@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Designed a clinical alert dashboard to reduce override of critical drug-interaction warnings</title>
+<meta name="description" content="Healthcare UX case study — AI dashboard design, clinical alert triage, WCAG 2.2 accessibility, and two rounds of usability testing with SUS and NASA-TLX.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <nav class="site-nav">
+    <a class="logo" href="index.html">Spencer</a>
+    <ul>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#" class="pending">Résumé</a></li>
+    </ul>
+  </nav>
+</div>
+
+<section style="padding-bottom: 0;">
+  <div class="container prose">
+    <p class="type-label-upper">Case Study</p>
+    <h1 class="type-h1" style="margin-top: var(--sp-md);">Designed a clinical alert dashboard to reduce override of critical drug-interaction warnings</h1>
+
+    <blockquote class="opening-stat type-body-lg">
+      In a study of 18,354 medication orders across two hospitals, physicians overrode 95% of
+      drug-interaction alerts — with no evidence of improvement since the Meaningful Use era began.
+      <cite class="type-caption">(Bryant et al., Applied Clinical Informatics, 2014)</cite>
+    </blockquote>
+
+    <p class="pending-block">
+      PENDING — one-sentence outcome stat once Round 2 results exist, placed here per the writing rule
+      "open with a published statistic + outcome."
+    </p>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <p class="type-label-upper label">Role</p>
+        <p class="type-body">Solo — research, synthesis, design, testing, prototyping</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Timeline</p>
+        <p class="type-body">May–Aug 2026</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Tools</p>
+        <p class="type-body">Figma, Stark, Maze, Claude API</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container prose">
+
+    <div class="case-section">
+      <h2 class="type-h2">How alert fatigue breaks clinical decision-making</h2>
+      <p class="type-body">
+        Hospitalists manage the highest volume of daily EHR medication orders in inpatient care and are the
+        primary recipients of drug-interaction alerts. Every alert in a modern EHR presents at identical
+        visual priority regardless of severity — no positional hierarchy, no size differentiation, no
+        reliable color signal distinguishes a life-threatening interaction from a routine advisory before
+        the clinician reads the full alert text.
+      </p>
+      <p class="type-body">
+        The cost of that flat hierarchy is not abstract. In 2015, a 16-year-old at UCSF received a
+        39-fold antibiotic overdose after both a physician and pharmacist overrode a critical alert — each
+        later reporting that it looked identical to the dozens of routine alerts they dismissed daily. The
+        prescribing physician's own words: <em>"There is no difference between a minuscule overdose and a
+        very large overdose. They all look exactly the same."</em> A Boston Globe investigation tied at
+        least 216 U.S. deaths between 2005–2010 to alarm fatigue.
+        <span class="type-caption">(R1-003)</span>
+      </p>
+      <p class="type-body">
+        It's also a compliance exposure, not just a clinical one: The Joint Commission issued an urgent
+        directive on alarm safety in 2013 (updated 2016), and the ECRI Institute named alarm-related
+        problems the top health-technology hazard for four consecutive years.
+        <span class="type-caption">(R1-003, R1-004)</span>
+      </p>
+      <p class="type-body">
+        And it's a volume problem before it's a design problem: UCSF ICU bedside monitors alone generated
+        187 audible alerts per patient per day — one every eight minutes, the overwhelming majority
+        clinically insignificant. Across five ICUs in one month: 2,507,822 unique alarms.
+        <span class="type-caption">(R1-005)</span> Each interruption during medication administration
+        raises error risk by ~13%; four interruptions doubles the rate of errors likely to cause permanent
+        harm or death. <span class="type-caption">(R1-003, R1-006)</span>
+      </p>
+      <p class="type-body">
+        <strong>The design implication:</strong> the problem isn't alert volume alone — it's that uniform
+        visual design makes every alert look equivalent, training clinicians to ignore all of them. A 95%
+        override rate in a system where critical and routine alerts are visually indistinguishable is a
+        predictable outcome, not a user failure.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Three questions this design had to answer</h2>
+      <ol class="rq-list type-body">
+        <li>What is the minimum information — urgency, confidence, recommended action — a hospitalist needs to triage an alert without leaving the alert view?</li>
+        <li>What visual or structural signal distinguishes a critical alert from a routine one at a glance, before the clinician reads any text?</li>
+        <li>Under what conditions does an AI confidence score increase a hospitalist's willingness to act on an alert rather than override it?</li>
+      </ol>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Why secondary research, and what it means for this study</h2>
+      <p class="type-body">
+        I didn't have access to practicing hospitalists for generative interviews — a gated clinical domain,
+        out of reach for a solo junior researcher. The persona and problem frame are instead built from 18
+        peer-reviewed and expert sources, trading primary interviews I couldn't run for depth of secondary
+        research. Evaluative testing (two rounds, Maze + SUS + NASA-TLX) was run with proxy testers — RNs, a
+        nursing student, and a hospital administrator who oversees nursing staff — to still validate the
+        design against people with real clinical workflow exposure. Stated as a limitation, not hidden.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">What the research surfaced</h2>
+      <p class="type-body">
+        <strong>Uniform visual priority is the proximate cause of mass override.</strong> No preattentive
+        signal — no position, size, or reliable color — separates a critical interaction from a routine
+        advisory before the clinician reads it. The 95.1% drug-drug override rate and 91.2% drug-allergy
+        override rate are the measurable outcome of that design failure, not clinician negligence.
+        <span class="type-caption">(R1-001, R1-002, R1-003)</span>
+      </p>
+      <p class="type-body">
+        <strong>AI confidence display is the single largest lever on clinician acceptance</strong> — larger
+        than model accuracy itself. In a study of 6,689 cardiovascular cases, high-confidence AI predictions
+        (90–99% band) were overridden 1.7% of the time; low-confidence predictions (70–79% band) were
+        overridden 99.3% of the time. <span class="type-caption">(R1-011)</span> How the AI is framed
+        matters too: perceived AI intelligence correlates with following its recommendations (B = 0.31,
+        p &lt; .001); perceived AI <em>emotion</em> correlates negatively (B = –1.04, p = .042) — a
+        professional, analytical presentation outperforms a warm, conversational one.
+        <span class="type-caption">(R1-017)</span>
+      </p>
+      <p class="type-body">
+        <strong>The information needed to decide isn't where the decision is made.</strong> Expert
+        consensus specifies drug identity, severity tier, and recommended action must appear in the alert
+        header itself — not behind navigation. When one EHR surfaced this in the primary view, physicians
+        showed significantly lower NASA-TLX workload and managed more abnormal results simultaneously.
+        <span class="type-caption">(R1-007, R1-009)</span>
+      </p>
+      <p class="type-body">
+        <strong>Severity tiering and role-tailoring are the two interventions proven to work</strong> — more
+        than any cosmetic visual change. A systematic review of 2007–2017 literature found role-tailoring
+        alerts to the right clinician the single most effective structural fix, severity tiering the
+        second. <span class="type-caption">(R1-008)</span>
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Design decisions, and what they're traced to</h2>
+
+      <div class="decision-card">
+        <h3 class="type-h3">D1-003 — Triage table, not a card list or zoned dashboard</h3>
+        <p class="type-body">
+          Each pending alert is a table row — severity tier, drug ordered vs. drug on file, AI confidence,
+          recommended action all visible without expanding. Rows sort by severity; the top row carries the
+          heaviest visual weight. Two alternatives were built and ruled out: a size-dominant card list
+          (scales badly past a few alerts, critical cards can scroll off-screen) and a severity-zoned
+          dashboard (breaks down when no critical alerts exist, and isn't a layout clinicians already know).
+          The tabular format won because it's native to how clinicians already read labs, vitals, and
+          medication lists — and it's the only format that supports comparing multiple patients at a glance
+          under time pressure.
+        </p>
+        <p class="type-caption source">Mazur et al. 2019 (R1-009); NN/g 2018 (R1-013)</p>
+      </div>
+
+      <div class="decision-card">
+        <h3 class="type-h3">D1-004 — Severity tiers use ESI, not an invented scale</h3>
+        <p class="type-body">
+          The alert panel borrows the Emergency Severity Index — the triage standard already in a
+          hospitalist's vocabulary — rather than a made-up "High/Medium/Low." "ESI-1" communicates urgency
+          with zero explanation needed; an invented label would require the clinician to learn a new scale
+          mid-shift.
+        </p>
+        <p class="type-caption source">The Joint Commission 2013/2016 (R1-004); Hussain et al. 2019 (R1-008)</p>
+      </div>
+
+      <div class="decision-card">
+        <h3 class="type-h3">D1-005 — Color reinforces severity, it never carries it alone</h3>
+        <p class="type-body">
+          Each ESI tier gets one accent color on the row's left border and badge — but strip the color out
+          and the ESI-1 row is still identifiable by position (top), height (tallest), and type weight
+          (boldest). Deliberate accessibility decision: color-only encoding fails for color-deficient
+          clinicians and is unreliable under time pressure regardless. AI confidence text stays neutral dark
+          at every severity level — confidence signals reliability, not danger, and coloring it red would
+          conflate "this alert is critical" with "this score can't be trusted."
+        </p>
+        <p class="type-caption source">NN/g 2018 (R1-013); The Joint Commission 2013/2016 (R1-004)</p>
+      </div>
+
+      <div class="decision-card">
+        <h3 class="type-h3">D1-006 / D1-007 — Friction scales with the risk of the action</h3>
+        <p class="type-body">
+          A recommended action (Hold) completes in one click, zero friction. Overriding an alert requires
+          selecting a reason from five visible radio options — not a dropdown — before the Confirm button
+          enables; nothing is pre-selected, so the clinician has to make an active choice. This directly
+          answers a documented EHR failure mode: override-reason dropdowns are too coarse, so clinicians
+          pick the fastest option rather than the accurate one, destroying the signal value of override data
+          for retrospective safety review.
+        </p>
+        <p class="type-caption source">Payne et al. 2015 (R1-007)</p>
+      </div>
+
+      <div class="decision-card" id="d1-002">
+        <h3 class="type-h3">D1-002 — A tool-schema field name was quietly reversing clinical meaning</h3>
+        <p class="type-body">
+          Building the explainability panel meant using the Claude API to extract structured alert fields
+          from clinical text. The first schema version labeled fields <code>drug_primary</code> /
+          <code>drug_interacting</code>. Given a Warfarin + Ciprofloxacin case, the model labeled
+          Ciprofloxacin (the new order triggering the alert) as <code>drug_primary</code> and Warfarin (the
+          existing active order) as <code>drug_interacting</code> — technically reversed from a prescribing
+          point of view, and exactly the ambiguity expert guidance says alert headers must not require a
+          clinician to resolve. Renamed to <code>drug_ordered</code> / <code>drug_on_file</code> —
+          self-explanatory without inference, and a reminder that schema field names shape both what a model
+          outputs and how a UI ends up labeling it.
+        </p>
+        <p class="type-caption source">Payne et al. 2015 (R1-007)</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Testing</h2>
+      <p class="type-body">
+        <strong>Method:</strong> Unmoderated Maze test simulating a hospitalist reviewing AI-generated
+        drug-interaction alerts across three tasks, followed by SUS and NASA-TLX (via Google Form). Five
+        proxy testers: three RNs, one nursing student/former phlebotomist, one hospital administrator who
+        oversees nursing staff.
+      </p>
+
+      <div class="pending-block" style="margin-bottom: var(--sp-md);">
+        <strong>PENDING — Round 1 results.</strong> Fill from <code>testing/ROUND1_RESULTS.md</code> once collected.
+      </div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="value">—</div>
+          <div class="type-label-upper label">SUS Score (68+ = above avg)</div>
+        </div>
+        <div class="stat">
+          <div class="value">—</div>
+          <div class="type-label-upper label">NASA-TLX Workload</div>
+        </div>
+        <div class="stat">
+          <div class="value">—</div>
+          <div class="type-label-upper label">Task 1 Completion</div>
+        </div>
+      </div>
+
+      <p class="pending-block">
+        PENDING — Round 2 results after targeted fixes, side by side with Round 1, plus the summary story
+        stat (e.g. "After two rounds of testing with 5 participants, SUS improved from X to Y (+Z), NASA-TLX
+        workload dropped from A to B, and alert triage accuracy rose from C% to D%.").
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">What I learned</h2>
+      <p class="type-body">
+        <strong>Failure 1 — a schema field name almost shipped a clinically inverted label.</strong> The
+        <code>drug_primary</code> / <code>drug_interacting</code> naming (see D1-002 above) wasn't caught by
+        looking at the UI — it surfaced only when I traced the model's actual output against the clinical
+        scenario and asked which drug a hospitalist would expect to see first. Consequence if unshipped: the
+        exact panel meant to reduce override-by-confusion would have introduced a new, subtler version of
+        the same confusion — reversed drug context, at the moment a clinician is deciding whether to trust
+        the AI. Lesson: schema and copy review needs the same scrutiny as visual review, against a real
+        clinical scenario, not an abstract field list.
+      </p>
+      <p class="pending-block">
+        PENDING — Failure 2, once Round 1 results name a specific usability failure with the data and the fix.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="links">
+      <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
+      <a href="#" class="pending">LinkedIn</a>
+      <a href="#" class="pending">Résumé — PDF</a>
+    </div>
+    <p class="type-caption">© 2026 Spencer — UX Designer, Healthcare AI</p>
+  </div>
+</footer>
+
+</body>
+</html>
