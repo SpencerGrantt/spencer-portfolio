@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convoy — Full-Stack Field Operations PWA</title>
+<meta name="description" content="Solo full-stack build — mobile-first PWA with Supabase backend and a Claude API-powered AI assistant, built for a real logistics client in four weeks.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <nav class="site-nav">
+    <a class="logo" href="index.html">Spencer</a>
+    <ul>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="convoy.html">Build</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#" class="pending">Résumé</a></li>
+    </ul>
+  </nav>
+</div>
+
+<section style="padding-bottom: 0;">
+  <div class="container prose">
+    <p class="type-label-upper">Build</p>
+    <h1 class="type-h1" style="margin-top: var(--sp-md);">Convoy — a full-stack field operations PWA</h1>
+    <p class="type-body-lg subline">
+      A mobile-first Progressive Web App for a veteran-owned medical courier company managing
+      government-contract logistics — real-time run tracking, chain-of-custody proof, and an
+      AI assistant built into the workflow. Designed, built, and shipped solo in four weeks.
+    </p>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <p class="type-label-upper label">Role</p>
+        <p class="type-body">Solo — architecture, database, UI, AI integration, deployment</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Timeline</p>
+        <p class="type-body">4 weeks, in production use</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Stack</p>
+        <p class="type-body">React, Vite, Supabase, Claude API, Vercel</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container prose">
+
+    <div class="case-section">
+      <div class="image-slot" style="border-radius: 8px; margin-bottom: var(--sp-lg); border: 1px solid var(--border-default);">
+        [ product screenshot — generic/anonymized, no client-identifying data ]
+      </div>
+      <h2 class="type-h2">Why this exists</h2>
+      <p class="type-body">
+        The client is a 100% service-disabled veteran who owns a medical courier company holding
+        government contracts through SAM.gov (VA, DoD, HHS). Field operations — run assignment,
+        chain-of-custody proof, compliance tracking — were running on paper and text messages,
+        which doesn't hold up under a government contract's audit requirements. Convoy replaces
+        that with a role-based mobile app dispatchers and drivers actually use in the field.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">What it does</h2>
+      <div class="tile-grid">
+        <div class="tile">
+          <h3 class="type-h3">Field operations</h3>
+          <p class="type-body">Real-time run tracking (Supabase Realtime), camera capture with GPS tagging, touch signature capture, and a chain-of-custody event log written on every status change.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Works without signal</h3>
+          <p class="type-body">Offline queue backed by IndexedDB, syncs automatically on reconnect — built for drivers in low-connectivity areas, not just a happy-path demo.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">AI assistant + anomaly detection</h3>
+          <p class="type-body">A Supabase Edge Function proxies the Claude API for an in-app assistant and flags runs running &gt;40% over average duration — AI integrated into a real operational workflow, not a chat widget bolted on.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Compliance automation</h3>
+          <p class="type-body">SAM.gov contract expiry alerts, SDVOSB credential tracking, an AI-scored contract-opportunity matcher, and branded chain-of-custody PDF generation for audits.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Performance</h2>
+      <p class="type-body" style="margin-bottom: var(--sp-md);">Lighthouse audit, production build:</p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="value filled">97</div>
+          <div class="type-label-upper label">Performance</div>
+        </div>
+        <div class="stat">
+          <div class="value filled">100</div>
+          <div class="type-label-upper label">Accessibility</div>
+        </div>
+        <div class="stat">
+          <div class="value filled">100</div>
+          <div class="type-label-upper label">Best Practices</div>
+        </div>
+      </div>
+      <div class="stat-row" style="grid-template-columns: 1fr; max-width: 260px;">
+        <div class="stat">
+          <div class="value filled">100</div>
+          <div class="type-label-upper label">SEO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Why this is here</h2>
+      <p class="type-body">
+        The Healthcare AI Dashboard case study is the research-driven design work — this is the shipping
+        side of the same specialization. Convoy is a live product with a role-based UI, a real database
+        schema, and an AI model wired into an operational decision (flagging anomalous runs) rather than
+        a prototype. Same interest — where AI output meets a person who has to act on it — approached as
+        a builder instead of a researcher.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="links">
+      <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
+      <a href="#" class="pending">LinkedIn</a>
+      <a href="#" class="pending">Résumé — PDF</a>
+    </div>
+    <p class="type-caption">© 2026 Spencer — UX Designer, Healthcare AI</p>
+  </div>
+</footer>
+
+</body>
+</html>

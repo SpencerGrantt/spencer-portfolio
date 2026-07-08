@@ -137,8 +137,17 @@ section { padding: var(--sp-3xl) 0; }
   overflow: hidden;
 }
 
-.featured-card .image-slot {
+.image-slot {
   background: var(--surface-muted);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+.featured-card .image-slot {
   border-bottom: 1px solid var(--border-default);
   aspect-ratio: 16 / 9;
   display: flex;
