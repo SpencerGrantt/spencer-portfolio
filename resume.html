@@ -36,9 +36,32 @@
   }
 
   @media print {
+    @page { margin: 0.5in; }
     .site-nav, .site-footer, .resume-header .btn-row { display: none; }
     section { padding: 0; }
-    body { font-size: 13px; }
+    body {
+      font-size: 11px;
+      line-height: 1.35;
+      --sp-xs: 2px;
+      --sp-sm: 4px;
+      --sp-md: 8px;
+      --sp-lg: 10px;
+      --sp-xl: 14px;
+      --sp-2xl: 16px;
+      --sp-3xl: 20px;
+    }
+    .container { padding: 0; }
+    .type-h1 { font-size: 22px; line-height: 26px; }
+    .type-body-lg { font-size: 12px; line-height: 17px; }
+    .type-body { font-size: 11px; line-height: 15px; }
+    .type-caption, .type-label-upper { font-size: 9px; }
+    .r-entry-title { font-size: 12px; }
+    .r-entry-sub { font-size: 11px; }
+    .r-entry-date { font-size: 10px; }
+    .r-status { font-size: 9px; padding: 1px 5px; }
+    .r-entry ul { padding-left: 12px; }
+    .r-entry li { margin-bottom: 0; }
+    .resume-header { margin-bottom: var(--sp-lg); }
   }
 </style>
 </head>
@@ -104,10 +127,9 @@
         </div>
         <p class="r-entry-sub">Self-initiated case study — clinician-facing AI decision-support interface</p>
         <ul class="type-body">
-          <li>Designed a triage dashboard addressing a documented 95% override rate on AI-generated drug-interaction alerts, grounding every design decision in a synthesis of 18 peer-reviewed and expert clinical sources</li>
-          <li>Used the Claude API to prototype and debug a structured-extraction schema powering the dashboard's explainability panel — caught and fixed a field-naming bug that was quietly reversing clinical meaning (drug ordered vs. drug on file) before it reached the UI</li>
-          <li>Applied severity-tiering (Emergency Severity Index) and role-tailored information hierarchy — the two interventions research identifies as most effective, over cosmetic visual changes</li>
-          <li>Stark-audited to WCAG 2.2 AA prior to usability testing; running unmoderated Maze evaluation (SUS + NASA-TLX) with proxy clinical testers (RNs, nursing student, hospital administrator)</li>
+          <li>Designed a triage dashboard addressing a documented 95% override rate on AI-generated drug-interaction alerts, grounding every design decision in a synthesis of 18 peer-reviewed clinical sources</li>
+          <li>Used the Claude API to prototype a structured-extraction schema for the dashboard's explainability panel — caught and fixed a field-naming bug quietly reversing clinical meaning before it reached the UI</li>
+          <li>Applied severity-tiering (Emergency Severity Index) and role-tailored hierarchy, Stark-audited to WCAG 2.2 AA; running unmoderated Maze evaluation (SUS + NASA-TLX) with proxy clinical testers</li>
         </ul>
       </div>
 
@@ -121,8 +143,7 @@
         <p class="r-entry-sub">Solo build for a veteran-owned medical courier company (anonymized client, government contract logistics)</p>
         <ul class="type-body">
           <li>Designed and built a mobile-first PWA solo — architecture, database, UI, AI integration, and deployment — replacing paper/text-based field operations with a role-based app for dispatchers and drivers</li>
-          <li>Wired the Claude API into a real operational decision (flagging runs &gt;40% over average duration) via a Supabase Edge Function, not a bolted-on chat widget; built an offline-first sync layer for low-connectivity field use</li>
-          <li>Shipped to production with a Lighthouse audit of 97 Performance / 100 Accessibility / 100 Best Practices / 100 SEO</li>
+          <li>Wired the Claude API into a real operational decision (flagging runs &gt;40% over average duration); built an offline-first sync layer for low-connectivity field use; shipped with a Lighthouse audit of 97/100/100/100</li>
         </ul>
       </div>
 
@@ -133,8 +154,7 @@
         </div>
         <p class="r-entry-sub">Self-initiated case study, remote</p>
         <ul class="type-body">
-          <li>Designed a government transparency mobile app end-to-end — information architecture, visual system, and responsive mobile-first layouts across 12+ screens, from persona development and journey mapping through a complete hi-fi Figma prototype</li>
-          <li>Defined success metrics tied to measurable user behaviors and mapped design constraints across data, privacy, accessibility, and mobile UX complexity</li>
+          <li>Designed a government transparency mobile app end-to-end — information architecture, visual system, and responsive layouts across 12+ screens, from persona research through a complete hi-fi Figma prototype</li>
         </ul>
       </div>
     </div>
