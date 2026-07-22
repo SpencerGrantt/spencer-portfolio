@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résumé — Spencer Grant, UX Designer, Healthcare AI</title>
+<meta name="description" content="Spencer Grant — UX designer specializing in healthcare AI and clinical decision-support interfaces. Skills, projects, and experience.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .resume-header { text-align: center; margin-bottom: var(--sp-2xl); }
+  .resume-header h1 { margin-bottom: var(--sp-xs); }
+  .resume-header .contact { color: var(--text-secondary); margin-top: var(--sp-sm); }
+  .resume-header .contact a { text-decoration: underline; }
+  .resume-header .btn-row { justify-content: center; margin-top: var(--sp-lg); }
+
+  .r-section { margin-bottom: var(--sp-2xl); }
+  .r-section h2 {
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-secondary); border-bottom: 1px solid var(--border-default);
+    padding-bottom: var(--sp-sm); margin-bottom: var(--sp-md);
+  }
+  .r-skills-row { margin-bottom: var(--sp-sm); }
+  .r-skills-row strong { color: var(--text-primary); }
+
+  .r-entry { margin-bottom: var(--sp-lg); }
+  .r-entry-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: var(--sp-sm); margin-bottom: var(--sp-xs); }
+  .r-entry-title { font-size: 16px; font-weight: 700; }
+  .r-entry-sub { color: var(--text-secondary); font-size: 14px; }
+  .r-entry-date { font-size: 13px; color: var(--text-tertiary); white-space: nowrap; }
+  .r-entry ul { padding-left: var(--sp-lg); }
+  .r-entry li { margin-bottom: var(--sp-xs); color: var(--text-primary); }
+  .r-status {
+    display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.03em; padding: 2px 8px; border-radius: 4px; margin-left: var(--sp-sm);
+    background: var(--surface-muted); color: var(--text-secondary); border: 1px solid var(--border-default);
+  }
+
+  @media print {
+    @page { margin: 0.5in; }
+    .site-nav, .site-footer, .resume-header .btn-row { display: none; }
+    section { padding: 0; }
+    body {
+      font-size: 11px;
+      line-height: 1.35;
+      --sp-xs: 2px;
+      --sp-sm: 4px;
+      --sp-md: 8px;
+      --sp-lg: 10px;
+      --sp-xl: 14px;
+      --sp-2xl: 16px;
+      --sp-3xl: 20px;
+    }
+    .container { padding: 0; }
+    .type-h1 { font-size: 22px; line-height: 26px; }
+    .type-body-lg { font-size: 12px; line-height: 17px; }
+    .type-body { font-size: 11px; line-height: 15px; }
+    .type-caption, .type-label-upper { font-size: 9px; }
+    .r-entry-title { font-size: 12px; }
+    .r-entry-sub { font-size: 11px; }
+    .r-entry-date { font-size: 10px; }
+    .r-status { font-size: 9px; padding: 1px 5px; }
+    .r-entry ul { padding-left: 12px; }
+    .r-entry li { margin-bottom: 0; }
+    .resume-header { margin-bottom: var(--sp-lg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="site-nav">
+    <a class="logo" href="index.html">Spencer</a>
+    <ul>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="convoy.html">Build</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html"><strong>Résumé</strong></a></li>
+    </ul>
+  </nav>
+</div>
+
+<section>
+  <div class="container prose">
+
+    <div class="resume-header">
+      <h1 class="type-h1">Spencer Grant</h1>
+      <p class="type-body-lg" style="color: var(--text-secondary);">UX Designer · Healthcare AI · Clinical Decision-Support Interfaces</p>
+      <p class="type-body contact">
+        Frederick, MD &nbsp;·&nbsp;
+        <a href="mailto:byspencercreative@gmail.com">byspencercreative@gmail.com</a> &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+      </div>
+    </div>
+
+    <div class="r-section">
+      <h2>Summary</h2>
+      <p class="type-body">
+        UX designer specializing in the interface between a clinical AI model and the person who has to
+        decide whether to trust its output. Background in digital arts and media design, with end-to-end
+        experience — contextual research, journey mapping, wireframing, hi-fi prototyping, and usability
+        testing (Maze, SUS, NASA-TLX). Works directly with the Claude API to prototype and debug the
+        structured data AI-forward products depend on, not just design around it — catching a mislabeled
+        model output before it becomes a UI bug, not after.
+      </p>
+    </div>
+
+    <div class="r-section">
+      <h2>Skills &amp; Tools</h2>
+      <p class="type-body r-skills-row"><strong>Design:</strong> Figma (8pt grid, semantic tokens, auto layout, Component/Variant/State systems), Adobe Creative Cloud (Photoshop, Illustrator, InDesign), Webflow, HTML, CSS</p>
+      <p class="type-body r-skills-row"><strong>Process:</strong> User research, persona development, journey mapping, wireframing, hi-fi prototyping, usability testing (Maze, SUS, NASA-TLX), information architecture, responsive design, accessibility (WCAG 2.2 AA, Stark audits), design system contribution</p>
+      <p class="type-body r-skills-row"><strong>AI &amp; Technical:</strong> Claude API (tool use, structured-extraction schemas, prompt engineering), SQL, front-end fundamentals (HTML/CSS, React in progress)</p>
+    </div>
+
+    <div class="r-section">
+      <h2>Case Studies &amp; Projects</h2>
+
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div>
+            <span class="r-entry-title">Healthcare AI Dashboard — Clinical Alert Triage</span>
+            <span class="r-status">In progress</span>
+          </div>
+          <span class="r-entry-date">2026</span>
+        </div>
+        <p class="r-entry-sub">Self-initiated case study — clinician-facing AI decision-support interface</p>
+        <ul class="type-body">
+          <li>Designed a triage dashboard addressing a documented 95% override rate on AI-generated drug-interaction alerts, grounding every design decision in a synthesis of 18 peer-reviewed clinical sources</li>
+          <li>Used the Claude API to prototype a structured-extraction schema for the dashboard's explainability panel — caught and fixed a field-naming bug quietly reversing clinical meaning before it reached the UI</li>
+          <li>Applied severity-tiering (Emergency Severity Index) and role-tailored hierarchy, Stark-audited to WCAG 2.2 AA; running unmoderated Maze evaluation (SUS + NASA-TLX) with proxy clinical testers</li>
+        </ul>
+      </div>
+
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div>
+            <span class="r-entry-title">Convoy — Full-Stack Field Operations PWA</span>
+          </div>
+          <span class="r-entry-date">2026 · 4 weeks · shipped</span>
+        </div>
+        <p class="r-entry-sub">Solo build for a veteran-owned medical courier company (anonymized client, government contract logistics)</p>
+        <ul class="type-body">
+          <li>Designed and built a mobile-first PWA solo — architecture, database, UI, AI integration, and deployment — replacing paper/text-based field operations with a role-based app for dispatchers and drivers</li>
+          <li>Wired the Claude API into a real operational decision (flagging runs &gt;40% over average duration); built an offline-first sync layer for low-connectivity field use; shipped with a Lighthouse audit of 97/100/100/100</li>
+        </ul>
+      </div>
+
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div><span class="r-entry-title">CivicPulse — Government Transparency App</span></div>
+          <span class="r-entry-date">Aug 2025</span>
+        </div>
+        <p class="r-entry-sub">Self-initiated case study, remote</p>
+        <ul class="type-body">
+          <li>Designed a government transparency mobile app end-to-end — information architecture, visual system, and responsive layouts across 12+ screens, from persona research through a complete hi-fi Figma prototype</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="r-section">
+      <h2>Freelance Experience</h2>
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div><span class="r-entry-title">Web Designer</span></div>
+          <span class="r-entry-date">2024 – Present · Remote</span>
+        </div>
+        <p class="r-entry-sub">Independent client work</p>
+        <ul class="type-body">
+          <li>Designed and launched a responsive Webflow site for a local bakery, iterating through multiple client feedback rounds on layout, visual hierarchy, content structure, and brand tone; managed design-to-development handoff and ongoing maintenance</li>
+          <li>Designed a mobile-friendly web presence for a regional trucking company focused on clear service communication, trust signals, and intuitive navigation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="r-section">
+      <h2>Education</h2>
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div><span class="r-entry-title">B.A., New Media — Digital Arts &amp; Media Design Track</span></div>
+        </div>
+        <p class="r-entry-sub">The Pennsylvania State University, University Park, PA</p>
+        <ul class="type-body">
+          <li>Coursework emphasis on interaction design, visual systems, digital prototyping, and user-centered design methodology</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="links">
+      <a href="mailto:byspencercreative@gmail.com">byspencercreative@gmail.com</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" onclick="window.print(); return false;">Résumé — Print/PDF</a>
+    </div>
+    <p class="type-caption">© 2026 Spencer — UX Designer, Healthcare AI</p>
+  </div>
+</footer>
+
+</body>
+</html>
