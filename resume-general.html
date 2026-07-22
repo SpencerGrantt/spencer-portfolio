@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résumé — Spencer Grant, UX/UI Designer</title>
+<meta name="description" content="Spencer Grant — UX/UI designer specializing in digital product design and visual systems. Skills, projects, and experience.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .resume-header { text-align: center; margin-bottom: var(--sp-2xl); }
+  .resume-header h1 { margin-bottom: var(--sp-xs); }
+  .resume-header .contact { color: var(--text-secondary); margin-top: var(--sp-sm); }
+  .resume-header .contact a { text-decoration: underline; }
+  .resume-header .btn-row { justify-content: center; margin-top: var(--sp-lg); }
+
+  .r-section { margin-bottom: var(--sp-2xl); }
+  .r-section h2 {
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-secondary); border-bottom: 1px solid var(--border-default);
+    padding-bottom: var(--sp-sm); margin-bottom: var(--sp-md);
+  }
+  .r-skills-row { margin-bottom: var(--sp-sm); }
+  .r-skills-row strong { color: var(--text-primary); }
+
+  .r-entry { margin-bottom: var(--sp-lg); }
+  .r-entry-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: var(--sp-sm); margin-bottom: var(--sp-xs); }
+  .r-entry-title { font-size: 16px; font-weight: 700; }
+  .r-entry-sub { color: var(--text-secondary); font-size: 14px; }
+  .r-entry-date { font-size: 13px; color: var(--text-tertiary); white-space: nowrap; }
+  .r-entry ul { padding-left: var(--sp-lg); }
+  .r-entry li { margin-bottom: var(--sp-xs); color: var(--text-primary); }
+  .r-status {
+    display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.03em; padding: 2px 8px; border-radius: 4px; margin-left: var(--sp-sm);
+    background: var(--surface-muted); color: var(--text-secondary); border: 1px solid var(--border-default);
+  }
+
+  @media print {
+    .site-nav, .site-footer, .resume-header .btn-row { display: none; }
+    section { padding: 0; }
+    body { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="site-nav">
+    <a class="logo" href="index.html">Spencer</a>
+    <ul>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="convoy.html">Build</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Résumé</a></li>
+    </ul>
+  </nav>
+</div>
+
+<section>
+  <div class="container prose">
+
+    <div class="resume-header">
+      <h1 class="type-h1">Spencer Grant</h1>
+      <p class="type-body-lg" style="color: var(--text-secondary);">UX/UI Designer · Digital Product Design · Visual Systems</p>
+      <p class="type-body contact">
+        Frederick, MD &nbsp;·&nbsp;
+        <a href="mailto:byspencercreative@gmail.com">byspencercreative@gmail.com</a> &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+      </div>
+    </div>
+
+    <div class="r-section">
+      <h2>Summary</h2>
+      <p class="type-body">
+        UX/UI designer with a background in digital arts and media design, focused on creating intuitive,
+        accessible interfaces for civic, service, and enterprise product contexts. End-to-end experience —
+        contextual research, journey mapping, wireframing, information architecture, and hi-fi prototyping —
+        plus hands-on front-end and AI-integration skills most designers don't have: I've shipped a live,
+        production PWA solo and used the Claude API directly to build structured data pipelines, so I can
+        work credibly across the design-to-engineering handoff, not just up to it.
+      </p>
+    </div>
+
+    <div class="r-section">
+      <h2>Skills &amp; Tools</h2>
+      <p class="type-body r-skills-row"><strong>Design:</strong> Figma (8pt grid, semantic tokens, auto layout, Component/Variant/State systems), Adobe Creative Cloud (Photoshop, Illustrator, InDesign), Webflow, HTML, CSS</p>
+      <p class="type-body r-skills-row"><strong>Process:</strong> User research, persona development, journey mapping, wireframing, hi-fi prototyping, usability testing (Maze, SUS, NASA-TLX), information architecture, responsive design, accessibility (WCAG 2.2 AA, Stark audits), design system contribution</p>
+      <p class="type-body r-skills-row"><strong>Technical:</strong> SQL, front-end fundamentals (HTML/CSS, React in progress), Claude API (tool use, structured-extraction schemas, prompt engineering), Git/GitHub</p>
+    </div>
+
+    <div class="r-section">
+      <h2>Projects</h2>
+
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div>
+            <span class="r-entry-title">Convoy — Full-Stack Field Operations PWA</span>
+          </div>
+          <span class="r-entry-date">2026 · 4 weeks · shipped</span>
+        </div>
+        <p class="r-entry-sub">Solo build for a service-disabled-veteran-owned small business holding federal government contracts (anonymized client)</p>
+        <ul class="type-body">
+          <li>Designed and built a mobile-first Progressive Web App solo — architecture, database, UI, AI integration, and deployment — replacing paper/text-based field operations with a role-based app used daily in production</li>
+          <li>Built compliance-automation features for federal contract requirements: SAM.gov contract-expiry alerts, SDVOSB credential tracking, and branded chain-of-custody PDF generation for audits</li>
+          <li>Built an offline-first sync layer (IndexedDB queue) for field use in low-connectivity areas — not a happy-path-only demo</li>
+          <li>Shipped to production with a Lighthouse audit of 97 Performance / 100 Accessibility / 100 Best Practices / 100 SEO</li>
+        </ul>
+      </div>
+
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div><span class="r-entry-title">CivicPulse — Government Transparency App</span></div>
+          <span class="r-entry-date">Aug 2025</span>
+        </div>
+        <p class="r-entry-sub">Self-initiated case study, remote</p>
+        <ul class="type-body">
+          <li>Designed a government transparency mobile app end-to-end — information architecture, visual design system, and responsive mobile-first layouts across 12+ screens covering onboarding, a personalized dashboard, a legislation tracker, spending visualizations, and notification flows</li>
+          <li>Conducted persona development, journey mapping, and contextual workflow analysis to ground design decisions in real user needs</li>
+          <li>Defined success metrics tied to measurable user behaviors and mapped design constraints across data, privacy, accessibility, and mobile UX complexity</li>
+        </ul>
+      </div>
+
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div>
+            <span class="r-entry-title">Healthcare AI Dashboard — Clinical Alert Triage</span>
+            <span class="r-status">In progress</span>
+          </div>
+          <span class="r-entry-date">2026</span>
+        </div>
+        <p class="r-entry-sub">Self-initiated case study — AI decision-support interface, WCAG 2.2 AA</p>
+        <ul class="type-body">
+          <li>Designed a clinician-facing triage dashboard grounded in a synthesis of 18 peer-reviewed and expert sources; every design decision traced to a cited research finding</li>
+          <li>Stark-audited to WCAG 2.2 AA prior to usability testing; running an unmoderated Maze evaluation (SUS + NASA-TLX) now</li>
+          <li>Used the Claude API to prototype a structured-extraction schema, catching a field-naming bug that was quietly reversing clinical meaning before it reached the UI</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="r-section">
+      <h2>Freelance Experience</h2>
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div><span class="r-entry-title">Web Designer</span></div>
+          <span class="r-entry-date">2024 – Present · Remote</span>
+        </div>
+        <p class="r-entry-sub">Independent client work</p>
+        <ul class="type-body">
+          <li>Designed and launched a responsive Webflow site for a local bakery, iterating through multiple client feedback rounds on layout, visual hierarchy, content structure, and brand tone; managed design-to-development handoff and ongoing maintenance</li>
+          <li>Designed a mobile-friendly web presence for a regional trucking company focused on clear service communication, trust signals, and intuitive navigation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="r-section">
+      <h2>Education</h2>
+      <div class="r-entry">
+        <div class="r-entry-head">
+          <div><span class="r-entry-title">B.A., New Media — Digital Arts &amp; Media Design Track</span></div>
+        </div>
+        <p class="r-entry-sub">The Pennsylvania State University, University Park, PA</p>
+        <ul class="type-body">
+          <li>Coursework emphasis on interaction design, visual systems, digital prototyping, and user-centered design methodology</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="links">
+      <a href="mailto:byspencercreative@gmail.com">byspencercreative@gmail.com</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" onclick="window.print(); return false;">Résumé — Print/PDF</a>
+    </div>
+    <p class="type-caption">© 2026 Spencer — UX/UI Designer</p>
+  </div>
+</footer>
+
+</body>
+</html>
