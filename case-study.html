@@ -27,7 +27,7 @@
 
 <div class="container">
   <nav class="site-nav">
-    <a class="logo" href="index.html">Spencer</a>
+    <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <ul>
       <li><a href="case-study.html">Case Study</a></li>
       <li><a href="convoy.html">Build</a></li>
@@ -48,9 +48,10 @@
       <cite class="type-caption">(Bryant et al., Applied Clinical Informatics, 2014)</cite>
     </blockquote>
 
-    <p class="type-body" style="color: var(--text-secondary);">
-      Usability testing is in progress — Round 2 wraps in early August, with final results and the
-      full outcome story publishing here by Aug 15, 2026.
+    <p class="type-body-lg">
+      Round 1 testing with 3 RN proxy testers: 100% correctly triaged the critical alert on their own —
+      but 0% chose the correct action once the AI's confidence score entered the decision. Round 2 design
+      now targets that exact gap.
     </p>
 
     <div class="meta-row">
@@ -77,18 +78,23 @@
       <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">30-second summary</p>
       <ul class="type-body">
         <li><strong>Problem:</strong> hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</li>
-        <li><strong>Approach:</strong> synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 5 proxy clinical testers.</li>
+        <li><strong>Approach:</strong> synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</li>
         <li><strong>Key decision:</strong> a triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</li>
-        <li><strong>Status:</strong> usability testing in progress — results land here once collected.</li>
+        <li><strong>Status:</strong> Round 1 complete — alert triage worked (100% completion), but no tester chose the correct action once AI confidence entered the decision (0% completion). Round 2 design targets that gap; Round 2 testing is next.</li>
       </ul>
     </div>
+
+    <div class="shot-frame">
+      <img src="assets/triage-r1-table-full.png" alt="Round 1 hi-fi prototype — Drug Interaction Alerts table, five alerts sorted by ESI severity tier with AI confidence and recommended action columns">
+    </div>
+    <p class="type-caption" style="margin-bottom: var(--sp-xl);">Round 1 prototype — the alert triage table. Severity tier (ESI), drugs, AI confidence, and recommended action are visible for every alert without expanding a row.</p>
 
     <p class="type-caption method-note">
       <strong>A note on method:</strong> I didn't have access to practicing hospitalists for generative interviews — a
       gated clinical domain, out of reach for a solo junior researcher. The persona and problem frame are built from
-      18 peer-reviewed and expert sources instead; evaluative testing (Maze + SUS + NASA-TLX) runs with proxy
-      testers — RNs, a nursing student, and a hospital administrator — to still validate against people with real
-      clinical workflow exposure.
+      18 peer-reviewed and expert sources instead; evaluative testing (Useberry, originally built in Maze, + SUS +
+      NASA-TLX) ran with proxy testers — an initial panel of five narrowed to three RNs, the closest available
+      proxy to a practicing hospitalist — to still validate against people with real clinical workflow exposure.
     </p>
 
     <div class="case-section">
@@ -220,41 +226,72 @@
         </p>
         <p class="type-caption source">Payne et al. 2015 (R1-007)</p>
       </div>
+
+      <div class="decision-card" id="d1-008">
+        <h3 class="type-h3">D1-008 — Style Escalate as primary and state the AI recommendation as text (Round 2)</h3>
+        <p class="type-body">
+          Round 1 testing found 0 of 3 RN testers chose Escalate on a 94%-confidence critical alert — 2 chose
+          Override, 1 chose Hold. The wrong action didn't converge, which ruled out "Override looks too easy"
+          as the fix and pointed at something broader: nothing in the interface states the AI's recommendation
+          where the decision actually happens. Round 2 restyles Escalate as the primary button and adds a
+          one-line stated recommendation ("94% confidence supports escalation") directly above the button row,
+          for confidence ≥90% on ESI-1/ESI-2 alerts — tying the evidence panel's confidence score to the action
+          instead of leaving the tester to infer it.
+        </p>
+        <p class="type-caption source">Yu 2025 (R1-011); NN/g 2018 (R1-013); Payne et al. 2015 (R1-007)</p>
+      </div>
     </div>
 
     <div class="case-section">
       <h2 class="type-h2">Testing</h2>
       <p class="type-body">
-        <strong>Method:</strong> Unmoderated Maze test simulating a hospitalist reviewing AI-generated
-        drug-interaction alerts across three tasks, followed by SUS and NASA-TLX (via Google Form). Five
-        proxy testers: three RNs, one nursing student/former phlebotomist, one hospital administrator who
-        oversees nursing staff.
+        <strong>Method:</strong> Unmoderated usability test (built in Maze, rebuilt in Useberry mid-round
+        after a platform sync bug broke the original link) simulating a hospitalist reviewing AI-generated
+        drug-interaction alerts across three tasks, followed by SUS and NASA-TLX. Panel narrowed from an
+        initial five proxy testers to three RNs — the closest available proxy to a practicing hospitalist.
       </p>
 
-      <p class="type-body" style="color: var(--text-secondary); margin-bottom: var(--sp-md);">
-        Round 1 data collection is finishing now (proxy-tester sessions in progress); Round 2 launches
-        immediately after. Full results below by Aug 15, 2026.
-      </p>
+      <div class="shot-frame">
+        <img src="assets/triage-r1-esi1-expanded.png" alt="Round 1 hi-fi prototype — ESI-1 alert expanded, showing 94% AI confidence, evidence panel, and the Hold / Override / Escalate action row">
+      </div>
+      <p class="type-caption" style="margin-bottom: var(--sp-lg);">The ESI-1, 94%-confidence alert expanded — the exact Task 2 scenario where 0 of 3 testers chose Escalate.</p>
 
       <div class="stat-row">
         <div class="stat">
-          <div class="value">—</div>
+          <div class="value">73.3</div>
           <div class="type-label-upper label">SUS Score (68+ = above avg)</div>
         </div>
         <div class="stat">
-          <div class="value">—</div>
-          <div class="type-label-upper label">NASA-TLX Workload</div>
+          <div class="value">35.0</div>
+          <div class="type-label-upper label">NASA-TLX Workload (lower is better)</div>
         </div>
         <div class="stat">
-          <div class="value">—</div>
-          <div class="type-label-upper label">Task 1 Completion</div>
+          <div class="value">100%</div>
+          <div class="type-label-upper label">Task 1 Completion (n=3)</div>
+        </div>
+        <div class="stat">
+          <div class="value">0%</div>
+          <div class="type-label-upper label">Task 2 Completion — Escalate on 94% alert (n=3)</div>
+        </div>
+        <div class="stat">
+          <div class="value">67%</div>
+          <div class="type-label-upper label">Task 3 Completion — Override friction (n=3)</div>
         </div>
       </div>
 
-      <p class="type-body" style="color: var(--text-secondary);">
-        Round 2 (targeted fixes from Round 1's findings) runs the first week of August. This section
-        will show the Round 1 vs. Round 2 comparison — SUS, NASA-TLX, and task completion deltas — once
-        both rounds are complete.
+      <p class="type-body">
+        All 3 testers identified the critical alert first and took a definitive action without prompting
+        (Task 1: 100% completion, avg 127.2s). But 0 of 3 chose the correct action — Escalate — once the AI
+        confidence score was in front of them (Task 2: 0% completion): 2 chose Override, 1 chose Hold. Task 3
+        (override friction) completed at 2 of 3; the third tester dropped off before reaching the
+        override-reason form, an unconfirmed n=1 finding worth watching in Round 2. Full breakdown in
+        <code>testing/ROUND1_RESULTS.md</code>.
+      </p>
+
+      <p class="pending-block">
+        PENDING — Round 2 results after the D1-008 fix, side by side with Round 1, plus the summary story
+        stat (e.g. "After two rounds of testing, SUS improved from X to Y (+Z), NASA-TLX workload dropped
+        from A to B, and Task 2 completion rose from 0% to D%.").
       </p>
     </div>
 
@@ -270,9 +307,18 @@
         the AI. Lesson: schema and copy review needs the same scrutiny as visual review, against a real
         clinical scenario, not an abstract field list.
       </p>
-      <p class="type-body" style="color: var(--text-secondary);">
-        Failure 2 — a second named usability failure from Round 1 testing — publishes here once results
-        are analyzed, by Aug 15, 2026.
+      <p class="type-body">
+        <strong>Failure 2 — no tester chose the correct action once AI confidence was on screen.</strong>
+        Task 2 asked testers to escalate or override a 94%-confidence critical alert. All 3 RN testers chose
+        something other than Escalate — but not the same wrong thing (2 chose Override, 1 chose Hold), which
+        killed my first theory ("Override is styled too temptingly") within an hour of the third result
+        coming in. The real gap: the confidence score lives in an evidence panel, structurally disconnected
+        from the button row, so nothing tells the tester which button the AI is actually recommending.
+        Consequence if shipped as-is: a 94%-confidence alert — the exact case where Yu 2025 (R1-011) found a
+        1.7% real-world override rate — gets overridden or held 100% of the time in this interface. Lesson:
+        when two different Task 1 behaviors (a clean 2-click Hold vs. a 35-click Override) converge on the
+        same Task 2 miss, the shared cause is the interface, not either tester's judgment. Fix: D1-008,
+        testing next in Round 2.
       </p>
     </div>
 
@@ -282,11 +328,11 @@
 <footer class="site-footer">
   <div class="container">
     <div class="links">
-      <a href="mailto:byspencercreative@gmail.com">byspencercreative@gmail.com</a>
+      <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
       <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
       <a href="resume.html">Résumé — PDF</a>
     </div>
-    <p class="type-caption">© 2026 Spencer — UX Designer, Healthcare AI</p>
+    <p class="type-caption">© 2026 Spencer Grant's Portfolio — UX Designer, Healthcare AI</p>
   </div>
 </footer>
 
