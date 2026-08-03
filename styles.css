@@ -148,17 +148,20 @@ section { padding: var(--sp-3xl) 0; }
 .site-nav a:hover { text-decoration: underline; }
 
 .theme-toggle {
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   color: var(--text-secondary);
   background: none;
   border: 1px solid var(--button-border);
-  border-radius: 6px;
-  padding: 5px 10px;
+  border-radius: 50%;
+  padding: 0;
   cursor: pointer;
 }
 .theme-toggle:hover { color: var(--text-primary); border-color: var(--text-tertiary); }
+.theme-toggle svg { display: block; }
 
 /* ── Buttons ── */
 
