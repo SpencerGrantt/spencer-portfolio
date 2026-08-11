@@ -309,6 +309,14 @@ section { padding: var(--sp-3xl) 0; }
   .tile-grid { grid-template-columns: 1fr; }
 }
 
+/* Narrower variant for grids that sit inside .prose (720px) rather than
+   the full .container — 4 tracks there leaves ~150px columns, too narrow
+   for paragraph-length card copy. */
+.tile-grid-prose { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 640px) {
+  .tile-grid-prose { grid-template-columns: 1fr; }
+}
+
 .tile {
   background: var(--surface-default);
   border: 1px solid var(--border-default);

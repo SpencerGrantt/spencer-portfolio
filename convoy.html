@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Convoy — Full-Stack Field Operations PWA</title>
-<meta name="description" content="Solo full-stack build — mobile-first PWA with Supabase backend and a Claude API-powered AI assistant, built for a real logistics client in four weeks.">
+<title>Convoy — a full-stack field operations PWA for a veteran-owned medical courier</title>
+<meta name="description" content="Solo product design + full-stack build — mobile-first PWA with a Supabase backend, federal contract matching, and a Claude API-powered AI assistant, in live production use by a real logistics client.">
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
 </head>
@@ -31,18 +31,19 @@
     <h1 class="type-h1" style="margin-top: var(--sp-md);">Convoy — a full-stack field operations PWA</h1>
     <p class="type-body-lg subline">
       A mobile-first Progressive Web App for a veteran-owned medical courier company managing
-      government-contract logistics — real-time run tracking, chain-of-custody proof, and an
-      AI assistant built into the workflow. Designed, built, and shipped solo in four weeks.
+      federal and commercial logistics contracts — real-time dispatch, chain-of-custody proof,
+      financial analytics, and an AI assistant built into the workflow. Designed, built, and
+      shipped solo; in active production use.
     </p>
 
     <div class="meta-row">
       <div class="meta-item">
         <p class="type-label-upper label">Role</p>
-        <p class="type-body">Solo — architecture, database, UI, AI integration, deployment</p>
+        <p class="type-body">Solo — product scope, database, UI, AI integration, deployment</p>
       </div>
       <div class="meta-item">
         <p class="type-label-upper label">Timeline</p>
-        <p class="type-body">4 weeks, in production use</p>
+        <p class="type-body">May 2026–ongoing, in production</p>
       </div>
       <div class="meta-item">
         <p class="type-label-upper label">Stack</p>
@@ -56,40 +57,179 @@
   <div class="container prose">
 
     <div class="case-section">
-      <div class="shot-frame">
-        <img src="assets/convoy-dashboard.jpg" alt="Convoy dashboard — overview stats, contract expiry alert, and recent runs list">
-      </div>
-      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Dashboard view, seed/demo account — no real client, contract, or driver data shown.</p>
-      <h2 class="type-h2">Why this exists</h2>
+      <h2 class="type-h2">The business</h2>
       <p class="type-body">
-        The client is a 100% service-disabled veteran who owns a medical courier company holding
-        government contracts through SAM.gov (VA, DoD, HHS). Field operations — run assignment,
-        chain-of-custody proof, compliance tracking — were running on paper and text messages,
-        which doesn't hold up under a government contract's audit requirements. Convoy replaces
-        that with a role-based mobile app dispatchers and drivers actually use in the field.
+        The client is a 100% service-disabled veteran who owns a small SDVOSB (Service-Disabled
+        Veteran-Owned Small Business) medical courier company — specimen and supply deliveries,
+        split between federal contracts sourced through SAM.gov (VA, DoD, HHS) and
+        commercial/broker-booked hauls. Before this product existed, the business ran on paper
+        logs, text messages, and spreadsheets, which created three concrete gaps:
+      </p>
+      <ul class="type-body" style="padding-left: var(--sp-lg); margin-bottom: var(--sp-md);">
+        <li><strong>Chain of custody was unverifiable.</strong> Medical specimen transport carries
+        real compliance stakes, and there was no timestamped, geotagged record tying a photo or
+        signature to a specific delivery.</li>
+        <li><strong>The office and the road didn't share a system of record.</strong> A dispatcher
+        assigning a run and a driver executing it had no shared, real-time view of status.</li>
+        <li><strong>Financial and compliance visibility was reactive.</strong> SAM.gov registration
+        lapses, contract renewals, and margin per run were things the owner found out about late,
+        not early.</li>
+      </ul>
+      <p class="type-body">
+        The brief, in effect: build the tool a two-person office-and-fleet operation actually
+        needs, not a scaled-down version of enterprise transportation-management software they'd
+        never fully use.
       </p>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">What it does</h2>
-      <div class="tile-grid">
+      <h2 class="type-h2">Who it's for</h2>
+      <p class="type-body">
+        Three roles, three genuinely different jobs, one shared data model. Rather than one
+        dashboard with permission-gated widgets, each role gets a different home screen built
+        around its actual task — a dispatcher opens the app to <em>decide something</em>, a driver
+        opens it to <em>do something</em>.
+      </p>
+      <div class="tile-grid tile-grid-prose">
         <div class="tile">
-          <h3 class="type-h3">Field operations</h3>
-          <p class="type-body">Real-time run tracking (Supabase Realtime), camera capture with GPS tagging, touch signature capture, and a chain-of-custody event log written on every status change.</p>
+          <h3 class="type-h3">Owner / Head Admin</h3>
+          <p class="type-body">Desk, intermittently on the road. Needs business health at a glance: revenue, compliance deadlines, fleet status, contract pipeline.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Dispatcher</h3>
+          <p class="type-body">Desk. Needs to assign runs, track them in real time, and manage fleet and crew.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Driver / Crew</h3>
+          <p class="type-body">One-handed, in a vehicle, often with poor signal. Needs today's run, fast proof-of-delivery capture, and to get paid correctly.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">What shipped</h2>
+      <div class="shot-frame">
+        <img src="assets/convoy-dashboard.png" alt="Convoy owner Dashboard — active runs, delivered-this-month, open contracts, SAM expiry, miles and run-type breakdown, and a recent-runs list">
+      </div>
+      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Owner Dashboard — business metrics at a glance. Seed/demo account, no real client, contract, or driver data shown.</p>
+      <p class="type-body" style="margin-bottom: var(--sp-lg);">
+        Nine core surfaces, all live in production, built around a shared Postgres schema with
+        role-scoped access at the database layer (Supabase Row Level Security), not just hidden
+        in the UI.
+      </p>
+      <div class="tile-grid tile-grid-prose">
+        <div class="tile">
+          <h3 class="type-h3">Dispatch &amp; run tracking</h3>
+          <p class="type-body">Runs move through a fixed status pipeline with real-time updates (Supabase Realtime), split by contract vs. commercial and by loaded vs. deadhead miles.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Chain of custody</h3>
+          <p class="type-body">Camera capture with GPS tagging, touch signature capture, and an event log written on every status change — the compliance-critical flow the whole product exists to fix.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Federal contract matching</h3>
+          <p class="type-body">Live SAM.gov opportunity search, AI-scored against the company's NAICS codes and SDVOSB status, with fallback to clearly-labeled sample data if the government API is down.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Financial analytics</h3>
+          <p class="type-body">Revenue vs. expense trends, cost-per-mile, and expense breakdown by category, plus an auto-generated invoice from any completed run.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Fleet &amp; drivers</h3>
+          <p class="type-body">Vehicle and driver records, compliance-doc tracking with 30/60-day expiry alerts, IFTA quarterly mileage reporting.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">AI assistant + anomaly detection</h3>
+          <p class="type-body">A Supabase Edge Function proxies the Claude API for an in-app assistant scoped to the company's own live data, and flags runs running &gt;40% over average duration.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Works without signal</h3>
           <p class="type-body">Offline queue backed by IndexedDB, syncs automatically on reconnect — built for drivers in low-connectivity areas, not just a happy-path demo.</p>
         </div>
         <div class="tile">
-          <h3 class="type-h3">AI assistant + anomaly detection</h3>
-          <p class="type-body">A Supabase Edge Function proxies the Claude API for an in-app assistant and flags runs running &gt;40% over average duration — AI integrated into a real operational workflow, not a chat widget bolted on.</p>
+          <h3 class="type-h3">Team messaging</h3>
+          <p class="type-body">In-app chat between dispatch and drivers, so a status question doesn't have to leave the system of record for a text thread.</p>
         </div>
         <div class="tile">
-          <h3 class="type-h3">Compliance automation</h3>
-          <p class="type-body">SAM.gov contract expiry alerts, SDVOSB credential tracking, an AI-scored contract-opportunity matcher, and branded chain-of-custody PDF generation for audits.</p>
+          <h3 class="type-h3">Compliance paperwork</h3>
+          <p class="type-body">Branded chain-of-custody PDF generation, downloadable straight from a run's detail page for audits.</p>
         </div>
       </div>
+    </div>
+
+    <div class="case-section">
+      <div class="shot-frame">
+        <img src="assets/convoy-contracts.png" alt="Convoy Contracts page — SAM.gov opportunity matches scored against the company's NAICS codes, with a manual search and a saved-contracts list below">
+      </div>
+      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Contracts — AI-scored SAM.gov opportunity matches. Seed/demo account, no real client or contract data shown.</p>
+
+      <div class="shot-frame">
+        <img src="assets/convoy-finances.png" alt="Convoy Finances Analytics tab — revenue vs. expense chart, expense-by-category breakdown, and the AI assistant answering a financial-summary question in the docked chat panel">
+      </div>
+      <p class="type-caption">Finances — revenue/expense analytics with the AI assistant answering a live query against the same data. Seed/demo account, no real financial data shown.</p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Design decisions</h2>
+
+      <div class="decision-card">
+        <h3 class="type-h3">A different home screen per role, not one dashboard with permissions</h3>
+        <p class="type-body">
+          The owner's Dashboard leads with business metrics and compliance alerts; the driver's is
+          a "Today / Upcoming" run list with nothing else competing for attention. That split came
+          directly from watching how differently the two roles actually open the app.
+        </p>
+      </div>
+
+      <div class="decision-card">
+        <h3 class="type-h3">Honest degradation over silent failure</h3>
+        <p class="type-body">
+          When the live SAM.gov call fails — which, for a public government API, it sometimes
+          does — the UI doesn't hide the failure behind an empty state. It falls back to clearly
+          labeled sample data with the actual failure reason visible underneath, and computes
+          fallback deadlines relative to today instead of shipping dates that quietly go stale.
+        </p>
+      </div>
+
+      <div class="decision-card">
+        <h3 class="type-h3">Reliability is the UX, not a separate concern</h3>
+        <p class="type-body">
+          A driver on a weak cell connection who sees "Uploading…" with no feedback and no retry
+          doesn't have a technical problem — they have a lost proof-of-delivery problem. Every
+          upload has an explicit timeout so a stalled request fails visibly and retryably, and
+          photos are compressed client-side before upload since phone-camera JPEGs routinely run
+          3–12MB.
+        </p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">How this differs from off-the-shelf fleet software</h2>
+      <p class="type-body">
+        Most trucking/TMS tools ship the same generic feature set whether the cargo is freight or
+        lab specimens. Two things here don't show up on a typical off-the-shelf feature list:
+      </p>
+      <ul class="type-body" style="padding-left: var(--sp-lg); margin-bottom: var(--sp-md);">
+        <li><strong>Federal contract matching, not just contract tracking.</strong> SAM.gov
+        opportunities are pulled live and AI-scored against the company's actual NAICS codes and
+        SDVOSB status — ranked matches with a one-click "save as contract," not a search box the
+        owner has to babysit.</li>
+        <li><strong>An AI assistant wired into live company data</strong>, not a chat widget bolted
+        on. It answers "show me this month's expenses" by querying the real revenue/expense
+        tables, scoped server-side to that company only, and is explicitly grounded in the current
+        date so it doesn't reason from stale training-data time.</li>
+        <li><strong>Medical chain-of-custody as a first-class flow</strong> — photo, GPS, and
+        signature on every status change — because "delivery proof" means something more specific
+        for a company hauling lab specimens under federal contracts than for a general freight
+        hauler.</li>
+      </ul>
+      <p class="type-body">
+        That's not a claim this beats mature TMS platforms feature-for-feature — ELD/HOS
+        compliance and live fuel-card integration aren't built, and would likely mean integrating
+        an existing certified provider rather than building from scratch. The case for this
+        product is narrower: built deep around the real constraints of one business, instead of a
+        broad tool the business configures around the parts that don't fit.
+      </p>
     </div>
 
     <div class="case-section">
@@ -120,11 +260,12 @@
     <div class="case-section">
       <h2 class="type-h2">Why this is here</h2>
       <p class="type-body">
-        The Healthcare AI Dashboard case study is the research-driven design work — this is the shipping
-        side of the same specialization. Convoy is a live product with a role-based UI, a real database
-        schema, and an AI model wired into an operational decision (flagging anomalous runs) rather than
-        a prototype. Same interest — where AI output meets a person who has to act on it — approached as
-        a builder instead of a researcher.
+        The Healthcare AI Dashboard case study is the research-driven design work — this is the
+        shipping side of the same specialization. Convoy is a live product with a role-based UI, a
+        real database schema, and an AI model wired into an operational decision (flagging
+        anomalous runs, scoring contract matches) rather than a prototype. Same interest — where
+        AI output meets a person who has to act on it — approached as a builder instead of a
+        researcher.
       </p>
     </div>
 
