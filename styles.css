@@ -226,6 +226,20 @@ section { padding: var(--sp-3xl) 0; }
   display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.shot-frame:hover img {
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot-frame img {
+    transition: none;
+  }
+  .shot-frame:hover img {
+    transform: none;
+  }
 }
 
 .featured-card .image-slot {
