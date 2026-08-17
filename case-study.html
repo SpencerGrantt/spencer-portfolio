@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Designed a clinical alert dashboard to reduce override of critical drug-interaction warnings</title>
-<meta name="description" content="Healthcare UX case study — AI dashboard design, clinical alert triage, WCAG 2.2 accessibility, and two rounds of usability testing with SUS and NASA-TLX.">
+<meta name="description" content="Healthcare UX case study: AI dashboard design, clinical alert triage, WCAG 2.2 accessibility, and two rounds of usability testing with SUS and NASA-TLX.">
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
 <style>
@@ -22,6 +22,7 @@
     padding-left: var(--sp-md);
     margin-bottom: var(--sp-2xl);
   }
+  .finding-tile .source { margin-top: var(--sp-sm); }
 </style>
 </head>
 <body>
@@ -44,28 +45,22 @@
 <section style="padding-bottom: 0;">
   <div class="container prose">
     <p class="type-label-upper">Case Study</p>
-    <h1 class="type-h1" style="margin-top: var(--sp-md);">Designed a clinical alert dashboard to reduce override of critical drug-interaction warnings</h1>
+    <h1 class="type-h1" style="margin-top: var(--sp-md);">A clinical alert dashboard, designed to cut hospitalist override</h1>
 
     <blockquote class="opening-stat type-body-lg">
-      In a study of 18,354 medication orders across two hospitals, physicians overrode 95% of
-      drug-interaction alerts — with no evidence of improvement since the Meaningful Use era began.
+      Physicians override 95% of drug-interaction alerts, across 18,354 medication orders at two
+      hospitals, with no improvement since the Meaningful Use era began.
       <cite class="type-caption">(Bryant et al., Applied Clinical Informatics, 2014)</cite>
     </blockquote>
-
-    <p class="type-body-lg">
-      Round 1 testing with 3 RN proxy testers: 100% correctly triaged the critical alert on their own —
-      but 0% chose the correct action once the AI's confidence score entered the decision. Round 2 design
-      now targets that exact gap.
-    </p>
 
     <div class="meta-row">
       <div class="meta-item">
         <p class="type-label-upper label">Role</p>
-        <p class="type-body">Solo — research, synthesis, design, testing, prototyping</p>
+        <p class="type-body">Solo: research, synthesis, design, testing, prototyping</p>
       </div>
       <div class="meta-item">
         <p class="type-label-upper label">Timeline</p>
-        <p class="type-body">May–Aug 2026</p>
+        <p class="type-body">May to Aug 2026</p>
       </div>
       <div class="meta-item">
         <p class="type-label-upper label">Tools</p>
@@ -78,184 +73,154 @@
 <section style="padding-top: 0;">
   <div class="container prose">
 
+    <div class="stat-row">
+      <div class="stat">
+        <div class="value filled">73.3</div>
+        <div class="type-label-upper label">SUS score, Round 1 (68+ is above average)</div>
+      </div>
+      <div class="stat">
+        <div class="value filled">100%</div>
+        <div class="type-label-upper label">Correctly triaged the critical alert alone</div>
+      </div>
+      <div class="stat">
+        <div class="value filled">0%</div>
+        <div class="type-label-upper label">Chose the right action once AI confidence entered the decision</div>
+      </div>
+    </div>
+
+    <div class="figma-embed">
+      <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fjo3H6810m9f2w6VpX7hgTi%2FAlert-Dashboard%3Fnode-id%3D448-4160%26p%3Df%26viewport%3D185%252C287%252C0.25%26t%3Dxv7ntJq6d0bOYks0-1%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D448%253A4160%26show-proto-sidebar%3D1%26page-id%3D438%253A957" allowfullscreen loading="lazy" title="Healthcare AI Dashboard live prototype"></iframe>
+    </div>
+    <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the Round 1 triage table above, or <a href="https://www.figma.com/proto/jo3H6810m9f2w6VpX7hgTi/Alert-Dashboard?node-id=448-4160&p=f&viewport=185%2C287%2C0.25&t=xv7ntJq6d0bOYks0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=448%3A4160&show-proto-sidebar=1&page-id=438%3A957" target="_blank" rel="noopener">open it in Figma →</a></p>
+
     <div class="summary-block">
       <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">30-second summary</p>
       <ul class="type-body">
         <li><strong>Problem:</strong> hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</li>
         <li><strong>Approach:</strong> synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</li>
         <li><strong>Key decision:</strong> a triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</li>
-        <li><strong>Status:</strong> Round 1 complete — alert triage worked (100% completion), but no tester chose the correct action once AI confidence entered the decision (0% completion). Round 2 design targets that gap; Round 2 testing is next.</li>
+        <li><strong>Status:</strong> Round 1 complete. Alert triage worked, but no tester chose the correct action once AI confidence entered the decision. Round 2 design targets that gap; Round 2 testing is next.</li>
       </ul>
     </div>
 
-    <div class="figma-embed">
-      <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fjo3H6810m9f2w6VpX7hgTi%2FAlert-Dashboard%3Fnode-id%3D448-4160%26p%3Df%26viewport%3D185%252C287%252C0.25%26t%3Dxv7ntJq6d0bOYks0-1%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D448%253A4160%26show-proto-sidebar%3D1%26page-id%3D438%253A957" allowfullscreen loading="lazy" title="Healthcare AI Dashboard — interactive Figma prototype"></iframe>
-    </div>
-    <p class="type-caption" style="margin-bottom: var(--sp-xl);">The full Round 1 prototype — click through the triage table directly, or <a href="https://www.figma.com/proto/jo3H6810m9f2w6VpX7hgTi/Alert-Dashboard?node-id=448-4160&p=f&viewport=185%2C287%2C0.25&t=xv7ntJq6d0bOYks0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=448%3A4160&show-proto-sidebar=1&page-id=438%3A957" target="_blank" rel="noopener">open it in Figma →</a></p>
-
     <p class="type-caption method-note">
-      <strong>A note on method:</strong> I didn't have access to practicing hospitalists for generative interviews — a
-      gated clinical domain, out of reach for a solo junior researcher. The persona and problem frame are built from
-      18 peer-reviewed and expert sources instead; evaluative testing (Useberry, originally built in Maze, + SUS +
-      NASA-TLX) ran with proxy testers — an initial panel of five narrowed to three RNs, the closest available
-      proxy to a practicing hospitalist — to still validate against people with real clinical workflow exposure.
+      <strong>A note on method:</strong> I didn't have access to practicing hospitalists for generative
+      interviews, a gated clinical domain, out of reach for a solo junior researcher. The persona and
+      problem frame are built from 18 peer-reviewed and expert sources instead. Evaluative testing
+      (Useberry, originally built in Maze, plus SUS and NASA-TLX) ran with an initial panel of five proxy
+      testers narrowed to three RNs, the closest available proxy to a practicing hospitalist.
     </p>
 
     <div class="case-section">
-      <h2 class="type-h2">How alert fatigue breaks clinical decision-making</h2>
+      <h2 class="type-h2">Why alerts stop working</h2>
       <p class="type-body">
-        Hospitalists manage the highest volume of daily EHR medication orders in inpatient care and are the
-        primary recipients of drug-interaction alerts — but every alert presents at identical visual
-        priority regardless of severity, with no positional, size, or color signal distinguishing a
-        life-threatening interaction from a routine advisory.
+        Hospitalists handle the highest volume of daily medication orders in inpatient care, and they're
+        the primary recipients of drug-interaction alerts. Every alert presents at identical visual
+        priority regardless of severity: no position, size, or color signal separates a life-threatening
+        interaction from a routine advisory.
       </p>
       <ul class="type-body" style="padding-left: var(--sp-lg); margin-bottom: var(--sp-md);">
-        <li>A 2015 UCSF case: a 16-year-old received a 39-fold antibiotic overdose after both a physician
-        and pharmacist overrode a critical alert that <em>"looked exactly the same"</em> as routine ones. A
-        Boston Globe investigation tied at least 216 U.S. deaths (2005–2010) to alarm fatigue.
+        <li>A 2015 UCSF case: a 16-year-old received a 39-fold antibiotic overdose after a physician and
+        pharmacist both overrode a critical alert that <em>"looked exactly the same"</em> as routine ones.
+        A Boston Globe investigation tied at least 216 U.S. deaths (2005 to 2010) to alarm fatigue.
         <span class="type-caption">(R1-003)</span></li>
-        <li>The Joint Commission issued an urgent alarm-safety directive in 2013 (updated 2016); the ECRI
-        Institute named alarm-related problems the top health-technology hazard for four consecutive years.
+        <li>The Joint Commission issued an urgent alarm-safety directive in 2013, updated 2016. ECRI
+        Institute named alarm-related problems the top health-technology hazard for four straight years.
         <span class="type-caption">(R1-003, R1-004)</span></li>
-        <li>UCSF ICU bedside monitors alone generated 187 alerts per patient per day — one every eight
-        minutes, almost all clinically insignificant. Across five ICUs in one month: 2,507,822 unique
-        alarms. <span class="type-caption">(R1-005)</span></li>
-        <li>Each interruption during medication administration raises error risk by ~13%; four
+        <li>UCSF ICU monitors generated 187 alerts per patient per day, almost all clinically
+        insignificant: 2,507,822 unique alarms across five ICUs in one month.
+        <span class="type-caption">(R1-005)</span></li>
+        <li>Each interruption during medication administration raises error risk about 13%. Four
         interruptions doubles the rate of errors likely to cause permanent harm or death.
         <span class="type-caption">(R1-003, R1-006)</span></li>
       </ul>
       <p class="type-body">
-        <strong>The design implication:</strong> the problem isn't alert volume alone — uniform visual
-        design makes every alert look equivalent, training clinicians to ignore all of them. A 95% override
-        rate where critical and routine alerts are visually indistinguishable is a predictable outcome, not
-        a user failure.
+        <strong>The design implication:</strong> volume alone isn't the problem. Uniform visual design
+        makes every alert look equivalent, training clinicians to ignore all of them. A 95% override rate,
+        where critical and routine alerts are visually indistinguishable, is a predictable outcome, not a
+        user failure.
       </p>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Three questions this design had to answer</h2>
+      <h2 class="type-h2">Three questions the design had to answer</h2>
       <ol class="rq-list type-body">
-        <li>What is the minimum information — urgency, confidence, recommended action — a hospitalist needs to triage an alert without leaving the alert view?</li>
-        <li>What visual or structural signal distinguishes a critical alert from a routine one at a glance, before the clinician reads any text?</li>
-        <li>Under what conditions does an AI confidence score increase a hospitalist's willingness to act on an alert rather than override it?</li>
+        <li>What's the minimum information (urgency, confidence, recommended action) a hospitalist needs to triage an alert without leaving the alert view?</li>
+        <li>What visual signal distinguishes a critical alert from a routine one at a glance, before the clinician reads any text?</li>
+        <li>Under what conditions does an AI confidence score make a hospitalist more willing to act on an alert instead of overriding it?</li>
       </ol>
     </div>
 
     <div class="case-section">
       <h2 class="type-h2">What the research surfaced</h2>
-      <ul class="type-body" style="padding-left: var(--sp-lg);">
-        <li><strong>Uniform visual priority is the proximate cause of mass override.</strong> No
-        preattentive signal — position, size, or reliable color — separates a critical interaction from a
-        routine advisory before the clinician reads it. The 95.1% drug-drug and 91.2% drug-allergy override
-        rates are the measurable outcome of that design failure, not clinician negligence.
-        <span class="type-caption">(R1-001, R1-002, R1-003)</span></li>
-        <li><strong>AI confidence display is the single largest lever on clinician acceptance</strong> —
-        larger than model accuracy itself. High-confidence AI predictions (90–99%) were overridden 1.7% of
-        the time; low-confidence predictions (70–79%) were overridden 99.3% of the time, across 6,689
-        cardiovascular cases. <span class="type-caption">(R1-011)</span> Framing matters too: a
-        professional, analytical presentation outperforms a warm, conversational one.
-        <span class="type-caption">(R1-017)</span></li>
-        <li><strong>The information needed to decide isn't where the decision is made.</strong> Expert
-        consensus specifies drug identity, severity tier, and recommended action must appear in the alert
-        header itself, not behind navigation — one EHR that did this measured significantly lower clinician
-        workload. <span class="type-caption">(R1-007, R1-009)</span></li>
-        <li><strong>Severity tiering and role-tailoring are the two interventions proven to work</strong> —
-        more than any cosmetic visual change. A systematic review of 2007–2017 literature found
-        role-tailoring the single most effective structural fix, severity tiering the second.
-        <span class="type-caption">(R1-008)</span></li>
-      </ul>
+      <div class="tile-grid tile-grid-prose">
+        <div class="tile finding-tile">
+          <h3 class="type-h3">Uniform priority causes mass override</h3>
+          <p class="type-body">No preattentive signal separates a critical interaction from a routine advisory. The 95.1% drug-drug override rate is a measurable outcome of that failure, not clinician negligence.</p>
+          <p class="type-caption source">R1-001, R1-002, R1-003</p>
+        </div>
+        <div class="tile finding-tile">
+          <h3 class="type-h3">AI confidence is the biggest lever</h3>
+          <p class="type-body">Bigger than model accuracy itself. High-confidence predictions (90 to 99%) were overridden 1.7% of the time; low-confidence ones (70 to 79%), 99.3%, across 6,689 cardiovascular cases.</p>
+          <p class="type-caption source">R1-011, R1-017</p>
+        </div>
+        <div class="tile finding-tile">
+          <h3 class="type-h3">Decisions happen in the header</h3>
+          <p class="type-body">Drug identity, severity tier, and recommended action need to appear in the alert header itself, not behind navigation. One EHR that did this measured significantly lower clinician workload.</p>
+          <p class="type-caption source">R1-007, R1-009</p>
+        </div>
+        <div class="tile finding-tile">
+          <h3 class="type-h3">Two fixes actually work</h3>
+          <p class="type-body">A systematic review of 2007 to 2017 literature found role-tailoring the single most effective structural fix, severity tiering the second. Cosmetic changes alone didn't move the needle.</p>
+          <p class="type-caption source">R1-008</p>
+        </div>
+      </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Design decisions, and what they're traced to</h2>
+      <h2 class="type-h2">Design decisions, traced to the research</h2>
 
-      <div class="decision-card">
-        <h3 class="type-h3">D1-003 — Triage table, not a card list or zoned dashboard</h3>
-        <p class="type-body">
-          Each pending alert is a table row — severity tier, drug ordered vs. drug on file, AI confidence,
-          and recommended action all visible without expanding, sorted by severity. Two alternatives were
-          ruled out: a card list (critical cards can scroll off-screen) and a severity-zoned dashboard
-          (breaks down with zero critical alerts). Tables won because they're native to how clinicians
-          already read labs and medication lists, and the only format that supports comparing multiple
-          patients at a glance.
-        </p>
-        <p class="type-caption source">Mazur et al. 2019 (R1-009); NN/g 2018 (R1-013)</p>
-      </div>
-
-      <div class="decision-card">
-        <h3 class="type-h3">D1-004 — Severity tiers use ESI, not an invented scale</h3>
-        <p class="type-body">
-          The alert panel borrows the Emergency Severity Index — the triage standard already in a
-          hospitalist's vocabulary — rather than a made-up "High/Medium/Low." "ESI-1" communicates urgency
-          with zero explanation needed; an invented label would require the clinician to learn a new scale
-          mid-shift.
-        </p>
-        <p class="type-caption source">The Joint Commission 2013/2016 (R1-004); Hussain et al. 2019 (R1-008)</p>
-      </div>
-
-      <div class="decision-card">
-        <h3 class="type-h3">D1-005 — Color reinforces severity, it never carries it alone</h3>
-        <p class="type-body">
-          Each ESI tier gets one accent color on the row's border and badge — but strip the color out and
-          the ESI-1 row is still identifiable by position, height, and weight. Deliberate accessibility
-          call: color-only encoding fails for color-deficient clinicians and is unreliable under time
-          pressure regardless. AI confidence text stays neutral at every severity level, so a red badge
-          never gets confused with "this score can't be trusted."
-        </p>
-        <p class="type-caption source">NN/g 2018 (R1-013); The Joint Commission 2013/2016 (R1-004)</p>
-      </div>
-
-      <div class="decision-card">
-        <h3 class="type-h3">D1-006 / D1-007 — Friction scales with the risk of the action</h3>
-        <p class="type-body">
-          A recommended action (Hold) completes in one click. Overriding requires selecting a reason from
-          five visible radio options — not a dropdown — before Confirm enables, with nothing pre-selected.
-          This fixes a documented EHR failure mode: dropdown override-reasons are too coarse, so clinicians
-          pick the fastest option instead of the accurate one, destroying the data's value for safety
-          review.
-        </p>
-        <p class="type-caption source">Payne et al. 2015 (R1-007)</p>
-      </div>
-
-      <div class="decision-card" id="d1-002">
-        <h3 class="type-h3">D1-002 — A tool-schema field name was quietly reversing clinical meaning</h3>
-        <p class="type-body">
-          Building the explainability panel meant using the Claude API to extract structured alert fields
-          from clinical text. The first schema version labeled fields <code>drug_primary</code> /
-          <code>drug_interacting</code> — given a Warfarin + Ciprofloxacin case, the model labeled
-          Ciprofloxacin as <code>drug_primary</code> and Warfarin as <code>drug_interacting</code>, reversed
-          from a prescribing point of view. Renamed to <code>drug_ordered</code> / <code>drug_on_file</code>
-          — self-explanatory without inference, and a reminder that schema field names shape how a UI ends
-          up labeling a model's output.
-        </p>
-        <p class="type-caption source">Payne et al. 2015 (R1-007)</p>
-      </div>
-
-      <div class="decision-card" id="d1-008">
-        <h3 class="type-h3">D1-008 — Style Escalate as primary and state the AI recommendation as text (Round 2)</h3>
-        <p class="type-body">
-          Round 1 testing found 0 of 3 RN testers chose Escalate on a 94%-confidence critical alert — 2 chose
-          Override, 1 chose Hold. The wrong action didn't converge, which ruled out "Override looks too easy"
-          as the fix and pointed at something broader: nothing in the interface states the AI's recommendation
-          where the decision actually happens. Round 2 restyles Escalate as the primary button and adds a
-          one-line stated recommendation ("94% confidence supports escalation") directly above the button row,
-          for confidence ≥90% on ESI-1/ESI-2 alerts — tying the evidence panel's confidence score to the action
-          instead of leaving the tester to infer it.
-        </p>
-        <p class="type-caption source">Yu 2025 (R1-011); NN/g 2018 (R1-013); Payne et al. 2015 (R1-007)</p>
+      <div class="tile-grid tile-grid-prose">
+        <div class="tile">
+          <h3 class="type-h3">A table, not cards or zones</h3>
+          <p class="type-body">Every alert is a row: severity, drug ordered vs. drug on file, AI confidence, recommended action, all visible without expanding. A card list lets critical cards scroll off-screen; a severity-zoned layout breaks with zero critical alerts. Tables are already how clinicians read labs and med lists.</p>
+          <p class="type-caption source">Mazur et al. 2019, NN/g 2018</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">ESI, not an invented scale</h3>
+          <p class="type-body">The panel borrows the Emergency Severity Index, already in a hospitalist's vocabulary, instead of a made-up "High/Medium/Low." "ESI-1" needs zero explanation mid-shift.</p>
+          <p class="type-caption source">The Joint Commission 2013/2016, Hussain et al. 2019</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Color reinforces, never carries</h3>
+          <p class="type-body">Strip the color out and the ESI-1 row is still identifiable by position, height, and weight. Color-only encoding fails for color-deficient clinicians and is unreliable under time pressure regardless.</p>
+          <p class="type-caption source">NN/g 2018, The Joint Commission 2013/2016</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Friction scales with risk</h3>
+          <p class="type-body">The recommended action (Hold) completes in one click. Overriding requires picking a reason from five visible radio options, not a dropdown, before Confirm enables. Dropdown reasons are too coarse; clinicians pick the fastest option, not the accurate one.</p>
+          <p class="type-caption source">Payne et al. 2015</p>
+        </div>
+        <div class="tile" id="d1-002">
+          <h3 class="type-h3">A schema bug that reversed meaning</h3>
+          <p class="type-body">Extracting alert fields with the Claude API, the first schema labeled fields <code>drug_primary</code> / <code>drug_interacting</code>. On a Warfarin + Ciprofloxacin case, that reversed the prescribing context. Renamed to <code>drug_ordered</code> / <code>drug_on_file</code>: self-explanatory, no inference required.</p>
+          <p class="type-caption source">Payne et al. 2015</p>
+        </div>
+        <div class="tile" id="d1-008">
+          <h3 class="type-h3">Round 2: state the AI's recommendation</h3>
+          <p class="type-body">0 of 3 testers chose Escalate on a 94%-confidence alert (2 chose Override, 1 Hold). Nothing in the interface stated what the AI actually recommended. Round 2 makes Escalate the primary button and adds a one-line stated recommendation above it for confidence at or above 90%.</p>
+          <p class="type-caption source">Yu 2025, NN/g 2018, Payne et al. 2015</p>
+        </div>
       </div>
     </div>
 
     <div class="case-section">
       <h2 class="type-h2">Testing</h2>
       <p class="type-body">
-        <strong>Method:</strong> Unmoderated usability test (built in Maze, rebuilt in Useberry mid-round
-        after a platform sync bug broke the original link) simulating a hospitalist reviewing AI-generated
-        drug-interaction alerts across three tasks, followed by SUS and NASA-TLX. Panel narrowed from an
-        initial five proxy testers to three RNs — the closest available proxy to a practicing hospitalist.
+        Unmoderated usability test (built in Maze, rebuilt in Useberry mid-round after a platform sync bug
+        broke the original link), simulating a hospitalist reviewing AI-generated alerts across three
+        tasks, followed by SUS and NASA-TLX. Panel narrowed from five proxy testers to three RNs.
       </p>
-
-      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Task 2 asked testers to reach the Escalate-to-pharmacist confirmation step on the 94%-confidence ESI-1 alert — reachable in the prototype above — and 0 of 3 did.</p>
 
       <div class="stat-row">
         <div class="stat">
@@ -272,55 +237,38 @@
         </div>
         <div class="stat">
           <div class="value">0%</div>
-          <div class="type-label-upper label">Task 2 Completion — Escalate on 94% alert (n=3)</div>
+          <div class="type-label-upper label">Task 2: Escalate on 94% alert (n=3)</div>
         </div>
         <div class="stat">
           <div class="value">67%</div>
-          <div class="type-label-upper label">Task 3 Completion — Override friction (n=3)</div>
+          <div class="type-label-upper label">Task 3: Override friction (n=3)</div>
         </div>
       </div>
 
       <p class="type-body">
-        All 3 testers identified the critical alert first and took a definitive action without prompting
-        (Task 1: 100% completion, avg 127.2s). But 0 of 3 chose the correct action — Escalate — once the AI
-        confidence score was in front of them (Task 2: 0% completion): 2 chose Override, 1 chose Hold. Task 3
-        (override friction) completed at 2 of 3; the third tester dropped off before reaching the
-        override-reason form, an unconfirmed n=1 finding worth watching in Round 2. Full breakdown in
-        <code>testing/ROUND1_RESULTS.md</code>.
+        All 3 testers found the critical alert first and acted without prompting (Task 1, avg 127.2s).
+        None chose Escalate once AI confidence was on screen (Task 2): 2 chose Override, 1 chose Hold.
+        Task 3 completed at 2 of 3; the third dropped off before the override-reason form, an unconfirmed
+        n=1 finding worth watching in Round 2. Full breakdown in <code>testing/ROUND1_RESULTS.md</code>.
       </p>
 
       <p class="pending-block">
-        PENDING — Round 2 results after the D1-008 fix, side by side with Round 1, plus the summary story
-        stat (e.g. "After two rounds of testing, SUS improved from X to Y (+Z), NASA-TLX workload dropped
-        from A to B, and Task 2 completion rose from 0% to D%.").
+        PENDING: Round 2 results after the confidence-recommendation fix, side by side with Round 1.
       </p>
     </div>
 
     <div class="case-section">
       <h2 class="type-h2">What I learned</h2>
-      <p class="type-body">
-        <strong>Failure 1 — a schema field name almost shipped a clinically inverted label.</strong> The
-        <code>drug_primary</code> / <code>drug_interacting</code> naming (see D1-002 above) wasn't caught by
-        looking at the UI — it surfaced only when I traced the model's actual output against the clinical
-        scenario and asked which drug a hospitalist would expect to see first. Consequence if unshipped: the
-        exact panel meant to reduce override-by-confusion would have introduced a new, subtler version of
-        the same confusion — reversed drug context, at the moment a clinician is deciding whether to trust
-        the AI. Lesson: schema and copy review needs the same scrutiny as visual review, against a real
-        clinical scenario, not an abstract field list.
-      </p>
-      <p class="type-body">
-        <strong>Failure 2 — no tester chose the correct action once AI confidence was on screen.</strong>
-        Task 2 asked testers to escalate or override a 94%-confidence critical alert. All 3 RN testers chose
-        something other than Escalate — but not the same wrong thing (2 chose Override, 1 chose Hold), which
-        killed my first theory ("Override is styled too temptingly") within an hour of the third result
-        coming in. The real gap: the confidence score lives in an evidence panel, structurally disconnected
-        from the button row, so nothing tells the tester which button the AI is actually recommending.
-        Consequence if shipped as-is: a 94%-confidence alert — the exact case where Yu 2025 (R1-011) found a
-        1.7% real-world override rate — gets overridden or held 100% of the time in this interface. Lesson:
-        when two different Task 1 behaviors (a clean 2-click Hold vs. a 35-click Override) converge on the
-        same Task 2 miss, the shared cause is the interface, not either tester's judgment. Fix: D1-008,
-        testing next in Round 2.
-      </p>
+      <div class="tile-grid tile-grid-prose">
+        <div class="tile">
+          <h3 class="type-h3">Failure 1: a reversed label almost shipped</h3>
+          <p class="type-body">The <code>drug_primary</code> / <code>drug_interacting</code> naming wasn't caught by looking at the UI. It surfaced only when I traced the model's output against the clinical scenario and asked which drug a hospitalist would expect first. The exact panel meant to reduce override-by-confusion would have introduced a subtler version of the same confusion. Schema review needs the same scrutiny as visual review, against a real scenario, not an abstract field list.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Failure 2: nobody chose the right action</h3>
+          <p class="type-body">Testers didn't converge on the same wrong answer (2 Override, 1 Hold), which killed my first theory that Override was styled too temptingly within an hour. The real gap: the confidence score sat in an evidence panel, disconnected from the button row. When two different Task 1 behaviors converge on the same Task 2 miss, the shared cause is the interface, not either tester's judgment.</p>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -331,9 +279,9 @@
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
       <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="resume-general.html">Résumé — PDF</a>
+      <a href="resume-general.html">Résumé (PDF)</a>
     </div>
-    <p class="type-caption">© 2026 Spencer Grant's Portfolio — UX / Product Designer</p>
+    <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>
   </div>
 </footer>
 
