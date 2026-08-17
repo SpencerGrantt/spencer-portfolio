@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CivicPulse — making a real city budget legible to the people paying for it</title>
+<meta name="description" content="A government-transparency app grounded in real Baltimore legislation and budget data — personas, a Dashboard, neighborhood-level spending, and a meeting calendar built to close the civic engagement gap.">
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <nav class="site-nav">
+    <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
+    <div class="nav-right">
+    <ul>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="convoy.html">Build</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume-general.html">Résumé</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+  </div>
+  </nav>
+</div>
+
+<section style="padding-bottom: 0;">
+  <div class="container prose">
+    <p class="type-label-upper">Case Study</p>
+    <h1 class="type-h1" style="margin-top: var(--sp-md);">CivicPulse</h1>
+
+    <blockquote class="opening-stat type-body-lg">
+      The bill on CivicPulse's Legislation screen is real. "Housing Options and Opportunity Act (25-0066)"
+      is pulled directly from a Baltimore mayor's-office press release, not invented copy — because a
+      civic app that fakes its data teaches people not to trust civic apps, which is exactly the problem
+      it's supposed to solve.
+    </blockquote>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <p class="type-label-upper label">Role</p>
+        <p class="type-body">Solo — research, personas, information architecture, hi-fi UI</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Timeline</p>
+        <p class="type-body">4 weeks, August 2025</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Tools</p>
+        <p class="type-body">Figma, Notion</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container prose">
+
+    <div class="figma-embed">
+      <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fs4m5Rb949bizRf8h7XD1UX%2FCivicPulse-Prototyping--Copy-%3Fnode-id%3D0-1%26t%3DuSX6YyaTmqgGHE5n-1" allowfullscreen loading="lazy" title="CivicPulse — interactive Figma prototype"></iframe>
+    </div>
+    <p class="type-caption" style="margin-bottom: var(--sp-xl);">The full interactive prototype — click through it directly, or <a href="https://www.figma.com/proto/s4m5Rb949bizRf8h7XD1UX/CivicPulse-Prototyping--Copy-?node-id=0-1&t=uSX6YyaTmqgGHE5n-1" target="_blank" rel="noopener">open it in Figma →</a></p>
+
+    <div class="case-section">
+      <h2 class="type-h2">Local government publishes everything and explains nothing</h2>
+      <p class="type-body">
+        Every city government I looked at technically makes its data public — council votes, budgets,
+        311 requests, zoning changes. Almost none of it is usable by the person it's supposed to serve.
+        It's buried in PDFs, split across departments that don't cross-reference each other, and written
+        in language built for other city employees, not residents. One resident put the actual problem
+        better than I could: <em>"It's not about information overload — it's about information in the
+        right format."</em> The data existed. The interface to it didn't.
+      </p>
+      <p class="type-body">
+        That gap is what CivicPulse is built to close — a mobile-first platform that takes the same
+        public budget, legislation, and meeting data cities already publish and gives it a format an
+        actual resident would use.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">An organizer and a bystander, both stuck with the same broken tools</h2>
+      <p class="type-body">
+        Two people shaped the design. Jasmine runs community programs in Baltimore and already shows up
+        to council meetings and coordinates housing campaigns — she doesn't need to be convinced civic
+        engagement matters, she needs a way to track a bill from proposal to outcome without digging
+        through a different city website for every stage. Jordan is the opposite starting point: he
+        doesn't vote locally, feels a little guilty about it, and picks up what he knows from Instagram
+        and TikTok rather than any city source. He's not looking for a research tool — he wants to know
+        what's happening in his district without deciding to become an activist first.
+      </p>
+      <p class="type-body">
+        Designing for both meant the same information had to work at two different depths: skimmable for
+        Jordan, trackable and shareable for Jasmine. Neither version could be the "real" one with the
+        other bolted on.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">A dashboard that starts with what you already follow</h2>
+      <p class="type-body">
+        The home screen isn't a feed of everything happening in city government — it's a starred list of
+        what a specific resident already cares about, plus the meetings and local initiatives tied to
+        their neighborhood. A funding approval on a nearby field house sits next to a housing bill with an
+        upcoming committee vote, both one tap from full detail. The goal was to make "what's relevant to
+        me" the default view instead of something a user has to filter for themselves.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Making a bill's progress visible, and its source checkable</h2>
+      <p class="type-body">
+        Every bill screen states its status in plain language ("In Committee") next to a one-tap "Track
+        Progress" action, backed by a real source link to the originating government press release. That
+        link matters more than it looks like it should — one of the biggest research findings was that
+        people don't just want civic information simplified, they want to be able to verify it wasn't
+        simplified into something misleading. A neutral, sourced summary builds more trust than a
+        confident one with nothing behind it.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Spending, reorganized around a block instead of a department</h2>
+      <p class="type-body">
+        City budgets are normally published by department — a format built for city accountants, not
+        someone wondering why their street hasn't been repaved. CivicPulse's Spending tab reorganizes the
+        same underlying budget data around neighborhoods instead: Bridgeview-Greenlawn, Park Heights,
+        Harwood, each with its own estimated allocation, searchable and comparable. Same numbers, reframed
+        around the geography a resident actually lives in rather than the org chart a city runs on.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Meetings you'd actually know about in time to attend</h2>
+      <p class="type-body">
+        "Lack of timely alerts" came up constantly in research — city meeting schedules exist, but nobody
+        finds out about a hearing that affects them until after it happened. The Meetings screen is a
+        straightforward monthly calendar with one-tap RSVP on anything upcoming, deliberately unglamorous:
+        the design problem here wasn't a clever interaction, it was just surfacing dates that were already
+        public but functionally invisible.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Personalizing by ZIP code, and saying so out loud</h2>
+      <p class="type-body">
+        Onboarding asks for a ZIP code before anything else, with the reason stated in the same breath —
+        <em>"This data will only be used to track local legislation"</em> — and a Skip option that doesn't
+        punish someone for saying no. Research flagged geo-personalization as one of the fastest ways to
+        lose a user's trust if it isn't handled transparently; asking for location data silently, the way
+        a lot of apps do, was never on the table for something explicitly trying to earn civic trust.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">What I learned</h2>
+      <p class="type-body">
+        Civic tech turned out to be a harder design problem than I expected, and not for the reason I
+        assumed going in. The hard part wasn't information architecture — it was that almost every
+        interesting design decision was also a trust decision. Show a rep's voting record and you risk it
+        reading as a smear. Personalize by neighborhood and you risk it reading as surveillance. Simplify a
+        bill's language and you risk it reading as spin. I couldn't design around those risks by avoiding
+        them; the research made clear that residents wanted exactly that information. The only real
+        response was to be relentlessly neutral in how it's presented — sourced, plainly worded, and never
+        editorializing — and to treat every one of those trust risks as a constraint on the design, not an
+        edge case to handle later.
+      </p>
+      <p class="type-body">
+        The other honest limitation: this is unmoderated concept work, not a product validated with actual
+        Baltimore residents. The budget figures, bill status, and meeting data are grounded in real public
+        sources, but I haven't watched a real Jasmine or Jordan use this and get stuck somewhere I didn't
+        predict. That's the next version of this project, not a footnote — a concept this dependent on
+        earning trust needs to be tested with the people whose trust it's asking for.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="links">
+      <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume-general.html">Résumé — PDF</a>
+    </div>
+    <p class="type-caption">© 2026 Spencer Grant's Portfolio — UX / Product Designer</p>
+  </div>
+</footer>
+
+</body>
+</html>

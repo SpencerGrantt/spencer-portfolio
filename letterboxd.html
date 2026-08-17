@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reframing Letterboxd — centralizing social, fixing navigation, adding TV</title>
+<meta name="description" content="A self-directed redesign of Letterboxd's mobile app, built on 50+ mined community reviews and a five-app competitive audit — centralized social, clearer navigation, and native TV tracking.">
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <nav class="site-nav">
+    <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
+    <div class="nav-right">
+    <ul>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="convoy.html">Build</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume-general.html">Résumé</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+  </div>
+  </nav>
+</div>
+
+<section style="padding-bottom: 0;">
+  <div class="container prose">
+    <p class="type-label-upper">Case Study</p>
+    <h1 class="type-h1" style="margin-top: var(--sp-md);">Reframing Letterboxd</h1>
+
+    <blockquote class="opening-stat type-body-lg">
+      Scroll far enough into a Letterboxd comment thread and you'll hit a Petco ad before you hit the
+      reply you were looking for. That's not a metaphor — it's a screenshot I circled in red during the
+      audit that started this project.
+    </blockquote>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <p class="type-label-upper label">Role</p>
+        <p class="type-body">Solo — competitive research, review mining, wireframing, hi-fi UI</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Timeline</p>
+        <p class="type-body">4 weeks, July 2025</p>
+      </div>
+      <div class="meta-item">
+        <p class="type-label-upper label">Tools</p>
+        <p class="type-body">Figma, Notion</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container prose">
+
+    <div class="figma-embed">
+      <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FHRuiKiED5B0r3A6B2wAAR6%2FLetterboxd-Prototype%3Fnode-id%3D0-1%26t%3DOv9yUXI9WyyebAT8-1" allowfullscreen loading="lazy" title="Reframing Letterboxd — interactive Figma prototype"></iframe>
+    </div>
+    <p class="type-caption" style="margin-bottom: var(--sp-xl);">The full interactive prototype — click through it directly, or <a href="https://www.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=0-1&t=Ov9yUXI9WyyebAT8-1" target="_blank" rel="noopener">open it in Figma →</a></p>
+
+    <div class="case-section">
+      <h2 class="type-h2">A film app with no easy way to find your friends</h2>
+      <p class="type-body">
+        I use Letterboxd the way a lot of people do — logging what I watch, rating it, occasionally reading
+        a review that's funnier than the movie. What kept nagging at me was how hard the app made it to
+        actually connect with anyone. So instead of guessing at what was broken, I went looking for
+        evidence: I read through 50-plus community reviews and forum threads, and audited five competing
+        apps — Trakt, IMDb, Taste, TV Time, Goodreads — to see how each of them handled the same problems
+        Letterboxd was clearly struggling with.
+      </p>
+      <p class="type-body">
+        Three things kept surfacing. Social features existed, but they were scattered across screens with
+        no obvious home — one user put it bluntly: <em>"The app lacks coherence and clarity relating to
+        searching for your friends and anything related to interaction."</em> Navigation patterns shifted
+        depending on which part of the app you were in, so nothing felt learnable. And almost 30% of the
+        reviews I read wanted TV show tracking that simply didn't exist — one commenter had already designed
+        the feature in their head: <em>"TV should be its own entire section of the app... there should be a
+        toggle button that switches the UI to all TV shows until you toggle it back to movies."</em>
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Two people, pulling the app in different directions</h2>
+      <p class="type-body">
+        The research pointed to two distinct ways people actually use Letterboxd. Alex is a film curator —
+        he wants deep engagement: award-based discovery, curated lists, critic-level detail on what he's
+        watching. Jasmine is a social sharer — she's not there for the criticism, she's there to see what
+        her friends watched, reply to a review, and argue about last night's episode without hunting for
+        where that conversation even lives. Neither of them was well served by an app built around a single,
+        undifferentiated activity feed. Any fix had to work for both without turning into two apps.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">Three moves, not a full rebuild</h2>
+      <p class="type-body">
+        I didn't want to design a different app wearing Letterboxd's name — the minimalist, film-first
+        identity is most of why people love it. So the redesign stayed narrow on purpose: three targeted
+        changes, each one answering a specific complaint I'd actually read, rather than a wishlist of
+        features nobody asked for.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h3 class="type-h3">Give the social layer an actual home</h3>
+      <p class="type-body">
+        In the current app, seeing what friends watched and finding people to follow live in different
+        places, neither obvious. The redesign puts a unified activity feed front and center, with an
+        always-visible "Add Friends" action and recent activity sitting at the top of the screen instead of
+        buried under a tab. If the whole point of a social feature is that you actually use it, it can't
+        require three taps to remember where it is.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h3 class="type-h3">Let a conversation actually be a conversation</h3>
+      <p class="type-body">
+        This is where the Petco ad comes back in. In the current app, comment threads are flat, cramped, and
+        interrupted by ad units mid-scroll — the exact moment someone's trying to follow a reply gets
+        derailed by pet food. The redesign nests replies properly, adds inline reactions, timestamps, and
+        filtering, and gets the ad out of the conversation's way. None of this is a flashy feature; it's just
+        the difference between a comment section people use and one they scroll past.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h3 class="type-h3">Make a poster carry more information</h3>
+      <p class="type-body">
+        Small change, real payoff: award badges and age ratings on movie posters mean recognition happens
+        before anyone reads a word. It's a minor visual addition, but it does real work — a user scanning a
+        feed can tell an award-winner from a forgettable rewatch at a glance, which matters more the faster
+        people actually scroll.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h3 class="type-h3">And the one people were already asking for</h3>
+      <p class="type-body">
+        The TV integration users described almost exactly matches what shipped: a toggle in the exploration
+        and activity screens that switches the whole UI between film and TV mode, episode-level reviews,
+        season progress tracking, and separate activity feeds so the two don't clutter each other. It's a
+        genuinely new surface area for the app, which is exactly why it got the toggle treatment instead of
+        being crammed into the existing film-only navigation.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">From sketch to shipped-looking screens</h2>
+      <p class="type-body">
+        Every screen went through three passes before it looked like what's shown above. Low-fidelity
+        wireframes validated the new navigation hierarchy and mapped where the social hub would actually
+        live. Mid-fidelity added the real content — TV progress tracking, nested comments, the toggle
+        placement — and started refining the iconography. High-fidelity is where the visual system landed
+        for good: a dark, near-black base (<code>#14171C</code>) with a cyan-blue accent
+        (<code>#00BFFA</code>) for primary actions and an orange accent (<code>#F27405</code>) reserved for
+        emphasis, set in Proxima Nova. Dark enough to stay out of the way of movie posters — which is really
+        the whole point of a film app's UI — while giving the new social and TV features enough visual
+        weight that they don't read as an afterthought.
+      </p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="type-h2">What I learned</h2>
+      <p class="type-body">
+        Everything here is built on secondary research — mined reviews and competitive audits, not
+        moderated usability sessions with real Letterboxd users. That's a real limitation, and I don't think
+        it's honest to present this the same way I'd present a project with direct testing behind it. What
+        it taught me instead was how to be disciplined about that gap: every design decision here traces
+        back to a pattern that showed up repeatedly across reviews or a gap that showed up repeatedly across
+        competitors, not to my own assumption about what would be nice to have. When I couldn't validate a
+        choice against a direct observation, I tried to at least validate it against a repeated one.
+      </p>
+      <p class="type-body">
+        The other thing this project sharpened was restraint. It would have been easy to turn "add TV
+        support" into a reason to redesign half the app. Prioritizing the three changes that answered actual,
+        repeated complaints — and leaving the rest of Letterboxd's identity alone — is a harder discipline
+        than it sounds, and probably the most transferable skill this project gave me.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="links">
+      <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume-general.html">Résumé — PDF</a>
+    </div>
+    <p class="type-caption">© 2026 Spencer Grant's Portfolio — UX / Product Designer</p>
+  </div>
+</footer>
+
+</body>
+</html>
