@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Convoy — a full-stack field operations PWA for a veteran-owned medical courier</title>
-<meta name="description" content="Solo product design + full-stack build — mobile-first PWA with a Supabase backend, federal contract matching, and a Claude API-powered AI assistant, in live production use by a real logistics client.">
+<title>Convoy: a full-stack field operations PWA for a veteran-owned medical courier</title>
+<meta name="description" content="Solo product design + full-stack build: mobile-first PWA with a Supabase backend, federal contract matching, and a Claude API-powered AI assistant, in live production use by a real logistics client.">
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
 </head>
@@ -28,10 +28,10 @@
 <section style="padding-bottom: 0;">
   <div class="container prose">
     <p class="type-label-upper">Build</p>
-    <h1 class="type-h1" style="margin-top: var(--sp-md);">Convoy — a full-stack field operations PWA</h1>
+    <h1 class="type-h1" style="margin-top: var(--sp-md);">Convoy: a full-stack field operations PWA</h1>
     <p class="type-body-lg subline">
       A mobile-first Progressive Web App for a veteran-owned medical courier company managing
-      federal and commercial logistics contracts — real-time dispatch, chain-of-custody proof,
+      federal and commercial logistics contracts: real-time dispatch, chain-of-custody proof,
       financial analytics, and an AI assistant built into the workflow. Designed, built, and
       shipped solo; in active production use.
     </p>
@@ -39,7 +39,7 @@
     <div class="meta-row">
       <div class="meta-item">
         <p class="type-label-upper label">Role</p>
-        <p class="type-body">Solo — product scope, database, UI, AI integration, deployment</p>
+        <p class="type-body">Solo: product scope, database, UI, AI integration, deployment</p>
       </div>
       <div class="meta-item">
         <p class="type-label-upper label">Timeline</p>
@@ -60,7 +60,7 @@
       <h2 class="type-h2">The business</h2>
       <p class="type-body">
         The client is a 100% service-disabled veteran who owns a small SDVOSB (Service-Disabled
-        Veteran-Owned Small Business) medical courier company — specimen and supply deliveries,
+        Veteran-Owned Small Business) medical courier company, specimen and supply deliveries,
         split between federal contracts sourced through SAM.gov (VA, DoD, HHS) and
         commercial/broker-booked hauls. Before this product existed, the business ran on paper
         logs, text messages, and spreadsheets, which created three concrete gaps:
@@ -87,7 +87,7 @@
       <p class="type-body">
         Three roles, three genuinely different jobs, one shared data model. Rather than one
         dashboard with permission-gated widgets, each role gets a different home screen built
-        around its actual task — a dispatcher opens the app to <em>decide something</em>, a driver
+        around its actual task: a dispatcher opens the app to <em>decide something</em>, a driver
         opens it to <em>do something</em>.
       </p>
       <div class="tile-grid tile-grid-prose">
@@ -109,9 +109,9 @@
     <div class="case-section">
       <h2 class="type-h2">What shipped</h2>
       <div class="shot-frame">
-        <img src="assets/convoy-dashboard.png" alt="Convoy owner Dashboard — active runs, delivered-this-month, open contracts, SAM expiry, miles and run-type breakdown, and a recent-runs list">
+        <img src="assets/convoy-dashboard.png" alt="Convoy owner Dashboard: active runs, delivered-this-month, open contracts, SAM expiry, miles and run-type breakdown, and a recent-runs list">
       </div>
-      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Owner Dashboard — business metrics at a glance. Seed/demo account, no real client, contract, or driver data shown.</p>
+      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Owner Dashboard: business metrics at a glance. Seed/demo account, no real client, contract, or driver data shown.</p>
       <p class="type-body" style="margin-bottom: var(--sp-lg);">
         Nine core surfaces, all live in production, built around a shared Postgres schema with
         role-scoped access at the database layer (Supabase Row Level Security), not just hidden
@@ -124,7 +124,7 @@
         </div>
         <div class="tile">
           <h3 class="type-h3">Chain of custody</h3>
-          <p class="type-body">Camera capture with GPS tagging, touch signature capture, and an event log written on every status change — the compliance-critical flow the whole product exists to fix.</p>
+          <p class="type-body">Camera capture with GPS tagging, touch signature capture, and an event log written on every status change: the compliance-critical flow the whole product exists to fix.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Federal contract matching</h3>
@@ -144,7 +144,7 @@
         </div>
         <div class="tile">
           <h3 class="type-h3">Works without signal</h3>
-          <p class="type-body">Offline queue backed by IndexedDB, syncs automatically on reconnect — built for drivers in low-connectivity areas, not just a happy-path demo.</p>
+          <p class="type-body">Offline queue backed by IndexedDB, syncs automatically on reconnect. Built for drivers in low-connectivity areas, not just a happy-path demo.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Team messaging</h3>
@@ -159,14 +159,14 @@
 
     <div class="case-section">
       <div class="shot-frame">
-        <img src="assets/convoy-contracts.png" alt="Convoy Contracts page — SAM.gov opportunity matches scored against the company's NAICS codes, with a manual search and a saved-contracts list below">
+        <img src="assets/convoy-contracts.png" alt="Convoy Contracts page: SAM.gov opportunity matches scored against the company's NAICS codes, with a manual search and a saved-contracts list below">
       </div>
-      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Contracts — AI-scored SAM.gov opportunity matches. Seed/demo account, no real client or contract data shown.</p>
+      <p class="type-caption" style="margin-bottom: var(--sp-lg);">Contracts: AI-scored SAM.gov opportunity matches. Seed/demo account, no real client or contract data shown.</p>
 
       <div class="shot-frame">
-        <img src="assets/convoy-finances.png" alt="Convoy Finances Analytics tab — revenue vs. expense chart, expense-by-category breakdown, and the AI assistant answering a financial-summary question in the docked chat panel">
+        <img src="assets/convoy-finances.png" alt="Convoy Finances Analytics tab: revenue vs. expense chart, expense-by-category breakdown, and the AI assistant answering a financial-summary question in the docked chat panel">
       </div>
-      <p class="type-caption">Finances — revenue/expense analytics with the AI assistant answering a live query against the same data. Seed/demo account, no real financial data shown.</p>
+      <p class="type-caption">Finances: revenue/expense analytics with the AI assistant answering a live query against the same data. Seed/demo account, no real financial data shown.</p>
     </div>
 
     <div class="case-section">
@@ -184,8 +184,8 @@
       <div class="decision-card">
         <h3 class="type-h3">Honest degradation over silent failure</h3>
         <p class="type-body">
-          When the live SAM.gov call fails — which, for a public government API, it sometimes
-          does — the UI doesn't hide the failure behind an empty state. It falls back to clearly
+          When the live SAM.gov call fails (which, for a public government API, it sometimes
+          does), the UI doesn't hide the failure behind an empty state. It falls back to clearly
           labeled sample data with the actual failure reason visible underneath, and computes
           fallback deadlines relative to today instead of shipping dates that quietly go stale.
         </p>
@@ -195,7 +195,7 @@
         <h3 class="type-h3">Reliability is the UX, not a separate concern</h3>
         <p class="type-body">
           A driver on a weak cell connection who sees "Uploading…" with no feedback and no retry
-          doesn't have a technical problem — they have a lost proof-of-delivery problem. Every
+          doesn't have a technical problem, they have a lost proof-of-delivery problem. Every
           upload has an explicit timeout so a stalled request fails visibly and retryably, and
           photos are compressed client-side before upload since phone-camera JPEGs routinely run
           3–12MB.
@@ -212,19 +212,19 @@
       <ul class="type-body" style="padding-left: var(--sp-lg); margin-bottom: var(--sp-md);">
         <li><strong>Federal contract matching, not just contract tracking.</strong> SAM.gov
         opportunities are pulled live and AI-scored against the company's actual NAICS codes and
-        SDVOSB status — ranked matches with a one-click "save as contract," not a search box the
+        SDVOSB status: ranked matches with a one-click "save as contract," not a search box the
         owner has to babysit.</li>
         <li><strong>An AI assistant wired into live company data</strong>, not a chat widget bolted
         on. It answers "show me this month's expenses" by querying the real revenue/expense
         tables, scoped server-side to that company only, and is explicitly grounded in the current
         date so it doesn't reason from stale training-data time.</li>
-        <li><strong>Medical chain-of-custody as a first-class flow</strong> — photo, GPS, and
-        signature on every status change — because "delivery proof" means something more specific
+        <li><strong>Medical chain-of-custody as a first-class flow:</strong> photo, GPS, and
+        signature on every status change, because "delivery proof" means something more specific
         for a company hauling lab specimens under federal contracts than for a general freight
         hauler.</li>
       </ul>
       <p class="type-body">
-        That's not a claim this beats mature TMS platforms feature-for-feature — ELD/HOS
+        That's not a claim this beats mature TMS platforms feature-for-feature. ELD/HOS
         compliance and live fuel-card integration aren't built, and would likely mean integrating
         an existing certified provider rather than building from scratch. The case for this
         product is narrower: built deep around the real constraints of one business, instead of a
@@ -260,11 +260,11 @@
     <div class="case-section">
       <h2 class="type-h2">Why this is here</h2>
       <p class="type-body">
-        The Healthcare AI Dashboard case study is the research-driven design work — this is the
+        The Healthcare AI Dashboard case study is the research-driven design work. This is the
         shipping side. Convoy is a live product with a role-based UI, a real database schema, and
         an AI model wired into an operational decision (flagging anomalous runs, scoring contract
-        matches) rather than a prototype. Same underlying interest — where AI output meets a person
-        who has to act on it — approached as a builder instead of a researcher.
+        matches) rather than a prototype. Same underlying interest, where AI output meets a person
+        who has to act on it, approached as a builder instead of a researcher.
       </p>
     </div>
 
@@ -276,9 +276,9 @@
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
       <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="resume-general.html">Résumé — PDF</a>
+      <a href="resume-general.html">Résumé (PDF)</a>
     </div>
-    <p class="type-caption">© 2026 Spencer Grant's Portfolio — UX / Product Designer</p>
+    <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>
   </div>
 </footer>
 
