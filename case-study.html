@@ -35,7 +35,7 @@
       <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="convoy.html">Build</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="resume-general.html">Résumé</a></li>
+      <li><a href="resume.html">Résumé</a></li>
     </ul>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
   </div>
@@ -83,8 +83,8 @@
         <div class="type-label-upper label">Correctly triaged the critical alert alone</div>
       </div>
       <div class="stat">
-        <div class="value filled">0%</div>
-        <div class="type-label-upper label">Chose the right action once AI confidence entered the decision</div>
+        <div class="value filled">0% → 100%</div>
+        <div class="type-label-upper label">Chose the right AI-confidence action: Round 1 (n=3) to first Round 2 respondent (n=1)</div>
       </div>
     </div>
 
@@ -99,7 +99,7 @@
         <li><strong>Problem:</strong> hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</li>
         <li><strong>Approach:</strong> synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</li>
         <li><strong>Key decision:</strong> a triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</li>
-        <li><strong>Status:</strong> Round 1 complete. Alert triage worked, but no tester chose the correct action once AI confidence entered the decision. Round 2 design targets that gap; Round 2 testing is next.</li>
+        <li><strong>Status:</strong> Round 1 complete. Alert triage worked, but no tester chose the correct action once AI confidence entered the decision. Round 2 targets that exact gap, and the first Round 2 respondent got it right. Round 2 testing is ongoing.</li>
       </ul>
     </div>
 
@@ -249,12 +249,29 @@
         All 3 testers found the critical alert first and acted without prompting (Task 1, avg 127.2s).
         None chose Escalate once AI confidence was on screen (Task 2): 2 chose Override, 1 chose Hold.
         Task 3 completed at 2 of 3; the third dropped off before the override-reason form, an unconfirmed
-        n=1 finding worth watching in Round 2. Full breakdown in <code>testing/ROUND1_RESULTS.md</code>.
+        n=1 finding worth watching in Round 2.
       </p>
 
-      <p class="pending-block">
-        PENDING: Round 2 results after the confidence-recommendation fix, side by side with Round 1.
+      <p class="type-body" style="margin-top: var(--sp-lg);">
+        <strong>Round 2, in progress:</strong> the first respondent scored 82.5 SUS (up from 73.3) and
+        completed all three tasks, including the AI-confidence decision that stumped every Round 1 tester.
+        One data point isn't a trend yet. More Round 2 testers are still coming in before this round closes.
       </p>
+
+      <div class="stat-row" style="margin-top: var(--sp-md);">
+        <div class="stat">
+          <div class="value">82.5</div>
+          <div class="type-label-upper label">SUS Score, Round 2 (n=1, up from 73.3)</div>
+        </div>
+        <div class="stat">
+          <div class="value">100%</div>
+          <div class="type-label-upper label">Task 2 equivalent: AI-confidence decision (n=1, up from 0%)</div>
+        </div>
+        <div class="stat">
+          <div class="value">100%</div>
+          <div class="type-label-upper label">Task 3 equivalent: override friction (n=1, up from 67%)</div>
+        </div>
+      </div>
     </div>
 
     <div class="case-section">
@@ -279,7 +296,7 @@
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
       <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="resume-general.html">Résumé (PDF)</a>
+      <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>
   </div>
