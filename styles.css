@@ -67,7 +67,7 @@
 }
 
 @media print {
-  :root {
+  :root, :root[data-theme="dark"], :root[data-theme="light"] {
     --text-primary: #171717;
     --text-secondary: #525252;
     --text-tertiary: #a3a3a3;
