@@ -418,6 +418,16 @@ section { padding: var(--sp-3xl) 0; }
 }
 @media (max-width: 640px) { .split { grid-template-columns: 1fr; } }
 
+.pill-row { display: flex; flex-wrap: wrap; gap: var(--sp-sm); }
+.pill {
+  border: 1px solid var(--border-default);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
 /* ── About hero: headshot + intro ── */
 
 .about-hero {
