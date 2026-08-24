@@ -15,14 +15,13 @@
     padding: var(--sp-lg);
     margin-bottom: var(--sp-xl);
   }
-  .summary-block ul { padding-left: var(--sp-lg); }
-  .summary-block li { margin-bottom: var(--sp-sm); color: var(--text-primary); }
   .method-note {
     border-left: 2px solid var(--border-default);
     padding-left: var(--sp-md);
     margin-bottom: var(--sp-2xl);
   }
   .finding-tile .source { margin-top: var(--sp-sm); }
+  .tile-grid-decisions .tile { min-height: 268px; }
 </style>
 </head>
 <body>
@@ -43,15 +42,17 @@
 </div>
 
 <section style="padding-bottom: 0;">
-  <div class="container prose">
-    <p class="type-label-upper">Case Study</p>
-    <h1 class="type-h1" style="margin-top: var(--sp-md);">A clinical alert dashboard, designed to cut hospitalist override</h1>
+  <div class="container">
+    <div class="prose">
+      <p class="type-label-upper">Case Study</p>
+      <h1 class="type-h1" style="margin-top: var(--sp-md);">A clinical alert dashboard, designed to cut hospitalist override</h1>
 
-    <blockquote class="opening-stat type-body-lg">
-      Physicians override 95% of drug-interaction alerts, across 18,354 medication orders at two
-      hospitals, with no improvement since the Meaningful Use era began.
-      <cite class="type-caption">(Bryant et al., Applied Clinical Informatics, 2014)</cite>
-    </blockquote>
+      <blockquote class="opening-stat type-body-lg">
+        Physicians override 95% of drug-interaction alerts, across 18,354 medication orders at two
+        hospitals, with no improvement since the Meaningful Use era began.
+        <cite class="type-caption">(Bryant et al., Applied Clinical Informatics, 2014)</cite>
+      </blockquote>
+    </div>
 
     <div class="meta-row">
       <div class="meta-item">
@@ -71,7 +72,7 @@
 </section>
 
 <section style="padding-top: 0;">
-  <div class="container prose">
+  <div class="container">
 
     <div class="stat-row">
       <div class="stat">
@@ -93,66 +94,107 @@
     </div>
     <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the Round 1 triage table above, or <a href="https://www.figma.com/proto/jo3H6810m9f2w6VpX7hgTi/Alert-Dashboard?node-id=448-4160&p=f&viewport=185%2C287%2C0.25&t=xv7ntJq6d0bOYks0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=448%3A4160&show-proto-sidebar=1&page-id=438%3A957" target="_blank" rel="noopener">open it in Figma →</a></p>
 
-    <div class="summary-block">
-      <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">30-second summary</p>
-      <ul class="type-body">
-        <li><strong>Problem:</strong> hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</li>
-        <li><strong>Approach:</strong> synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</li>
-        <li><strong>Key decision:</strong> a triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</li>
-        <li><strong>Status:</strong> Round 1 complete. Alert triage worked, but no tester chose the correct action once AI confidence entered the decision. Round 2 targets that exact gap, and the first Round 2 respondent got it right. Round 2 testing is ongoing.</li>
-      </ul>
+    <div class="tile-grid tile-grid-prose" style="margin-bottom: var(--sp-md);">
+      <div>
+        <div class="shot-frame">
+          <img src="assets/triage-esi1-expanded.png" alt="ESI-1 alert expanded: AI confidence, evidence basis, and the Hold/Override/Escalate action row">
+        </div>
+        <p class="type-caption">The ESI-1 alert, expanded. Round 1 design: Hold is styled primary; nothing states the AI's recommendation.</p>
+      </div>
+      <div>
+        <div class="shot-frame">
+          <img src="assets/triage-esi1-escalate-confirmation.png" alt="Escalate-to-pharmacist confirmation step over the ESI-1 alert">
+        </div>
+        <p class="type-caption">The Escalate confirmation step. Screenshots are Round 1; the Round 2 fix (Escalate primary, stated recommendation) lives in the decision log below, not yet re-exported as a screenshot.</p>
+      </div>
     </div>
 
-    <p class="type-caption method-note">
-      <strong>A note on method:</strong> I didn't have access to practicing hospitalists for generative
-      interviews, a gated clinical domain, out of reach for a solo junior researcher. The persona and
-      problem frame are built from 18 peer-reviewed and expert sources instead. Evaluative testing
-      (Useberry, originally built in Maze, plus SUS and NASA-TLX) ran with an initial panel of five proxy
-      testers narrowed to three RNs, the closest available proxy to a practicing hospitalist.
-    </p>
+    <div class="prose">
+      <div class="summary-block">
+        <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">30-second summary</p>
+        <div class="flow">
+          <div class="flow-step">
+            <p class="type-label-upper flow-label">Problem</p>
+            <p class="type-body">Hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</p>
+          </div>
+          <div class="flow-step">
+            <p class="type-label-upper flow-label">Approach</p>
+            <p class="type-body">Synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</p>
+          </div>
+          <div class="flow-step">
+            <p class="type-label-upper flow-label">Key decision</p>
+            <p class="type-body">A triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</p>
+          </div>
+          <div class="flow-step">
+            <p class="type-label-upper flow-label">Status</p>
+            <p class="type-body">Both rounds complete. Round 1 found the gap (0% chose the right action); Round 2 closed it (100%, SUS 82.5).</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="case-section">
-      <h2 class="type-h2">Why alerts stop working</h2>
-      <p class="type-body">
-        Hospitalists handle the highest volume of daily medication orders in inpatient care, and they're
-        the primary recipients of drug-interaction alerts. Every alert presents at identical visual
-        priority regardless of severity: no position, size, or color signal separates a life-threatening
-        interaction from a routine advisory.
-      </p>
-      <ul class="type-body" style="padding-left: var(--sp-lg); margin-bottom: var(--sp-md);">
-        <li>A 2015 UCSF case: a 16-year-old received a 39-fold antibiotic overdose after a physician and
-        pharmacist both overrode a critical alert that <em>"looked exactly the same"</em> as routine ones.
-        A Boston Globe investigation tied at least 216 U.S. deaths (2005 to 2010) to alarm fatigue.
-        <span class="type-caption">(R1-003)</span></li>
-        <li>The Joint Commission issued an urgent alarm-safety directive in 2013, updated 2016. ECRI
-        Institute named alarm-related problems the top health-technology hazard for four straight years.
-        <span class="type-caption">(R1-003, R1-004)</span></li>
-        <li>UCSF ICU monitors generated 187 alerts per patient per day, almost all clinically
-        insignificant: 2,507,822 unique alarms across five ICUs in one month.
-        <span class="type-caption">(R1-005)</span></li>
-        <li>Each interruption during medication administration raises error risk about 13%. Four
-        interruptions doubles the rate of errors likely to cause permanent harm or death.
-        <span class="type-caption">(R1-003, R1-006)</span></li>
-      </ul>
-      <p class="type-body">
-        <strong>The design implication:</strong> volume alone isn't the problem. Uniform visual design
-        makes every alert look equivalent, training clinicians to ignore all of them. A 95% override rate,
-        where critical and routine alerts are visually indistinguishable, is a predictable outcome, not a
-        user failure.
+      <p class="type-caption method-note">
+        <strong>A note on method:</strong> I didn't have access to practicing hospitalists for generative
+        interviews, a gated clinical domain, out of reach for a solo junior researcher. The persona and
+        problem frame are built from 18 peer-reviewed and expert sources instead. Evaluative testing
+        (Useberry, originally built in Maze, plus SUS and NASA-TLX) ran with an initial panel of five proxy
+        testers narrowed to three RNs, the closest available proxy to a practicing hospitalist.
       </p>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Three questions the design had to answer</h2>
-      <ol class="rq-list type-body">
-        <li>What's the minimum information (urgency, confidence, recommended action) a hospitalist needs to triage an alert without leaving the alert view?</li>
-        <li>What visual signal distinguishes a critical alert from a routine one at a glance, before the clinician reads any text?</li>
-        <li>Under what conditions does an AI confidence score make a hospitalist more willing to act on an alert instead of overriding it?</li>
-      </ol>
+      <div class="prose">
+        <h2 class="type-h2">Why alerts stop working</h2>
+        <p class="type-body">
+          Hospitalists handle the highest volume of daily medication orders in inpatient care, and they're
+          the primary recipients of drug-interaction alerts. Every alert presents at identical visual
+          priority regardless of severity: no position, size, or color signal separates a life-threatening
+          interaction from a routine advisory.
+        </p>
+        <div class="fact-grid">
+          <div class="fact">
+            <p class="fact-value">39-fold</p>
+            <p class="fact-body">antibiotic overdose in a 2015 UCSF case, after a physician and pharmacist both overrode a critical alert that <em>"looked exactly the same"</em> as routine ones.</p>
+            <p class="type-caption fact-source">R1-003</p>
+          </div>
+          <div class="fact">
+            <p class="fact-value">216+ deaths</p>
+            <p class="fact-body">in the U.S. (2005–2010) tied to alarm fatigue, per a Boston Globe investigation.</p>
+            <p class="type-caption fact-source">R1-003</p>
+          </div>
+          <div class="fact">
+            <p class="fact-value">187/day</p>
+            <p class="fact-body">alerts per patient at UCSF ICUs, almost all clinically insignificant — 2,507,822 unique alarms across five ICUs in one month.</p>
+            <p class="type-caption fact-source">R1-005</p>
+          </div>
+          <div class="fact">
+            <p class="fact-value">+13% risk</p>
+            <p class="fact-body">per interruption during medication administration. Four interruptions doubles the rate of errors likely to cause permanent harm or death.</p>
+            <p class="type-caption fact-source">R1-003, R1-006</p>
+          </div>
+        </div>
+        <p class="type-caption" style="margin-bottom: var(--sp-md);">The Joint Commission issued an urgent alarm-safety directive in 2013, updated 2016; ECRI Institute named alarm-related problems the top health-technology hazard for four straight years. (R1-003, R1-004)</p>
+        <p class="type-body">
+          <strong>The design implication:</strong> volume alone isn't the problem. Uniform visual design
+          makes every alert look equivalent, training clinicians to ignore all of them. A 95% override rate,
+          where critical and routine alerts are visually indistinguishable, is a predictable outcome, not a
+          user failure.
+        </p>
+      </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">What the research surfaced</h2>
+      <div class="prose">
+        <h2 class="type-h2">Three questions the design had to answer</h2>
+        <ol class="rq-list type-body">
+          <li>What's the minimum information (urgency, confidence, recommended action) a hospitalist needs to triage an alert without leaving the alert view?</li>
+          <li>What visual signal distinguishes a critical alert from a routine one at a glance, before the clinician reads any text?</li>
+          <li>Under what conditions does an AI confidence score make a hospitalist more willing to act on an alert instead of overriding it?</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="prose"><h2 class="type-h2">What the research surfaced</h2></div>
       <div class="tile-grid tile-grid-prose">
         <div class="tile finding-tile">
           <h3 class="type-h3">Uniform priority causes mass override</h3>
@@ -178,9 +220,9 @@
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Design decisions, traced to the research</h2>
+      <div class="prose"><h2 class="type-h2">Design decisions, traced to the research</h2></div>
 
-      <div class="tile-grid tile-grid-prose">
+      <div class="tile-grid tile-grid-prose tile-grid-decisions">
         <div class="tile">
           <h3 class="type-h3">A table, not cards or zones</h3>
           <p class="type-body">Every alert is a row: severity, drug ordered vs. drug on file, AI confidence, recommended action, all visible without expanding. A card list lets critical cards scroll off-screen; a severity-zoned layout breaks with zero critical alerts. Tables are already how clinicians read labs and med lists.</p>
@@ -215,12 +257,14 @@
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Testing</h2>
-      <p class="type-body">
-        Unmoderated usability test (built in Maze, rebuilt in Useberry mid-round after a platform sync bug
-        broke the original link), simulating a hospitalist reviewing AI-generated alerts across three
-        tasks, followed by SUS and NASA-TLX. Panel narrowed from five proxy testers to three RNs.
-      </p>
+      <div class="prose">
+        <h2 class="type-h2">Testing</h2>
+        <p class="type-body">
+          Unmoderated usability test (built in Maze, rebuilt in Useberry mid-round after a platform sync bug
+          broke the original link), simulating a hospitalist reviewing AI-generated alerts across three
+          tasks, followed by SUS and NASA-TLX. Panel narrowed from five proxy testers to three RNs.
+        </p>
+      </div>
 
       <div class="stat-row">
         <div class="stat">
@@ -245,37 +289,46 @@
         </div>
       </div>
 
-      <p class="type-body">
-        All 3 testers found the critical alert first and acted without prompting (Task 1, avg 127.2s).
-        None chose Escalate once AI confidence was on screen (Task 2): 2 chose Override, 1 chose Hold.
-        Task 3 completed at 2 of 3; the third dropped off before the override-reason form, an unconfirmed
-        n=1 finding worth watching in Round 2.
-      </p>
+      <div class="prose">
+        <p class="type-body" style="margin-top: var(--sp-lg);">
+          All 3 testers found the critical alert first and acted without prompting (Task 1, avg 127.2s).
+          None chose Escalate once AI confidence was on screen (Task 2): 2 chose Override, 1 chose Hold.
+          Task 3 completed at 2 of 3; the third dropped off before the override-reason form, an unconfirmed
+          n=1 finding worth watching in Round 2.
+        </p>
 
-      <p class="type-body" style="margin-top: var(--sp-lg);">
-        <strong>Round 2, in progress:</strong> the first respondent scored 82.5 SUS (up from 73.3) and
-        completed all three tasks, including the AI-confidence decision that stumped every Round 1 tester.
-        One data point isn't a trend yet. More Round 2 testers are still coming in before this round closes.
-      </p>
-
-      <div class="stat-row" style="margin-top: var(--sp-md);">
-        <div class="stat">
-          <div class="value">82.5</div>
-          <div class="type-label-upper label">SUS Score, Round 2 (n=1, up from 73.3)</div>
+        <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (n=1)</p>
+        <div class="compare-list">
+          <div class="compare-row">
+            <span class="compare-label">SUS Score</span>
+            <span class="compare-before">73.3</span>
+            <span class="compare-arrow">→</span>
+            <span class="compare-after">82.5</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">AI-confidence decision</span>
+            <span class="compare-before">0%</span>
+            <span class="compare-arrow">→</span>
+            <span class="compare-after">100%</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Override friction</span>
+            <span class="compare-before">67%</span>
+            <span class="compare-arrow">→</span>
+            <span class="compare-after">100%</span>
+          </div>
         </div>
-        <div class="stat">
-          <div class="value">100%</div>
-          <div class="type-label-upper label">Task 2 equivalent: AI-confidence decision (n=1, up from 0%)</div>
-        </div>
-        <div class="stat">
-          <div class="value">100%</div>
-          <div class="type-label-upper label">Task 3 equivalent: override friction (n=1, up from 67%)</div>
-        </div>
+        <p class="type-caption" style="margin-top: var(--sp-sm);">
+          Round 2 closed at n=1 — a strong directional signal that the stated-recommendation fix removed
+          the specific gap Round 1 found, not proof it holds at scale. One respondent isn't a validated
+          trend, and a properly powered Round 2 is the honest next step if this ever gets built past a
+          portfolio piece.
+        </p>
       </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">What I learned</h2>
+      <div class="prose"><h2 class="type-h2">What I learned</h2></div>
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Failure 1: a reversed label almost shipped</h3>

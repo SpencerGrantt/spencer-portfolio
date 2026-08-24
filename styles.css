@@ -31,7 +31,7 @@
 
   /* Layout */
   --container-max: 1120px;
-  --prose-max: 720px;
+  --prose-max: 760px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -342,9 +342,9 @@ section { padding: var(--sp-3xl) 0; }
   .tile-grid { grid-template-columns: 1fr; }
 }
 
-/* Narrower variant for grids that sit inside .prose (720px) rather than
-   the full .container — 4 tracks there leaves ~150px columns, too narrow
-   for paragraph-length card copy. */
+/* Narrower variant for card grids holding paragraph-length copy (case
+   study findings/decisions, build tiles) — 4 tracks leaves columns too
+   tight for that much text even at the full .container width. */
 .tile-grid-prose { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 640px) {
   .tile-grid-prose { grid-template-columns: 1fr; }
@@ -355,11 +355,14 @@ section { padding: var(--sp-3xl) 0; }
   border: 1px solid var(--border-default);
   border-radius: 8px;
   padding: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
 }
 
 .tile h3 { margin-bottom: var(--sp-sm); }
-.tile p { color: var(--text-secondary); }
-.tile a { font-size: 14px; font-weight: 600; text-decoration: underline; }
+.tile p.type-body { color: var(--text-secondary); flex: 1 0 auto; margin-bottom: var(--sp-sm); }
+.tile .source { margin-top: auto; padding-top: var(--sp-sm); }
+.tile a { font-size: 14px; font-weight: 600; text-decoration: underline; margin-top: auto; padding-top: var(--sp-sm); }
 
 /* ── About teaser / general two-col ── */
 
@@ -375,8 +378,9 @@ section { padding: var(--sp-3xl) 0; }
 
 .meta-row {
   display: flex;
-  gap: var(--sp-xl);
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-xl);
   margin: var(--sp-lg) 0 var(--sp-xl);
   padding-bottom: var(--sp-lg);
   border-bottom: 1px solid var(--border-default);
@@ -405,6 +409,80 @@ blockquote.opening-stat {
 
 .rq-list { padding-left: var(--sp-lg); margin-bottom: var(--sp-md); }
 .rq-list li { margin-bottom: var(--sp-sm); }
+
+/* ── Fact grid: hard numbers pulled out of prose, cited ── */
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg) var(--sp-xl);
+  margin: var(--sp-lg) 0 var(--sp-md);
+}
+@media (max-width: 640px) {
+  .fact-grid { grid-template-columns: 1fr; }
+}
+
+.fact { border-top: 2px solid var(--text-primary); padding-top: var(--sp-sm); }
+.fact .fact-value { font-size: 32px; font-weight: 700; line-height: 1.15; }
+.fact .fact-body { color: var(--text-secondary); margin: var(--sp-xs) 0 var(--sp-sm); }
+.fact .fact-source { color: var(--text-tertiary); }
+
+/* ── Flow: a short ordered sequence (problem → status, etc.) ── */
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md);
+}
+@media (max-width: 900px) { .flow { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .flow { grid-template-columns: 1fr; } }
+
+.flow-step {
+  position: relative;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: var(--sp-md);
+  background: var(--surface-default);
+}
+.flow-step .flow-label { margin-bottom: var(--sp-xs); }
+.flow-step p { color: var(--text-secondary); margin: 0; }
+
+@media (min-width: 901px) {
+  .flow-step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: calc(-1 * var(--sp-md) - 5px);
+    transform: translateY(-50%);
+    color: var(--text-tertiary);
+  }
+}
+
+/* ── Compare list: before → after metrics ── */
+
+.compare-list { display: flex; flex-direction: column; gap: var(--sp-sm); }
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: var(--sp-md);
+  padding: var(--sp-md) var(--sp-lg);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+}
+.compare-row .compare-label { font-weight: 600; }
+.compare-row .compare-before { color: var(--text-tertiary); font-size: 15px; }
+.compare-row .compare-arrow { color: var(--text-tertiary); }
+.compare-row .compare-after { font-weight: 700; font-size: 18px; }
+
+@media (max-width: 560px) {
+  .compare-row {
+    grid-template-columns: 1fr auto auto auto;
+    padding: var(--sp-md);
+  }
+  .compare-row .compare-label { grid-column: 1 / -1; margin-bottom: var(--sp-xs); }
+}
 
 /* ── Footer ── */
 

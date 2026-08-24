@@ -38,9 +38,22 @@
   }
 
   @media print {
+    @page { size: letter; margin: 10mm 13mm; }
     .site-nav, .site-footer, .resume-header .btn-row { display: none; }
+    .container { max-width: none; padding: 0; }
+    .prose { max-width: none; }
     section { padding: 0; }
-    body { font-size: 13px; }
+    body { font-size: 11px; line-height: 1.35; }
+    h1, h2, h3 { line-height: 1.2; }
+    .resume-header { margin-bottom: var(--sp-md); }
+    .resume-header h1 { font-size: 22px; margin-bottom: 2px; }
+    .r-section { margin-bottom: var(--sp-md); }
+    .r-section h2 { margin-bottom: var(--sp-sm); padding-bottom: 4px; }
+    .r-entry { margin-bottom: var(--sp-sm); }
+    .r-entry-head { margin-bottom: 2px; }
+    .r-entry ul { margin: 0; }
+    .r-entry li { margin-bottom: 2px; }
+    .r-skills-row { margin-bottom: 4px; }
   }
 </style>
 </head>
@@ -69,6 +82,7 @@
       <p class="type-body-lg" style="color: var(--text-secondary);">UX/UI Designer · Digital Product Design · Visual Systems</p>
       <p class="type-body contact">
         Frederick, MD &nbsp;·&nbsp;
+        301-401-4655 &nbsp;·&nbsp;
         <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a> &nbsp;·&nbsp;
         <a href="https://spencergrantt.github.io/spencer-portfolio/" target="_blank" rel="noopener">Portfolio</a> &nbsp;·&nbsp;
         <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
@@ -121,14 +135,13 @@
         <div class="r-entry-head">
           <div>
             <span class="r-entry-title">Healthcare AI Dashboard: Clinical Alert Triage</span>
-            <span class="r-status">In progress</span>
           </div>
           <span class="r-entry-date">2026</span>
         </div>
         <p class="r-entry-sub">Self-initiated case study: AI decision-support interface, WCAG 2.2 AA</p>
         <ul class="type-body">
           <li>Designed a clinician-facing triage dashboard grounded in a synthesis of 18 peer-reviewed and expert sources; every design decision traced to a cited research finding</li>
-          <li>Stark-audited to WCAG 2.2 AA prior to usability testing; Round 1 Useberry testing (SUS + NASA-TLX, n=3) scored 73.3 SUS and found 100% task completion on alert triage vs. 0% on the AI-confidence decision. Round 2 design now targets that gap, and the first Round 2 respondent completed it</li>
+          <li>Stark-audited to WCAG 2.2 AA prior to usability testing; Round 1 Useberry testing (SUS + NASA-TLX, n=3) scored 73.3 SUS and found 100% task completion on alert triage vs. 0% on the AI-confidence decision. Round 2 closed at n=1: SUS rose to 82.5 and the AI-confidence decision went from 0% to 100% correct</li>
           <li>Used the Claude API to prototype a structured-extraction schema, catching a field-naming bug that was quietly reversing clinical meaning before it reached the UI</li>
         </ul>
       </div>
