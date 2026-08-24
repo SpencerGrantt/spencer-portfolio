@@ -513,6 +513,9 @@ blockquote.opening-stat {
 .rq-list { padding-left: var(--sp-lg); margin-bottom: var(--sp-md); }
 .rq-list li { margin-bottom: var(--sp-sm); }
 
+.source-list a { text-decoration: underline; text-underline-offset: 2px; }
+.source-list a:hover { color: var(--text-primary); }
+
 /* ── Summary block: the "30-second summary" callout box ── */
 
 .summary-block {
