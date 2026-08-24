@@ -425,6 +425,23 @@ section { padding: var(--sp-3xl) 0; }
 .tile .source { margin-top: auto; padding-top: var(--sp-sm); }
 .tile a { font-size: 14px; font-weight: 600; text-decoration: underline; margin-top: auto; padding-top: var(--sp-sm); }
 
+/* Citation links inside a .source line are references, not CTAs — undo
+   the bold "Read more" tile-link treatment above. */
+.tile .source a,
+.fact .fact-source a {
+  font-size: inherit;
+  font-weight: 400;
+  margin-top: 0;
+  padding-top: 0;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tile .source a:hover,
+.fact .fact-source a:hover { color: var(--text-primary); }
+
+#sources li:target { color: var(--text-primary); }
+
 /* ── About teaser / general two-col ── */
 
 .split {
