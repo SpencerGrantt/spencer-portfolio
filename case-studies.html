@@ -8,21 +8,19 @@
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
 <style>
-  .cs-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-xl); }
+  .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xl); }
+  @media (max-width: 900px) { .cs-grid { grid-template-columns: 1fr; } }
   .cs-card {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
     border: 1px solid var(--border-default);
     border-radius: 12px;
-    overflow: hidden;
+    padding: var(--sp-xl);
     background: var(--surface-default);
   }
-  @media (min-width: 800px) {
-    .cs-card { grid-template-columns: 40% 1fr; min-height: 340px; }
-  }
-  .cs-card .cs-image { overflow: hidden; background: var(--surface-muted); min-height: 200px; }
-  .cs-card .cs-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .cs-card .cs-body { padding: var(--sp-xl); display: flex; flex-direction: column; justify-content: center; }
+  .cs-card .cs-body { display: flex; flex-direction: column; flex: 1; }
+  .cs-card .cs-body p.type-body { flex: 1; }
 </style>
 </head>
 <body>
@@ -32,7 +30,14 @@
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li class="nav-dropdown">
+        <a href="case-studies.html">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="case-study.html">Healthcare AI Dashboard<span>Clinical alert triage, deepest case study</span></a>
+          <a href="letterboxd.html">Reframing Letterboxd<span>Redesign, secondary research</span></a>
+          <a href="civicpulse.html">CivicPulse<span>Concept, civic tech</span></a>
+        </div>
+      </li>
       <li><a href="convoy.html">Build</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Résumé</a></li>
@@ -43,14 +48,16 @@
 </div>
 
 <section style="padding-bottom: 0;">
-  <div class="container prose">
-    <p class="type-label-upper">Case Studies</p>
-    <h1 class="type-h1" style="margin-top: var(--sp-md);">Three problems, one process</h1>
-    <p class="type-body-lg subline">
-      Healthcare, film, and civic tech aren't the same industry, but they got the same treatment: real
-      research first, every design decision traceable to something a user actually said or a source
-      actually published, and an honest account of what didn't work.
-    </p>
+  <div class="container">
+    <div class="prose">
+      <p class="type-label-upper">Case Studies</p>
+      <h1 class="type-h1" style="margin-top: var(--sp-md);">Three problems, one process</h1>
+      <p class="type-body-lg subline">
+        Healthcare, film, and civic tech aren't the same industry, but they got the same treatment: real
+        research first, every design decision traceable to something a user actually said or a source
+        actually published, and an honest account of what didn't work.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -59,9 +66,6 @@
     <div class="cs-grid">
 
       <a class="cs-card" href="case-study.html" style="text-decoration: none; color: inherit;">
-        <div class="cs-image">
-          <img src="assets/triage-esi1-expanded.png" alt="Healthcare AI Dashboard: clinical alert triage table">
-        </div>
         <div class="cs-body">
           <p class="type-label-upper" style="margin-bottom: var(--sp-sm); color: var(--text-secondary);">Healthcare AI · Deepest case study</p>
           <h2 class="type-h2" style="margin-bottom: var(--sp-sm);">Designed a clinical alert dashboard to cut hospitalist override behavior</h2>
@@ -76,9 +80,6 @@
       </a>
 
       <a class="cs-card" href="letterboxd.html" style="text-decoration: none; color: inherit;">
-        <div class="cs-image">
-          <img src="assets/letterboxd-social-hub.png" alt="Letterboxd redesign: before and after comparison of the social activity screen">
-        </div>
         <div class="cs-body">
           <p class="type-label-upper" style="margin-bottom: var(--sp-sm); color: var(--text-secondary);">Redesign · Secondary research</p>
           <h2 class="type-h2" style="margin-bottom: var(--sp-sm);">Reframing Letterboxd</h2>
@@ -92,9 +93,6 @@
       </a>
 
       <a class="cs-card" href="civicpulse.html" style="text-decoration: none; color: inherit;">
-        <div class="cs-image">
-          <img src="assets/civicpulse-dashboard.png" alt="CivicPulse Dashboard: starred bills, meetings, and local initiatives">
-        </div>
         <div class="cs-body">
           <p class="type-label-upper" style="margin-bottom: var(--sp-sm); color: var(--text-secondary);">Concept · Civic tech</p>
           <h2 class="type-h2" style="margin-bottom: var(--sp-sm);">CivicPulse</h2>

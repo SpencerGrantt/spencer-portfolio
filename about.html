@@ -15,7 +15,14 @@
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li class="nav-dropdown">
+        <a href="case-studies.html">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="case-study.html">Healthcare AI Dashboard<span>Clinical alert triage, deepest case study</span></a>
+          <a href="letterboxd.html">Reframing Letterboxd<span>Redesign, secondary research</span></a>
+          <a href="civicpulse.html">CivicPulse<span>Concept, civic tech</span></a>
+        </div>
+      </li>
       <li><a href="convoy.html">Build</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Résumé</a></li>
@@ -25,53 +32,91 @@
   </nav>
 </div>
 
-<section>
-  <div class="container prose">
-    <p class="type-label-upper">About</p>
-    <h1 class="type-h1" style="margin: var(--sp-md) 0 var(--sp-xl);">How I work</h1>
-
-    <div class="case-section">
-      <h2 class="type-h2">Career context</h2>
-      <p class="type-body">
-        I'm a UX/product designer based in Frederick, MD. I don't have a prior design internship. What I
-        have instead is a case study built the way I'd want a junior hire's first real project to look:
-        research traced to sources, design decisions traced to research, results traced to actual usability
-        testing, not opinion. Convoy, a full-stack PWA I designed and built solo for a real client, is a
-        second proof point, shipped and in daily production use, not a mockup. Reframing Letterboxd and
-        CivicPulse round it out: a streaming-app redesign built on competitive research, and a
-        civic-transparency concept grounded in real Baltimore data. Different problems, same rigor.
-      </p>
-      <p class="type-body">
-        My background is in digital arts and media design (B.A., New Media, Penn State), visual systems and
-        interaction design before UX was the explicit job title. Freelance client work built the end-to-end
-        fundamentals: research, wireframing, hi-fi prototyping, client handoff, and iteration. I went deep
-        on a healthcare AI case study because the problem (a person deciding whether to trust a model's
-        output under time pressure) is a genuinely hard design problem worth solving carefully, not because
-        I'm narrowing to healthcare as an industry. I'm looking for any UX or UX-adjacent role where that
-        same rigor applies.
-      </p>
-    </div>
-
-    <div class="case-section">
-      <h2 class="type-h2">Process</h2>
-      <p class="type-body">
-        Every screen I ship answers to a specific research finding, not a hunch. You can see that traced
-        end-to-end in the Healthcare AI case study's decision log. I run a Stark accessibility audit before
-        any design is considered final, WCAG 2.2 AA minimum. I also work with the tools that sit under the
-        interface, not just around it: I use the Claude API directly to prototype and debug structured data
-        (tool schemas, extraction logic) that AI-forward products depend on, which means I can catch a
-        mislabeled field before it becomes a UI bug instead of after.
-      </p>
-    </div>
-
-    <div class="case-section">
-      <h2 class="type-h2">Résumé + contact</h2>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="resume.html">Résumé (PDF)</a>
-        <a class="btn btn-secondary" href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+<section style="padding-bottom: 0;">
+  <div class="container">
+    <div class="about-hero">
+      <img class="about-headshot" src="assets/spencer-headshot.jpg" alt="Spencer Grant">
+      <div>
+        <p class="type-label-upper">About</p>
+        <h1 class="type-h1" style="margin: var(--sp-md) 0 var(--sp-lg);">How I work</h1>
+        <p class="type-body-lg" style="color: var(--text-secondary);">
+          UX/product designer based in Frederick, MD. Every screen I ship answers to a specific research
+          finding, not a hunch, and every claim in a case study traces back to a source or a test result.
+        </p>
       </div>
     </div>
+  </div>
+</section>
+
+<section style="padding-top: var(--sp-2xl);">
+  <div class="container">
+
+    <div class="case-section">
+      <div class="prose">
+        <h2 class="type-h2">Career context</h2>
+        <p class="type-body">
+          I don't have a prior design internship. What I have instead is a case study built the way I'd
+          want a junior hire's first real project to look: research traced to sources, design decisions
+          traced to research, results traced to actual usability testing, not opinion. Convoy, a full-stack
+          PWA I designed and built solo for a real client, is a second proof point, shipped and in daily
+          production use, not a mockup. Reframing Letterboxd and CivicPulse round it out: a streaming-app
+          redesign built on competitive research, and a civic-transparency concept grounded in real
+          Baltimore data. Different problems, same rigor.
+        </p>
+        <p class="type-body">
+          My background is in digital arts and media design (B.A., New Media, Penn State), visual systems
+          and interaction design before UX was the explicit job title. Freelance client work built the
+          end-to-end fundamentals: research, wireframing, hi-fi prototyping, client handoff, and iteration.
+          I went deep on a healthcare AI case study because the problem (a person deciding whether to trust
+          a model's output under time pressure) is a genuinely hard design problem worth solving carefully,
+          not because I'm narrowing to healthcare as an industry. I'm looking for any UX or UX-adjacent role
+          where that same rigor applies.
+        </p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="prose">
+        <h2 class="type-h2">Process</h2>
+        <p class="type-body">
+          Roughly the same four moves on every project, healthcare dashboard or civic-tech concept alike.
+          I run a Stark accessibility audit before any design is considered final, WCAG 2.2 AA minimum, and
+          I work with the tools that sit under the interface, not just around it: the Claude API directly,
+          to prototype and debug the structured data (tool schemas, extraction logic) that AI-forward
+          products depend on, so I catch a mislabeled field before it becomes a UI bug instead of after.
+        </p>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">1. Ideate</p>
+          <p class="type-body">Frame the problem against real sources, not a hunch. Constraints, research questions, and who's actually affected, before any pixels.</p>
+        </div>
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">2. Concept in Stitch</p>
+          <p class="type-body">AI-assisted concepting to get several directions on screen fast, then pressure-test which one actually answers the research question.</p>
+        </div>
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">3. Build in Figma</p>
+          <p class="type-body">Wireframes to hi-fi on an 8pt grid with semantic tokens and real component states, a Stark accessibility pass before anything is "final."</p>
+        </div>
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">4. Test, then ship</p>
+          <p class="type-body">Useberry + SUS/NASA-TLX against real tasks, decisions traced back to what testers actually did, then build it (Claude API included) if it's going to production.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="prose">
+        <h2 class="type-h2">Résumé + contact</h2>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="resume.html">Résumé (PDF)</a>
+          <a class="btn btn-secondary" href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

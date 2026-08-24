@@ -15,7 +15,14 @@
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li class="nav-dropdown">
+        <a href="case-studies.html">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="case-study.html">Healthcare AI Dashboard<span>Clinical alert triage, deepest case study</span></a>
+          <a href="letterboxd.html">Reframing Letterboxd<span>Redesign, secondary research</span></a>
+          <a href="civicpulse.html">CivicPulse<span>Concept, civic tech</span></a>
+        </div>
+      </li>
       <li><a href="convoy.html">Build</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Résumé</a></li>
@@ -26,15 +33,17 @@
 </div>
 
 <section style="padding-bottom: 0;">
-  <div class="container prose">
-    <p class="type-label-upper">Case Study</p>
-    <h1 class="type-h1" style="margin-top: var(--sp-md);">Reframing Letterboxd</h1>
+  <div class="container">
+    <div class="prose">
+      <p class="type-label-upper">Case Study</p>
+      <h1 class="type-h1" style="margin-top: var(--sp-md);">Reframing Letterboxd</h1>
 
-    <blockquote class="opening-stat type-body-lg">
-      Based on 50+ mined community reviews and an audit of five competing apps, I identified three
-      high-impact opportunities for Letterboxd's mobile app: centralize social, fix navigation
-      consistency, and add the TV tracking users kept asking for.
-    </blockquote>
+      <blockquote class="opening-stat type-body-lg">
+        Based on 50+ mined community reviews and an audit of five competing apps, I identified three
+        high-impact opportunities for Letterboxd's mobile app: centralize social, fix navigation
+        consistency, and add the TV tracking users kept asking for.
+      </blockquote>
+    </div>
 
     <div class="meta-row">
       <div class="meta-item">
@@ -54,7 +63,7 @@
 </section>
 
 <section style="padding-top: 0;">
-  <div class="container prose">
+  <div class="container">
 
     <div class="stat-row">
       <div class="stat">
@@ -74,26 +83,30 @@
     <div class="figma-embed">
       <iframe src="https://embed.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=19-166&p=f&viewport=749%2C252%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=19%3A166&show-proto-sidebar=1&page-id=0%3A1&embed-host=share" allowfullscreen loading="lazy" title="Reframing Letterboxd live prototype"></iframe>
     </div>
-    <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=19-166&p=f&viewport=749%2C252%2C0.25&t=eiYCLaBlE0xi3QNZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=19%3A166&show-proto-sidebar=1&page-id=0%3A1" target="_blank" rel="noopener">open it in Figma →</a></p>
-
-    <div class="case-section">
-      <h2 class="type-h2">The problem</h2>
-      <p class="type-body">
-        To find out where Letterboxd's mobile app was actually falling short, I audited five competitor
-        apps (Trakt, IMDb, Taste, TV Time, Goodreads) and read through 50+ community reviews and forum
-        threads looking for repeated, specific complaints rather than one-off gripes.
-      </p>
-      <p class="type-body">
-        Three problems kept surfacing. Social features exist but have no clear home, scattered across
-        screens with no obvious entry point. Navigation patterns shift depending on where you are in the
-        app, so nothing feels learnable. And almost 30% of the reviews wanted TV tracking that doesn't
-        exist. One user had already designed the fix in their head: <em>"there should be a toggle button
-        that switches the UI to all TV shows until you toggle it back to movies."</em>
-      </p>
+    <div class="prose">
+      <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=19-166&p=f&viewport=749%2C252%2C0.25&t=eiYCLaBlE0xi3QNZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=19%3A166&show-proto-sidebar=1&page-id=0%3A1" target="_blank" rel="noopener">open it in Figma →</a></p>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Two people, one app</h2>
+      <div class="prose">
+        <h2 class="type-h2">The problem</h2>
+        <p class="type-body">
+          To find out where Letterboxd's mobile app was actually falling short, I audited five competitor
+          apps (Trakt, IMDb, Taste, TV Time, Goodreads) and read through 50+ community reviews and forum
+          threads looking for repeated, specific complaints rather than one-off gripes.
+        </p>
+        <p class="type-body">
+          Three problems kept surfacing. Social features exist but have no clear home, scattered across
+          screens with no obvious entry point. Navigation patterns shift depending on where you are in the
+          app, so nothing feels learnable. And almost 30% of the reviews wanted TV tracking that doesn't
+          exist. One user had already designed the fix in their head: <em>"there should be a toggle button
+          that switches the UI to all TV shows until you toggle it back to movies."</em>
+        </p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="prose"><h2 class="type-h2">Two people, one app</h2></div>
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Alex, the curator</h3>
@@ -104,18 +117,22 @@
           <p class="type-body">Wants connection: what her friends watched, replying to reviews, arguing about last night's episode.</p>
         </div>
       </div>
-      <p class="type-body" style="margin-top: var(--sp-md);">
-        Neither was served by one undifferentiated activity feed. Any fix had to work for both without
-        turning into two separate apps.
-      </p>
+      <div class="prose">
+        <p class="type-body" style="margin-top: var(--sp-md);">
+          Neither was served by one undifferentiated activity feed. Any fix had to work for both without
+          turning into two separate apps.
+        </p>
+      </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Three moves, not a full rebuild</h2>
-      <p class="type-body">
-        The minimalist, film-first identity is most of why people love this app. So the redesign stayed
-        narrow: three targeted changes, each answering a complaint I'd actually read.
-      </p>
+      <div class="prose">
+        <h2 class="type-h2">Three moves, not a full rebuild</h2>
+        <p class="type-body">
+          The minimalist, film-first identity is most of why people love this app. So the redesign stayed
+          narrow: three targeted changes, each answering a complaint I'd actually read.
+        </p>
+      </div>
 
       <div class="tile-grid tile-grid-prose" style="margin-top: var(--sp-lg);">
         <div class="tile">
@@ -138,22 +155,26 @@
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">From sketch to shipped-looking screens</h2>
-      <p class="type-body">
-        Every screen went through three passes: low-fidelity to validate the new navigation, mid-fidelity to
-        add real content and TV tracking, high-fidelity to lock the visual system. Dark, near-black base
-        (<code>#14171C</code>), cyan-blue accent (<code>#00BFFA</code>) for primary actions, an orange accent
-        (<code>#F27405</code>) reserved for emphasis. Dark enough to stay out of the way of movie posters,
-        which is really the point of a film app's UI.
-      </p>
+      <div class="prose">
+        <h2 class="type-h2">From sketch to shipped-looking screens</h2>
+        <p class="type-body">
+          Every screen went through three passes: low-fidelity to validate the new navigation, mid-fidelity to
+          add real content and TV tracking, high-fidelity to lock the visual system. Dark, near-black base
+          (<code>#14171C</code>), cyan-blue accent (<code>#00BFFA</code>) for primary actions, an orange accent
+          (<code>#F27405</code>) reserved for emphasis. Dark enough to stay out of the way of movie posters,
+          which is really the point of a film app's UI.
+        </p>
+      </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Why this would matter to the business</h2>
-      <p class="type-body">
-        No live product means no retention or revenue numbers to report, so here's the honest version:
-        the reasoning that connects each decision to a business outcome, not a number I don't have.
-      </p>
+      <div class="prose">
+        <h2 class="type-h2">Why this would matter to the business</h2>
+        <p class="type-body">
+          No live product means no retention or revenue numbers to report, so here's the honest version:
+          the reasoning that connects each decision to a business outcome, not a number I don't have.
+        </p>
+      </div>
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Retention, against a named competitor</h3>
@@ -168,13 +189,16 @@
           <p class="type-body">The redesign stayed to three targeted changes instead of a rebuild specifically because the minimalist, film-first identity is named as "most of why people love this app" in the same reviews. A business case for change has to survive not damaging the retention driver that's already working.</p>
         </div>
       </div>
-      <p class="type-caption" style="margin-top: var(--sp-md);">
-        These are reasoned connections from the research to standard product metrics (retention, session
-        frequency), not measured outcomes. I'm naming that distinction rather than blurring it.
-      </p>
+      <div class="prose">
+        <p class="type-caption" style="margin-top: var(--sp-md);">
+          These are reasoned connections from the research to standard product metrics (retention, session
+          frequency), not measured outcomes. I'm naming that distinction rather than blurring it.
+        </p>
+      </div>
     </div>
 
     <div class="case-section">
+      <div class="prose">
       <h2 class="type-h2">What I learned</h2>
       <p class="type-body">
         This is built on secondary research: mined reviews and competitive audits, not moderated sessions
@@ -188,6 +212,7 @@
         Letterboxd's identity alone, was harder than it sounds. Probably the most transferable skill this
         project gave me.
       </p>
+      </div>
     </div>
 
   </div>

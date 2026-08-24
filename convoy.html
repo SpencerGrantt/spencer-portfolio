@@ -15,7 +15,14 @@
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li class="nav-dropdown">
+        <a href="case-studies.html">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="case-study.html">Healthcare AI Dashboard<span>Clinical alert triage, deepest case study</span></a>
+          <a href="letterboxd.html">Reframing Letterboxd<span>Redesign, secondary research</span></a>
+          <a href="civicpulse.html">CivicPulse<span>Concept, civic tech</span></a>
+        </div>
+      </li>
       <li><a href="convoy.html">Build</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Résumé</a></li>
@@ -130,7 +137,7 @@
       <div class="prose">
         <p class="type-caption" style="margin-bottom: var(--sp-lg);">Owner Dashboard: business metrics at a glance. Seed/demo account, no real client, contract, or driver data shown.</p>
         <p class="type-body" style="margin-bottom: var(--sp-lg);">
-          Nine core surfaces, all live in production, built around a shared Postgres schema with
+          Ten core surfaces, all live in production, built around a shared Postgres schema with
           role-scoped access at the database layer (Supabase Row Level Security), not just hidden
           in the UI.
         </p>
@@ -172,30 +179,59 @@
           <h3 class="type-h3">Compliance paperwork</h3>
           <p class="type-body">Branded chain-of-custody PDF generation, downloadable straight from a run's detail page for audits.</p>
         </div>
+        <div class="tile">
+          <h3 class="type-h3">Vehicle inspection</h3>
+          <p class="type-body">Pre-trip and post-trip checklists (tires, brakes, lights, cargo, temp-sensitive storage) with Pass/Fail/N/A per item; a failed item blocks submission until the driver adds a note.</p>
+        </div>
       </div>
     </div>
 
     <div class="case-section">
-      <div class="shot-frame">
-        <img src="assets/convoy-contracts.png" alt="Convoy Contracts page: SAM.gov opportunity matches scored against the company's NAICS codes, with a manual search and a saved-contracts list below">
-      </div>
-      <div class="prose">
-        <p class="type-caption" style="margin-bottom: var(--sp-lg);">Contracts: AI-scored SAM.gov opportunity matches. Seed/demo account, no real client or contract data shown.</p>
-      </div>
-
-      <div class="shot-frame">
-        <img src="assets/convoy-finances.png" alt="Convoy Finances Analytics tab: revenue vs. expense chart, expense-by-category breakdown, and the AI assistant answering a financial-summary question in the docked chat panel">
-      </div>
-      <div class="prose">
-        <p class="type-caption">Finances: revenue/expense analytics with the AI assistant answering a live query against the same data. Seed/demo account, no real financial data shown.</p>
+      <div class="prose"><h2 class="type-h2">A closer look</h2></div>
+      <div class="tile-grid tile-grid-prose">
+        <div>
+          <div class="shot-frame">
+            <img src="assets/convoy-contracts.png" alt="Convoy Contracts page: SAM.gov opportunity matches, scored against the company's NAICS codes, with a match-quality score and a one-click save-as-contract action">
+          </div>
+          <p class="type-caption">Contracts: live SAM.gov opportunities, AI-scored against the company's NAICS codes. Seed/demo account, no real client or contract data shown.</p>
+        </div>
+        <div>
+          <div class="shot-frame">
+            <img src="assets/convoy-analytics.png" alt="Convoy Finances Analytics tab: revenue vs. expense area chart and an expenses-by-category pie chart">
+          </div>
+          <p class="type-caption">Finances → Analytics: revenue/expense trend and cost breakdown, the source for the "Financial analytics" surface above. Seed/demo account, no real financial data shown.</p>
+        </div>
+        <div>
+          <div class="shot-frame">
+            <img src="assets/convoy-chain-of-custody.png" alt="Convoy Run Detail page: pickup, dropoff, and load details, with Mark as Delivered, View/Add Photos, and Download Chain of Custody PDF actions">
+          </div>
+          <p class="type-caption">Run detail: the chain-of-custody flow the product exists to fix — photo capture and a branded PDF, one tap away. Seed/demo account, no real run data shown.</p>
+        </div>
+        <div>
+          <div class="shot-frame">
+            <img src="assets/convoy-ai-assistant.png" alt="Convoy AI Assistant docked panel, answering a query about July 2026 financial data with a categorized summary">
+          </div>
+          <p class="type-caption">The AI assistant, scoped to the company's own live data, answering a financial-summary question mid-workflow. Seed/demo account, no real financial data shown.</p>
+        </div>
+        <div>
+          <div class="shot-frame">
+            <img src="assets/convoy-vehicle-inspection.png" alt="Convoy Vehicle Inspection checklist: Pre-Trip tab with Pass, Fail, and N/A per item, and a warning banner requiring notes on any failed item">
+          </div>
+          <p class="type-caption">Vehicle inspection: a failed item blocks submission until the driver adds a note, not a silent checkbox.</p>
+        </div>
+        <div>
+          <div class="shot-frame">
+            <img src="assets/convoy-ifta.png" alt="Convoy IFTA Report: quarterly mileage by jurisdiction, with a CSV export">
+          </div>
+          <p class="type-caption">IFTA Report: quarterly mileage by jurisdiction, exportable for filing. Seed/demo account, no real mileage data shown.</p>
+        </div>
       </div>
     </div>
 
     <div class="case-section">
-      <div class="prose">
-        <h2 class="type-h2">Design decisions</h2>
-
-        <div class="decision-card">
+      <div class="prose"><h2 class="type-h2">Design decisions</h2></div>
+      <div class="tile-grid tile-grid-3">
+        <div class="tile">
           <h3 class="type-h3">A different home screen per role, not one dashboard with permissions</h3>
           <p class="type-body">
             The owner's Dashboard leads with business metrics and compliance alerts; the driver's is
@@ -203,8 +239,7 @@
             directly from watching how differently the two roles actually open the app.
           </p>
         </div>
-
-        <div class="decision-card">
+        <div class="tile">
           <h3 class="type-h3">Honest degradation over silent failure</h3>
           <p class="type-body">
             When the live SAM.gov call fails (which, for a public government API, it sometimes
@@ -213,8 +248,7 @@
             fallback deadlines relative to today instead of shipping dates that quietly go stale.
           </p>
         </div>
-
-        <div class="decision-card">
+        <div class="tile">
           <h3 class="type-h3">Reliability is the UX, not a separate concern</h3>
           <p class="type-body">
             A driver on a weak cell connection who sees "Uploading…" with no feedback and no retry

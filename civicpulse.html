@@ -15,7 +15,14 @@
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li class="nav-dropdown">
+        <a href="case-studies.html">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="case-study.html">Healthcare AI Dashboard<span>Clinical alert triage, deepest case study</span></a>
+          <a href="letterboxd.html">Reframing Letterboxd<span>Redesign, secondary research</span></a>
+          <a href="civicpulse.html">CivicPulse<span>Concept, civic tech</span></a>
+        </div>
+      </li>
       <li><a href="convoy.html">Build</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Résumé</a></li>
@@ -26,15 +33,17 @@
 </div>
 
 <section style="padding-bottom: 0;">
-  <div class="container prose">
-    <p class="type-label-upper">Case Study</p>
-    <h1 class="type-h1" style="margin-top: var(--sp-md);">CivicPulse</h1>
+  <div class="container">
+    <div class="prose">
+      <p class="type-label-upper">Case Study</p>
+      <h1 class="type-h1" style="margin-top: var(--sp-md);">CivicPulse</h1>
 
-    <blockquote class="opening-stat type-body-lg">
-      The bill on CivicPulse's Legislation screen is real. "Housing Options and Opportunity Act (25-0066)"
-      comes straight from a Baltimore mayor's-office press release. A civic app that fakes its data
-      teaches people not to trust civic apps, and that's the exact problem it's supposed to solve.
-    </blockquote>
+      <blockquote class="opening-stat type-body-lg">
+        The bill on CivicPulse's Legislation screen is real. "Housing Options and Opportunity Act (25-0066)"
+        comes straight from a Baltimore mayor's-office press release. A civic app that fakes its data
+        teaches people not to trust civic apps, and that's the exact problem it's supposed to solve.
+      </blockquote>
+    </div>
 
     <div class="meta-row">
       <div class="meta-item">
@@ -54,7 +63,7 @@
 </section>
 
 <section style="padding-top: 0;">
-  <div class="container prose">
+  <div class="container">
 
     <div class="stat-row">
       <div class="stat">
@@ -74,23 +83,27 @@
     <div class="figma-embed">
       <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fs4m5Rb949bizRf8h7XD1UX%2FCivicPulse-Prototyping--Copy-%3Fnode-id%3D0-1%26t%3DuSX6YyaTmqgGHE5n-1" allowfullscreen loading="lazy" title="CivicPulse live prototype"></iframe>
     </div>
-    <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/s4m5Rb949bizRf8h7XD1UX/CivicPulse-Prototyping--Copy-?node-id=0-1&t=uSX6YyaTmqgGHE5n-1" target="_blank" rel="noopener">open it in Figma →</a></p>
-
-    <div class="case-section">
-      <h2 class="type-h2">The problem</h2>
-      <p class="type-body">
-        Every city government I looked at technically makes its data public: council votes, budgets, 311
-        requests. Almost none of it is usable by the person it's supposed to serve. It's buried in PDFs,
-        split across departments that don't talk to each other, and written for city staff, not residents.
-      </p>
-      <p class="type-body">
-        One resident said it better than I could: <em>"It's not about information overload. It's about
-        information in the right format."</em> The data existed. The interface to it didn't.
-      </p>
+    <div class="prose">
+      <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/s4m5Rb949bizRf8h7XD1UX/CivicPulse-Prototyping--Copy-?node-id=0-1&t=uSX6YyaTmqgGHE5n-1" target="_blank" rel="noopener">open it in Figma →</a></p>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Two Baltimore residents, opposite starting points</h2>
+      <div class="prose">
+        <h2 class="type-h2">The problem</h2>
+        <p class="type-body">
+          Every city government I looked at technically makes its data public: council votes, budgets, 311
+          requests. Almost none of it is usable by the person it's supposed to serve. It's buried in PDFs,
+          split across departments that don't talk to each other, and written for city staff, not residents.
+        </p>
+        <p class="type-body">
+          One resident said it better than I could: <em>"It's not about information overload. It's about
+          information in the right format."</em> The data existed. The interface to it didn't.
+        </p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="prose"><h2 class="type-h2">Two Baltimore residents, opposite starting points</h2></div>
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Jasmine, the organizer</h3>
@@ -101,14 +114,16 @@
           <p class="type-body">Doesn't vote locally, gets his news from Instagram and TikTok. Wants to know what's happening in his district without becoming an activist first.</p>
         </div>
       </div>
-      <p class="type-body" style="margin-top: var(--sp-md);">
-        Same information, two depths: skimmable for Jordan, trackable and shareable for Jasmine. Neither
-        version could be the "real" one with the other bolted on.
-      </p>
+      <div class="prose">
+        <p class="type-body" style="margin-top: var(--sp-md);">
+          Same information, two depths: skimmable for Jordan, trackable and shareable for Jasmine. Neither
+          version could be the "real" one with the other bolted on.
+        </p>
+      </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Five screens, one thread: earn the trust before you ask for it</h2>
+      <div class="prose"><h2 class="type-h2">Five screens, one thread: earn the trust before you ask for it</h2></div>
 
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
@@ -135,11 +150,13 @@
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">Why this would matter to a city</h2>
-      <p class="type-body">
-        This never shipped to real residents, so there's no participation or trust data to cite. What I can
-        show is which city-level goals each decision was actually built to move, and why.
-      </p>
+      <div class="prose">
+        <h2 class="type-h2">Why this would matter to a city</h2>
+        <p class="type-body">
+          This never shipped to real residents, so there's no participation or trust data to cite. What I can
+          show is which city-level goals each decision was actually built to move, and why.
+        </p>
+      </div>
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Lower staff burden, not just resident convenience</h3>
@@ -154,28 +171,32 @@
           <p class="type-body">Neighborhood-level budget framing maps to the kind of equity mandate a lot of city offices already carry, and "sourced, never editorializing" is what makes a transparency tool usable as evidence in a resident trust survey instead of dismissed as another city PR channel.</p>
         </div>
       </div>
-      <p class="type-caption" style="margin-top: var(--sp-md);">
-        These are reasoned connections to real municipal incentives (contact-center volume, participation
-        KPIs, resident trust surveys), not measured results from this concept. Same honesty as the
-        limitation below: the data is real, the impact case is my best reasoning, not an observation.
-      </p>
+      <div class="prose">
+        <p class="type-caption" style="margin-top: var(--sp-md);">
+          These are reasoned connections to real municipal incentives (contact-center volume, participation
+          KPIs, resident trust surveys), not measured results from this concept. Same honesty as the
+          limitation below: the data is real, the impact case is my best reasoning, not an observation.
+        </p>
+      </div>
     </div>
 
     <div class="case-section">
-      <h2 class="type-h2">What I learned</h2>
-      <p class="type-body">
-        Civic tech was a harder design problem than I expected, and not for the reason I assumed going in.
-        The hard part wasn't information architecture, it was that almost every interesting decision was
-        also a trust decision. Show a rep's voting record and it can read as a smear. Personalize by
-        neighborhood and it can read as surveillance. The only real response was to be relentlessly neutral:
-        sourced, plainly worded, never editorializing. Trust risk as a design constraint, not an edge case.
-      </p>
-      <p class="type-body">
-        The honest limitation: this is unmoderated concept work, not something validated with actual
-        Baltimore residents. The data is real. The reactions to it are still my best guess, not an
-        observation. A concept this dependent on earning trust needs to be tested with the people whose
-        trust it's asking for. That's the next version, not a footnote.
-      </p>
+      <div class="prose">
+        <h2 class="type-h2">What I learned</h2>
+        <p class="type-body">
+          Civic tech was a harder design problem than I expected, and not for the reason I assumed going in.
+          The hard part wasn't information architecture, it was that almost every interesting decision was
+          also a trust decision. Show a rep's voting record and it can read as a smear. Personalize by
+          neighborhood and it can read as surveillance. The only real response was to be relentlessly neutral:
+          sourced, plainly worded, never editorializing. Trust risk as a design constraint, not an edge case.
+        </p>
+        <p class="type-body">
+          The honest limitation: this is unmoderated concept work, not something validated with actual
+          Baltimore residents. The data is real. The reactions to it are still my best guess, not an
+          observation. A concept this dependent on earning trust needs to be tested with the people whose
+          trust it's asking for. That's the next version, not a footnote.
+        </p>
+      </div>
     </div>
 
   </div>
