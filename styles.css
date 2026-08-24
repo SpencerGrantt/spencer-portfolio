@@ -432,13 +432,14 @@ section { padding: var(--sp-3xl) 0; }
 
 .about-hero {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 1fr 220px;
   gap: var(--sp-2xl);
-  align-items: center;
+  align-items: start;
 }
+.about-hero .about-headshot { order: 2; }
 @media (max-width: 700px) {
   .about-hero { grid-template-columns: 1fr; }
-  .about-hero .about-headshot { max-width: 200px; }
+  .about-hero .about-headshot { order: -1; max-width: 160px; }
 }
 
 .about-headshot {
@@ -478,13 +479,24 @@ blockquote.opening-stat {
 .rq-list { padding-left: var(--sp-lg); margin-bottom: var(--sp-md); }
 .rq-list li { margin-bottom: var(--sp-sm); }
 
+/* ── Summary block: the "30-second summary" callout box ── */
+
+.summary-block {
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  padding: var(--sp-xl);
+  margin: var(--sp-xl) 0 var(--sp-3xl);
+}
+.summary-block > .type-label-upper { margin-bottom: var(--sp-md) !important; }
+
 /* ── Fact grid: hard numbers pulled out of prose, cited ── */
 
 .fact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-lg) var(--sp-xl);
-  margin: var(--sp-lg) 0 var(--sp-md);
+  gap: var(--sp-xl) var(--sp-2xl);
+  margin: var(--sp-2xl) 0 var(--sp-xl);
 }
 @media (max-width: 640px) {
   .fact-grid { grid-template-columns: 1fr; }
