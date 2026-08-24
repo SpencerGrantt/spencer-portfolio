@@ -301,6 +301,23 @@ section { padding: var(--sp-3xl) 0; }
   height: auto;
 }
 
+/* Expand-on-hover, scoped to the Convoy "A closer look" gallery only —
+   the rest of the site's screenshots are already sized to read at a
+   glance and don't need it. */
+.shot-zoom-grid .shot-frame {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
+}
+.shot-zoom-grid .shot-frame:hover {
+  transform: scale(1.6);
+  z-index: 10;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+@media (prefers-reduced-motion: reduce) {
+  .shot-zoom-grid .shot-frame { transition: none; }
+  .shot-zoom-grid .shot-frame:hover { transform: none; box-shadow: none; }
+}
+
 .featured-card .image-slot {
   border-bottom: 1px solid var(--border-default);
   aspect-ratio: 16 / 9;
