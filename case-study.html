@@ -109,29 +109,29 @@
       </div>
     </div>
 
-    <div class="prose">
-      <div class="summary-block">
-        <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">30-second summary</p>
-        <div class="flow">
-          <div class="flow-step">
-            <p class="type-label-upper flow-label">Problem</p>
-            <p class="type-body">Hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</p>
-          </div>
-          <div class="flow-step">
-            <p class="type-label-upper flow-label">Approach</p>
-            <p class="type-body">Synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</p>
-          </div>
-          <div class="flow-step">
-            <p class="type-label-upper flow-label">Key decision</p>
-            <p class="type-body">A triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</p>
-          </div>
-          <div class="flow-step">
-            <p class="type-label-upper flow-label">Status</p>
-            <p class="type-body">Both rounds complete. Round 1 found the gap (0% chose the right action); Round 2 closed it (100%, SUS 82.5).</p>
-          </div>
+    <div class="summary-block">
+      <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">30-second summary</p>
+      <div class="flow">
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">Problem</p>
+          <p class="type-body">Hospitalists override 95% of AI drug-interaction alerts because every alert looks the same regardless of severity.</p>
+        </div>
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">Approach</p>
+          <p class="type-body">Synthesized 18 clinical sources (no primary access to hospitalists), then designed and tested with 3 RN proxy testers.</p>
+        </div>
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">Key decision</p>
+          <p class="type-body">A triage table with ESI severity tiers, AI confidence scores, and friction that scales with the risk of the action.</p>
+        </div>
+        <div class="flow-step">
+          <p class="type-label-upper flow-label">Status</p>
+          <p class="type-body">Both rounds complete. Round 1 found the gap (0% chose the right action); Round 2 closed it (100%, SUS 82.5).</p>
         </div>
       </div>
+    </div>
 
+    <div class="prose">
       <p class="type-caption method-note">
         <strong>A note on method:</strong> I didn't have access to practicing hospitalists for generative
         interviews, a gated clinical domain, out of reach for a solo junior researcher. The persona and
@@ -150,28 +150,32 @@
           priority regardless of severity: no position, size, or color signal separates a life-threatening
           interaction from a routine advisory.
         </p>
-        <div class="fact-grid">
-          <div class="fact">
-            <p class="fact-value">39-fold</p>
-            <p class="fact-body">antibiotic overdose in a 2015 UCSF case, after a physician and pharmacist both overrode a critical alert that <em>"looked exactly the same"</em> as routine ones.</p>
-            <p class="type-caption fact-source">R1-003</p>
-          </div>
-          <div class="fact">
-            <p class="fact-value">216+ deaths</p>
-            <p class="fact-body">in the U.S. (2005–2010) tied to alarm fatigue, per a Boston Globe investigation.</p>
-            <p class="type-caption fact-source">R1-003</p>
-          </div>
-          <div class="fact">
-            <p class="fact-value">187/day</p>
-            <p class="fact-body">alerts per patient at UCSF ICUs, almost all clinically insignificant — 2,507,822 unique alarms across five ICUs in one month.</p>
-            <p class="type-caption fact-source">R1-005</p>
-          </div>
-          <div class="fact">
-            <p class="fact-value">+13% risk</p>
-            <p class="fact-body">per interruption during medication administration. Four interruptions doubles the rate of errors likely to cause permanent harm or death.</p>
-            <p class="type-caption fact-source">R1-003, R1-006</p>
-          </div>
+      </div>
+
+      <div class="fact-grid">
+        <div class="fact">
+          <p class="fact-value">39-fold</p>
+          <p class="fact-body">antibiotic overdose in a 2015 UCSF case, after a physician and pharmacist both overrode a critical alert that <em>"looked exactly the same"</em> as routine ones.</p>
+          <p class="type-caption fact-source">R1-003</p>
         </div>
+        <div class="fact">
+          <p class="fact-value">216+ deaths</p>
+          <p class="fact-body">in the U.S. (2005–2010) tied to alarm fatigue, per a Boston Globe investigation.</p>
+          <p class="type-caption fact-source">R1-003</p>
+        </div>
+        <div class="fact">
+          <p class="fact-value">187/day</p>
+          <p class="fact-body">alerts per patient at UCSF ICUs, almost all clinically insignificant — 2,507,822 unique alarms across five ICUs in one month.</p>
+          <p class="type-caption fact-source">R1-005</p>
+        </div>
+        <div class="fact">
+          <p class="fact-value">+13% risk</p>
+          <p class="fact-body">per interruption during medication administration. Four interruptions doubles the rate of errors likely to cause permanent harm or death.</p>
+          <p class="type-caption fact-source">R1-003, R1-006</p>
+        </div>
+      </div>
+
+      <div class="prose">
         <p class="type-caption" style="margin-bottom: var(--sp-md);">The Joint Commission issued an urgent alarm-safety directive in 2013, updated 2016; ECRI Institute named alarm-related problems the top health-technology hazard for four straight years. (R1-003, R1-004)</p>
         <p class="type-body">
           <strong>The design implication:</strong> volume alone isn't the problem. Uniform visual design
@@ -203,7 +207,19 @@
         </div>
         <div class="tile finding-tile">
           <h3 class="type-h3">AI confidence is the biggest lever</h3>
-          <p class="type-body">Bigger than model accuracy itself. High-confidence predictions (90 to 99%) were overridden 1.7% of the time; low-confidence ones (70 to 79%), 99.3%, across 6,689 cardiovascular cases.</p>
+          <p class="type-body">Bigger than model accuracy itself, across 6,689 cardiovascular cases: how often a prediction got overridden anyway.</p>
+          <div class="bar-chart--compact">
+            <div class="bar-row">
+              <span class="bar-tag">90–99%</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 1.7%;"></div></div>
+              <span class="bar-value">1.7%</span>
+            </div>
+            <div class="bar-row is-after">
+              <span class="bar-tag">70–79%</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 99.3%;"></div></div>
+              <span class="bar-value">99.3%</span>
+            </div>
+          </div>
           <p class="type-caption source">R1-011, R1-017</p>
         </div>
         <div class="tile finding-tile">
@@ -297,27 +313,58 @@
           n=1 finding worth watching in Round 2.
         </p>
 
-        <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (n=1)</p>
-        <div class="compare-list">
-          <div class="compare-row">
-            <span class="compare-label">SUS Score</span>
-            <span class="compare-before">73.3</span>
-            <span class="compare-arrow">→</span>
-            <span class="compare-after">82.5</span>
-          </div>
-          <div class="compare-row">
-            <span class="compare-label">AI-confidence decision</span>
-            <span class="compare-before">0%</span>
-            <span class="compare-arrow">→</span>
-            <span class="compare-after">100%</span>
-          </div>
-          <div class="compare-row">
-            <span class="compare-label">Override friction</span>
-            <span class="compare-before">67%</span>
-            <span class="compare-arrow">→</span>
-            <span class="compare-after">100%</span>
+      </div>
+
+      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (n=1)</p>
+      <div class="bar-chart">
+        <div class="bar-metric">
+          <p class="bar-metric-label">SUS Score</p>
+          <div class="bar-rows">
+            <div class="bar-row">
+              <span class="bar-tag">R1</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 73.3%;"></div></div>
+              <span class="bar-value">73.3</span>
+            </div>
+            <div class="bar-row is-after">
+              <span class="bar-tag">R2</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 82.5%;"></div></div>
+              <span class="bar-value">82.5</span>
+            </div>
           </div>
         </div>
+        <div class="bar-metric">
+          <p class="bar-metric-label">AI-confidence decision</p>
+          <div class="bar-rows">
+            <div class="bar-row">
+              <span class="bar-tag">R1</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+              <span class="bar-value">0%</span>
+            </div>
+            <div class="bar-row is-after">
+              <span class="bar-tag">R2</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+              <span class="bar-value">100%</span>
+            </div>
+          </div>
+        </div>
+        <div class="bar-metric">
+          <p class="bar-metric-label">Override friction</p>
+          <div class="bar-rows">
+            <div class="bar-row">
+              <span class="bar-tag">R1</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 67%;"></div></div>
+              <span class="bar-value">67%</span>
+            </div>
+            <div class="bar-row is-after">
+              <span class="bar-tag">R2</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+              <span class="bar-value">100%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
         <p class="type-caption" style="margin-top: var(--sp-sm);">
           Round 2 closed at n=1 — a strong directional signal that the stated-recommendation fix removed
           the specific gap Round 1 found, not proof it holds at scale. One respondent isn't a validated

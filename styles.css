@@ -30,8 +30,8 @@
   --sp-4xl: 96px;
 
   /* Layout */
-  --container-max: 1120px;
-  --prose-max: 760px;
+  --container-max: 1280px;
+  --prose-max: 800px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -458,31 +458,68 @@ blockquote.opening-stat {
   }
 }
 
-/* ── Compare list: before → after metrics ── */
+/* ── Bar chart: before/after metrics on a 0–100 scale, readable at a glance ── */
 
-.compare-list { display: flex; flex-direction: column; gap: var(--sp-sm); }
-
-.compare-row {
+.bar-chart {
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
-  align-items: center;
-  gap: var(--sp-md);
-  padding: var(--sp-md) var(--sp-lg);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg) var(--sp-xl);
+}
+@media (max-width: 800px) { .bar-chart { grid-template-columns: 1fr; } }
+
+.bar-metric {
   border: 1px solid var(--border-default);
   border-radius: 8px;
+  padding: var(--sp-md) var(--sp-lg);
 }
-.compare-row .compare-label { font-weight: 600; }
-.compare-row .compare-before { color: var(--text-tertiary); font-size: 15px; }
-.compare-row .compare-arrow { color: var(--text-tertiary); }
-.compare-row .compare-after { font-weight: 700; font-size: 18px; }
 
-@media (max-width: 560px) {
-  .compare-row {
-    grid-template-columns: 1fr auto auto auto;
-    padding: var(--sp-md);
-  }
-  .compare-row .compare-label { grid-column: 1 / -1; margin-bottom: var(--sp-xs); }
+.bar-metric-label { font-weight: 600; margin-bottom: var(--sp-md); }
+
+.bar-rows { display: flex; flex-direction: column; gap: 10px; }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 44px;
+  align-items: center;
+  gap: var(--sp-sm);
 }
+.bar-row .bar-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+}
+.bar-row.is-after .bar-tag { color: var(--text-primary); }
+
+.bar-track {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--surface-muted);
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: var(--text-tertiary);
+}
+.bar-row.is-after .bar-fill { background: var(--text-primary); }
+
+.bar-row .bar-value {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--text-secondary);
+}
+.bar-row.is-after .bar-value { color: var(--text-primary); font-weight: 700; }
+
+/* Compact variant for embedding a two-bar comparison inside a .tile */
+.bar-chart--compact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: var(--sp-sm) 0;
+}
+.bar-chart--compact .bar-row { grid-template-columns: 78px 1fr 40px; }
 
 /* ── Footer ── */
 
