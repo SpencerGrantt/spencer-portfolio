@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Designed a clinical alert dashboard to reduce override of critical drug-interaction warnings</title>
 <meta name="description" content="Healthcare UX case study: AI dashboard design, clinical alert triage, WCAG 2.2 accessibility, and two rounds of usability testing with SUS and NASA-TLX.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171717'/%3E%3Ctext x='16' y='21.5' font-family='Arial,Helvetica,sans-serif' font-size='13' font-weight='700' fill='%23f5f5f5' text-anchor='middle'%3ESG%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
 <style>
@@ -84,8 +85,8 @@
         <div class="type-label-upper label">Correctly triaged the critical alert alone</div>
       </div>
       <div class="stat">
-        <div class="value filled">0% → 100%</div>
-        <div class="type-label-upper label">Chose the right AI-confidence action: Round 1 (n=3) to first Round 2 respondent (n=1)</div>
+        <div class="value filled">11s vs. 87s</div>
+        <div class="type-label-upper label">Time on task for the two Round 2 testers who both missed the AI's recommendation, traced to two different causes</div>
       </div>
     </div>
 
@@ -103,9 +104,9 @@
       </div>
       <div>
         <div class="shot-frame">
-          <img src="assets/triage-esi1-escalate-confirmation.png" alt="Escalate-to-pharmacist confirmation step over the ESI-1 alert">
+          <img src="assets/triage-esi1-expanded-round2-fix.png" alt="ESI-1 alert expanded in the Round 2 design: Escalate to Pharmacy styled as the primary button, with a stated recommendation banner reading 94% confidence supports escalation to pharmacy">
         </div>
-        <p class="type-caption">The Escalate confirmation step. Screenshots are Round 1; the Round 2 fix (Escalate primary, stated recommendation) lives in the decision log below, not yet re-exported as a screenshot.</p>
+        <p class="type-caption">The Round 2 fix (D1-008): Escalate restyled as primary, plus a stated recommendation above the button row. Testing showed this wasn't enough on its own — see Testing below for why.</p>
       </div>
     </div>
 
@@ -126,7 +127,7 @@
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Status</p>
-          <p class="type-body">Both rounds complete. Round 1 found the gap (0% chose the right action); Round 2 closed it (100%, SUS 82.5).</p>
+          <p class="type-body">Both rounds complete. Round 1 found the gap (0% chose the right action); Round 2 (n=2) confirmed the fix didn't close it and isolated two distinct reasons why. Stronger fix recommended, not yet built or retested.</p>
         </div>
       </div>
     </div>
@@ -265,8 +266,8 @@
           <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015</a></p>
         </div>
         <div class="tile" id="d1-008">
-          <h3 class="type-h3">Round 2: state the AI's recommendation</h3>
-          <p class="type-body">0 of 3 testers chose Escalate on a 94%-confidence alert (2 chose Override, 1 Hold). Nothing in the interface stated what the AI actually recommended. Round 2 makes Escalate the primary button and adds a one-line stated recommendation above it for confidence at or above 90%.</p>
+          <h3 class="type-h3">Round 2: state the AI's recommendation (revised)</h3>
+          <p class="type-body">0 of 3 testers chose Escalate on a 94%-confidence alert (2 chose Override, 1 Hold). Nothing in the interface stated what the AI actually recommended, so Round 2 made Escalate the primary button and added a one-line stated recommendation above it. It wasn't enough on its own: Round 2 retesting still found 0 of 2 chose Escalate. See Testing below for why, and what I'd try next.</p>
           <p class="type-caption source"><a href="https://doi.org/10.3390/diagnostics15172204" target="_blank" rel="noopener">Yu et al. 2025</a>; <a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">NN/g 2018</a>; <a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015</a></p>
         </div>
       </div>
@@ -308,13 +309,14 @@
         <p class="type-body" style="margin-top: var(--sp-lg);">
           All 3 testers found the critical alert first and acted without prompting (Task 1, avg 127.2s).
           None chose Escalate once AI confidence was on screen (Task 2): 2 chose Override, 1 chose Hold.
-          Task 3 completed at 2 of 3; the third dropped off before the override-reason form, an unconfirmed
-          n=1 finding worth watching in Round 2.
+          Task 3 completed at 2 of 3; the third dropped off before the override-reason form. That drop-off
+          repeated with a different tester in Round 2, at the exact same step, confirming it as a real
+          problem rather than a one-off.
         </p>
 
       </div>
 
-      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (n=1)</p>
+      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (n=2)</p>
       <div class="bar-chart">
         <div class="bar-metric">
           <p class="bar-metric-label">SUS Score</p>
@@ -326,8 +328,8 @@
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 82.5%;"></div></div>
-              <span class="bar-value">82.5</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 66.3%;"></div></div>
+              <span class="bar-value">66.3</span>
             </div>
           </div>
         </div>
@@ -341,8 +343,8 @@
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
-              <span class="bar-value">100%</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+              <span class="bar-value">0%</span>
             </div>
           </div>
         </div>
@@ -356,8 +358,8 @@
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
-              <span class="bar-value">100%</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 50%;"></div></div>
+              <span class="bar-value">50%</span>
             </div>
           </div>
         </div>
@@ -365,17 +367,22 @@
 
       <div class="prose">
         <p class="type-caption" style="margin-top: var(--sp-sm);">
-          Round 2 closed at n=1 — a strong directional signal that the stated-recommendation fix removed
-          the specific gap Round 1 found, not proof it holds at scale. One respondent isn't a validated
-          trend, and a properly powered Round 2 is the honest next step if this ever gets built past a
-          portfolio piece.
+          Round 2 (n=2) shows the Round 1 fix didn't move the AI-confidence decision — still 0% chose
+          Escalate, same as Round 1. SUS and override-form completion both moved down, though with only
+          2 respondents that's a wide-uncertainty read, not a trend. The more useful result was diagnostic,
+          not directional: the two testers reached the same wrong answer in very different ways (11 seconds
+          and 1 click vs. 87 seconds and 3 clicks), pointing at two separate causes — one likely never saw
+          the new recommendation, the other saw it and didn't act on it. That reframes the next fix as two
+          problems, not one. With recruiting for this panel already at two months for three testers, I'm
+          closing testing here and documenting the next iteration as a recommendation rather than running a
+          third round.
         </p>
       </div>
     </div>
 
     <div class="case-section">
       <div class="prose"><h2 class="type-h2">What I learned</h2></div>
-      <div class="tile-grid tile-grid-prose">
+      <div class="tile-grid tile-grid-3">
         <div class="tile">
           <h3 class="type-h3">Failure 1: a reversed label almost shipped</h3>
           <p class="type-body">The <code>drug_primary</code> / <code>drug_interacting</code> naming wasn't caught by looking at the UI. It surfaced only when I traced the model's output against the clinical scenario and asked which drug a hospitalist would expect first. The exact panel meant to reduce override-by-confusion would have introduced a subtler version of the same confusion. Schema review needs the same scrutiny as visual review, against a real scenario, not an abstract field list.</p>
@@ -383,6 +390,10 @@
         <div class="tile">
           <h3 class="type-h3">Failure 2: nobody chose the right action</h3>
           <p class="type-body">Testers didn't converge on the same wrong answer (2 Override, 1 Hold), which killed my first theory that Override was styled too temptingly within an hour. The real gap: the confidence score sat in an evidence panel, disconnected from the button row. When two different Task 1 behaviors converge on the same Task 2 miss, the shared cause is the interface, not either tester's judgment.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">Failure 3: "completed" isn't "correct"</h3>
+          <p class="type-body">Round 2 was first closed on a reading of the testing platform's summary status, which reported the respondent had "completed" the AI-confidence task, and I logged that as having chosen the right action. It hadn't: re-checking the actual click path showed they'd chosen the same wrong answer as Round 1. Caught it before publishing by going back to the raw session data instead of trusting the dashboard's own labels. Now a standing check for every round of testing on this project: verify the specific action taken, not just whether the task block shows complete.</p>
         </div>
       </div>
     </div>
