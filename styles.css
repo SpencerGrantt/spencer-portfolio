@@ -301,7 +301,7 @@ section { padding: var(--sp-3xl) 0; }
   height: auto;
 }
 
-/* Expand-on-hover, scoped to the Convoy "A closer look" gallery only —
+/* Expand-on-hover, scoped to the Vantar "A closer look" gallery only —
    the rest of the site's screenshots are already sized to read at a
    glance and don't need it. */
 .shot-zoom-grid .shot-frame {
