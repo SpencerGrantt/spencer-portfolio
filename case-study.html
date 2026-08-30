@@ -193,12 +193,13 @@
           <h3 class="type-h3">State the AI's recommendation</h3>
           <p class="type-body">High-confidence AI predictions get overridden far less (1.7% vs. 99.3% at lower confidence, across 6,689 cardiovascular cases), but only when the confidence score actually connects to the recommended action, not left sitting in a separate evidence panel. Round 1 styled Escalate as secondary with nothing stated; Round 2 made it primary and added a one-line stated recommendation. See Process below for whether it worked.</p>
           <div class="bar-chart--compact">
+            <p class="bar-metric-label">Override rate, by AI confidence band</p>
             <div class="bar-row">
               <span class="bar-tag">90–99%</span>
               <div class="bar-track"><div class="bar-fill" style="width: 1.7%;"></div></div>
               <span class="bar-value">1.7%</span>
             </div>
-            <div class="bar-row is-after">
+            <div class="bar-row">
               <span class="bar-tag">70–79%</span>
               <div class="bar-track"><div class="bar-fill" style="width: 99.3%;"></div></div>
               <span class="bar-value">99.3%</span>
@@ -307,8 +308,9 @@
           2 respondents that's a wide-uncertainty read, not a trend. The more useful result was diagnostic,
           not directional: the two testers reached the same wrong answer in very different ways (11 seconds
           and 1 click vs. 87 seconds and 3 clicks), pointing at two separate causes: one likely never saw
-          the new recommendation, the other saw it and didn't act on it. That reframes the next fix as two
-          problems, not one. With recruiting for this panel already at two months for three testers, I'm
+          the new recommendation, the other saw it and still didn't act on it, closer to not trusting the
+          AI's confidence score than not noticing it. That reframes the next fix as two problems, not one:
+          a visibility problem and a trust problem. With recruiting for this panel already at two months for three testers, I'm
           closing testing here and documenting the next iteration as a recommendation rather than running a
           third round.
         </p>
@@ -333,12 +335,13 @@
         <p class="type-body">
           Both rounds are done. Alert triage works: every tester found the critical alert first, nothing to
           change there. The AI-confidence decision doesn't: two rounds of evidence, still 0% choosing the
-          recommended action. If I kept building this, the next move isn't a bigger button. It's an
-          interstitial that makes a clinician actively acknowledge the AI's recommendation before overriding
-          a high-confidence critical alert, tested with a moderated session that can ask why someone chose
-          what they chose instead of inferring it from click timestamps. Recruiting this panel took two
-          months for three testers, so that's documented as the next step rather than actually run. An
-          honest stopping point for a solo, entry-level project, not a finished product.
+          recommended action, split between a visibility problem and a trust problem. A bigger button only
+          fixes the first. If I kept building this, the next move is a required confirmation step that makes
+          a clinician actively acknowledge the AI's recommendation before overriding a high-confidence
+          critical alert, tested with a moderated session that can ask why someone chose what they chose,
+          and directly probe trust in the AI's confidence score, instead of inferring both from click
+          timestamps. Recruiting this panel took two months for three testers, so that's documented as the
+          next step rather than actually run.
         </p>
       </div>
     </div>
