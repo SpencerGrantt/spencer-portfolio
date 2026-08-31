@@ -150,9 +150,10 @@
           <h3 class="type-h3">Honest degradation over silent failure</h3>
           <p class="type-body">
             When the live SAM.gov call fails (which, for a public government API, it sometimes
-            does), the UI doesn't hide the failure behind an empty state. It falls back to clearly
-            labeled sample data with the actual failure reason visible underneath, and computes
-            fallback deadlines relative to today instead of shipping dates that quietly go stale.
+            does), the UI doesn't hide it behind a blank "no results" screen or invent listings to
+            fill the space. It states the actual failure reason where the results would go, and
+            computes any relative deadlines off today's date instead of shipping dates that quietly
+            go stale. No results means no results, not fabricated ones.
           </p>
         </div>
         <div class="tile">
@@ -190,7 +191,7 @@
         </div>
         <div class="tile">
           <h3 class="type-h3">Federal contract matching</h3>
-          <p class="type-body">Live SAM.gov opportunity search, AI-scored against the company's NAICS (federal industry-classification) codes and SDVOSB status, with fallback to clearly-labeled sample data if the government API is down.</p>
+          <p class="type-body">Live SAM.gov opportunity search, AI-scored against the company's NAICS (federal industry-classification) codes and SDVOSB status, with an explicit failure state, not invented listings, if the government API is down.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Financial analytics</h3>
