@@ -440,6 +440,61 @@ section { padding: var(--sp-3xl) 0; }
 .tile .source { margin-top: auto; padding-top: var(--sp-sm); }
 .tile a { font-size: 14px; font-weight: 600; text-decoration: underline; margin-top: auto; padding-top: var(--sp-sm); }
 
+/* One-card, arrow-navigated feature carousel (CivicPulse "Five screens") */
+.feature-carousel-card {
+  background: var(--surface-default);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: var(--sp-lg);
+  margin-top: var(--sp-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-lg);
+}
+.feature-slide {
+  display: none;
+  flex: 1;
+  grid-template-columns: 200px 1fr;
+  gap: var(--sp-xl);
+  align-items: center;
+}
+.feature-slide.is-active { display: grid; }
+.feature-slide .shot-frame { max-width: 200px; margin: 0 auto; }
+.feature-slide-copy .type-label-upper { margin-bottom: var(--sp-sm); }
+.carousel-arrow {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--border-default);
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.carousel-arrow:hover { background: var(--border-default); }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-md);
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border-default);
+  cursor: pointer;
+}
+.carousel-dot.is-active { background: var(--text-primary); }
+@media (max-width: 640px) {
+  .feature-carousel-card { flex-direction: column; }
+  .feature-slide { grid-template-columns: 1fr; }
+}
+
 /* Citation links inside a .source line are references, not CTAs — undo
    the bold "Read more" tile-link treatment above. */
 .tile .source a,

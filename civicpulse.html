@@ -148,26 +148,69 @@
     <div class="case-section">
       <div class="prose"><h2 class="type-h2">Five screens, one thread: earn the trust before you ask for it</h2></div>
 
-      <div class="tile-grid tile-grid-prose">
-        <div class="tile">
-          <h3 class="type-h3">Dashboard</h3>
-          <p class="type-body">Starts with what a resident already follows, not a firehose of everything happening city-wide. Starred bills, nearby meetings, local initiatives.</p>
+      <div class="feature-carousel">
+        <div class="feature-carousel-card">
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous screen">‹</button>
+
+          <div class="feature-slide is-active" data-slide="0">
+            <div class="shot-frame">
+              <img src="assets/civicpulse-dashboard.png" alt="CivicPulse Dashboard: starred bills, an upcoming committee meeting, and a local neighborhood initiative">
+            </div>
+            <div class="feature-slide-copy">
+              <p class="type-label-upper">Dashboard</p>
+              <p class="type-body">Starts with what a resident already follows, not a firehose of everything happening city-wide. Starred bills, nearby meetings, local initiatives.</p>
+            </div>
+          </div>
+
+          <div class="feature-slide" data-slide="1">
+            <div class="shot-frame">
+              <img src="assets/civicpulse-legislation.png" alt="CivicPulse Legislation: active bills with plain-language status like In Committee or Passed, next to a short summary">
+            </div>
+            <div class="feature-slide-copy">
+              <p class="type-label-upper">Legislation</p>
+              <p class="type-body">Plain-language status ("In Committee") next to a real source link. People don't just want it simplified, they want to verify it wasn't simplified into something misleading.</p>
+            </div>
+          </div>
+
+          <div class="feature-slide" data-slide="2">
+            <div class="shot-frame">
+              <img src="assets/civicpulse-spending.png" alt="CivicPulse Spending: budget data reorganized by neighborhood, listing Bridgeview-Greenlawn, Park Heights, and Harwood with estimated budgets">
+            </div>
+            <div class="feature-slide-copy">
+              <p class="type-label-upper">Spending</p>
+              <p class="type-body">The same budget data cities publish by department, reorganized by neighborhood instead: Park Heights, Harwood, Bridgeview-Greenlawn. Same numbers, a geography residents actually live in.</p>
+            </div>
+          </div>
+
+          <div class="feature-slide" data-slide="3">
+            <div class="shot-frame">
+              <img src="assets/civicpulse-meetings.png" alt="CivicPulse Meetings: a monthly calendar above a list of upcoming meetings, each with a one-tap RSVP button">
+            </div>
+            <div class="feature-slide-copy">
+              <p class="type-label-upper">Meetings</p>
+              <p class="type-body">A calendar with one-tap RSVP. Not clever, just fixing the constant complaint that hearings happen without anyone finding out in time.</p>
+            </div>
+          </div>
+
+          <div class="feature-slide" data-slide="4">
+            <div class="shot-frame">
+              <img src="assets/civicpulse-onboarding.png" alt="CivicPulse Onboarding: a ZIP code prompt stating the data is only used to track local legislation, with a visible Skip link">
+            </div>
+            <div class="feature-slide-copy">
+              <p class="type-label-upper">Onboarding</p>
+              <p class="type-body">Asks for a ZIP code, states the reason in the same breath, and lets you skip without penalty. Geo-personalization loses trust fast when it isn't transparent.</p>
+            </div>
+          </div>
+
+          <button class="carousel-arrow carousel-next" type="button" aria-label="Next screen">›</button>
         </div>
-        <div class="tile">
-          <h3 class="type-h3">Legislation</h3>
-          <p class="type-body">Plain-language status ("In Committee") next to a real source link. People don't just want it simplified, they want to verify it wasn't simplified into something misleading.</p>
-        </div>
-        <div class="tile">
-          <h3 class="type-h3">Spending</h3>
-          <p class="type-body">The same budget data cities publish by department, reorganized by neighborhood instead: Park Heights, Harwood, Bridgeview-Greenlawn. Same numbers, a geography residents actually live in.</p>
-        </div>
-        <div class="tile">
-          <h3 class="type-h3">Meetings</h3>
-          <p class="type-body">A calendar with one-tap RSVP. Not clever, just fixing the constant complaint that hearings happen without anyone finding out in time.</p>
-        </div>
-        <div class="tile">
-          <h3 class="type-h3">Onboarding</h3>
-          <p class="type-body">Asks for a ZIP code, states the reason in the same breath, and lets you skip without penalty. Geo-personalization loses trust fast when it isn't transparent.</p>
+
+        <div class="carousel-dots">
+          <button class="carousel-dot is-active" data-goto="0" aria-label="Go to Dashboard"></button>
+          <button class="carousel-dot" data-goto="1" aria-label="Go to Legislation"></button>
+          <button class="carousel-dot" data-goto="2" aria-label="Go to Spending"></button>
+          <button class="carousel-dot" data-goto="3" aria-label="Go to Meetings"></button>
+          <button class="carousel-dot" data-goto="4" aria-label="Go to Onboarding"></button>
         </div>
       </div>
     </div>
@@ -228,6 +271,25 @@
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.feature-slide'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
+  if (!slides.length) return;
+  var index = 0;
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach(function (slide, n) { slide.classList.toggle('is-active', n === index); });
+    dots.forEach(function (dot, n) { dot.classList.toggle('is-active', n === index); });
+  }
+
+  document.querySelector('.carousel-prev').addEventListener('click', function () { show(index - 1); });
+  document.querySelector('.carousel-next').addEventListener('click', function () { show(index + 1); });
+  dots.forEach(function (dot, n) { dot.addEventListener('click', function () { show(n); }); });
+})();
+</script>
 
 </body>
 </html>
