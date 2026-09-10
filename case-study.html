@@ -90,7 +90,7 @@
         <div class="type-label-upper label">Correctly triaged the critical alert alone</div>
       </div>
       <div class="stat">
-        <div class="value filled">67%</div>
+        <div class="value filled">33%</div>
         <div class="type-label-upper label">Chose the AI's recommended action in Round 2, up from 0% in Round 1</div>
       </div>
     </div>
@@ -120,9 +120,9 @@
         <strong>A note on method:</strong> I didn't have access to real hospitalists, that's a tightly
         restricted clinical setting, so I built the problem from 18 peer-reviewed and expert sources
         instead. To test the actual design, I recruited nurses as the closest available stand-in: an
-        initial group of five narrowed to three who tested it across two rounds, using two standard
-        measures, one for how easy the design felt to use (SUS) and one for how mentally taxing a task
-        felt (NASA-TLX).
+        initial group of five narrowed to three for round one, then three more for round two, using two
+        standard measures, one for how easy the design felt to use (SUS) and one for how mentally taxing
+        a task felt (NASA-TLX).
       </p>
     </div>
 
@@ -135,7 +135,7 @@
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Approach</p>
-          <p class="type-body">I didn't have access to real hospitalists, so I built the problem from 18 clinical sources, then tested the design with 3 nurses across two rounds.</p>
+          <p class="type-body">I didn't have access to real hospitalists, so I built the problem from 18 clinical sources, then tested the design across two rounds with nurses as the closest available stand-in.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Key decision</p>
@@ -143,7 +143,7 @@
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Status</p>
-          <p class="type-body">Two rounds of testing are done. Every tester found the critical alert right away. Getting them to act on the AI's recommendation took more work: nobody did in round one, but two of three did in round two once I moved the recommendation next to the button. The one tester who still didn't is the open question for a follow-up round.</p>
+          <p class="type-body">Two rounds of testing are done. Every tester found the critical alert right away, in both rounds. Getting people to act on the AI's recommendation improved but didn't fully work: nobody did in round one, and moving the recommendation next to the button got one of three testers to act on it in round two. The other two missed it for two different reasons, which is the real finding.</p>
         </div>
       </div>
     </div>
@@ -210,7 +210,7 @@
         <div class="tile">
           <h3 class="type-h3">ESI, not an invented scale</h3>
           <p class="type-body">The panel borrows the Emergency Severity Index, already in a hospitalist's vocabulary, instead of a made-up "High/Medium/Low." "ESI-1" needs zero explanation mid-shift.</p>
-          <p class="type-caption source"><a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission 2013/2016</a>; <a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain et al. 2019</a></p>
+          <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain et al. 2019</a></p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Friction scales with risk</h3>
@@ -235,16 +235,42 @@
           </div>
           <p class="type-caption source"><a href="https://doi.org/10.3390/diagnostics15172204" target="_blank" rel="noopener">Yu et al. 2025</a>; <a href="https://www.nngroup.com/articles/smarts-over-sentience/" target="_blank" rel="noopener">NN/g 2025</a>; <a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">NN/g 2018</a>; <a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015</a></p>
         </div>
-        <div class="tile" id="d1-002">
-          <h3 class="type-h3">A schema bug caught before it shipped</h3>
-          <p class="type-body">Extracting alert fields with the Claude API, the first schema labeled fields <code>drug_primary</code> / <code>drug_interacting</code>. On a Warfarin + Ciprofloxacin case, that reversed the prescribing context. Renamed to <code>drug_ordered</code> / <code>drug_on_file</code>, self-explanatory, no inference required.</p>
-          <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015</a></p>
-        </div>
       </div>
     </div>
 
     <div class="case-section">
       <div class="prose"><h2 class="type-h2">Process</h2></div>
+
+      <div class="tile-grid tile-grid-prose" style="margin-bottom: var(--sp-xl);">
+        <div class="tile">
+          <h3 class="type-h3">1. Research</h3>
+          <p class="type-body">Built the problem from 18 peer-reviewed and clinical sources instead of primary interviews, since practicing hospitalists weren't accessible. Synthesis produced two personas and the ESI-based severity framing the design is built around.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">2. Wireframes</h3>
+          <p class="type-body">Sketched three low-fidelity layout directions and ran each through a 3-second test: can a clinician spot the most critical alert without reading anything? A compact triage table passed; a zone-based layout was ruled out before sketching over an empty-state problem.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">3. Ideation in Stitch</h3>
+          <p class="type-body">Used Stitch to quickly generate and compare visual variations of the winning triage-table direction, color, spacing, type weight, before committing time to a full Figma build.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">4. Figma: refinement and prototyping</h3>
+          <p class="type-body">Built the chosen direction into a full interactive prototype: the triage table, expandable alert rows, the explainability panel, and the action buttons. Ran it through a WCAG 2.2 AA accessibility check in Stark before testing.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">5. Testing, round 1</h3>
+          <p class="type-body">Sent the prototype to three nurse proxy testers for an unmoderated usability test: alert triage, an escalate-or-override decision, and an override-friction task, plus two standard surveys (SUS, NASA-TLX).</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">6. Revision</h3>
+          <p class="type-body">Every tester skipped the AI's recommended action on the highest-confidence alert. Restyled Escalate as the primary button and added a one-line stated recommendation above it, instead of leaving the connection between confidence score and action implicit.</p>
+        </div>
+        <div class="tile">
+          <h3 class="type-h3">7. Testing, round 2</h3>
+          <p class="type-body">Sent the revised prototype to three new testers. One acted on the AI's recommendation, the other two still didn't, each for a different reason. The numbers behind both rounds are below.</p>
+        </div>
+      </div>
 
       <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">Round 1 results (3 testers)</p>
       <div class="stat-row">
@@ -281,7 +307,7 @@
 
       </div>
 
-      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (3 testers)</p>
+      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 (3 testers) → Round 2 (3 testers)</p>
       <div class="bar-chart">
         <div class="bar-metric">
           <p class="bar-metric-label">SUS Score</p>
@@ -308,8 +334,8 @@
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 67%;"></div></div>
-              <span class="bar-value">67%</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 33%;"></div></div>
+              <span class="bar-value">33%</span>
             </div>
           </div>
         </div>
@@ -332,27 +358,29 @@
 
       <div class="prose">
         <p class="type-caption" style="margin-top: var(--sp-sm);">
-          Round 2 shows the fix mostly worked: two of three testers acted on the AI's recommendation, up
-          from zero in round one. The usability score also improved slightly, from 73.3 to 74.2. The one
-          tester who still chose Hold instead of Escalate took much longer to decide, about two and a
-          half minutes, against 11 and 87 seconds for the two who acted on the recommendation, which
-          looks more like hesitation than a design element they simply missed. That tester also rated
-          their own performance lower afterward (2 out of 10, versus 9 out of 10 for the other two),
-          which lines up with the outcome. Recruiting nurses for this kind of testing has taken months
-          for just three people per round, so rather than guess why that one tester hesitated, I'm
-          planning a follow-up session where I can just ask them directly.
+          Round 2 shows the fix partly worked: one of three testers acted on the AI's recommendation, up
+          from zero in round one. The usability score held steady, 73.3 to 74.2. But the three testers got
+          to their answers in very different ways. One looked at the screen for 11 seconds and made a
+          single click before choosing Hold, likely too fast to have even registered the new stated
+          recommendation. Another spent 87 seconds and made three clicks before choosing Override anyway,
+          long enough to have read it and rejected it. The third spent over two minutes, clicked directly
+          on "Escalate to Pharmacy," and confirmed it a second later. Three different outcomes from the
+          same fix: didn't see it, saw it and rejected it, saw it and acted on it. The first two are
+          different problems, and a bigger button only ever had a chance of fixing one of them. The
+          override-form drop-off from round one also happened again, with a different tester hitting the
+          exact same dead end, so that's now a confirmed problem, not a one-off.
         </p>
       </div>
 
       <p class="type-label-upper" style="margin: var(--sp-xl) 0 var(--sp-sm);">What I learned</p>
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
-          <h3 class="type-h3">Nobody chose the right action</h3>
-          <p class="type-body">Testers didn't converge on the same wrong answer (2 Override, 1 Hold), which killed my first theory that Override was just styled too temptingly. The real gap: the AI's confidence score sat in a separate evidence panel, disconnected from the button row. Different testers, same miss: the interface was the shared cause, not their judgment.</p>
+          <h3 class="type-h3">A fix that works for one person can still hide two other problems</h3>
+          <p class="type-body">Stating the AI's recommendation and styling it as primary got one of three Round 2 testers to act on it, up from zero in Round 1. The other two picked something else, for different reasons: one decided in 11 seconds, too fast to have read the new text at all; the other spent 87 seconds and rejected the recommendation anyway. One is a visibility problem. The other is a trust problem: no amount of styling fixes a clinician who read the AI's recommendation and chose not to act on it. A single fix that partly works can hide the fact that it's solving two different problems at once.</p>
         </div>
         <div class="tile">
-          <h3 class="type-h3">"Completed" isn't "correct"</h3>
-          <p class="type-body">I first read the testing platform's "completed" status as "chose the right action." They're not the same thing. Re-checking the actual click path showed the tester had made the same wrong choice as Round 1. Caught before publishing by going back to raw session data instead of trusting the dashboard's own labels. Now a standing check for every testing round.</p>
+          <h3 class="type-h3">Recruiting is its own project risk</h3>
+          <p class="type-body">Getting three qualified proxy testers took months, and Round 2 alone stretched over three weeks between its first and third session. A mid-round platform switch (Maze to Useberry, after a sync bug) and a panel narrowed from five to three cost real calendar time before a single Round 1 result came in. Access to clinicians willing to test an unpaid prototype is genuinely limited, that's a project risk to plan for up front, not something extra prep time solves on its own.</p>
         </div>
       </div>
     </div>
@@ -361,10 +389,16 @@
       <div class="prose">
         <h2 class="type-h2">Where this stands</h2>
         <p class="type-body">
-          If I kept building this, the next step is a moderated session with the one tester who still
-          chose Hold, so I can ask directly why instead of guessing from click timestamps and
-          self-ratings. Recruiting nurses for this kind of testing has taken months for just three people
-          per round, so that session is planned, not yet run.
+          Two rounds in, the AI-confidence fix works for some clinicians and not others, and recruiting
+          for this panel has already taken months. Running a full third round isn't the right call. If I
+          kept building this, I'd change what gets tested next, not just test the same fix again: stop
+          iterating on button styling alone, since it already closed the gap for one tester but not the
+          other two, and try a stronger intervention like an interstitial that makes a clinician actively
+          acknowledge the AI's recommendation before choosing Hold or Override. I'd also move to a
+          moderated session so I can tell "didn't see it" apart from "saw it and disagreed" instead of
+          inferring it from click timestamps, and fix the override-form drop-off directly, that one's
+          happened to two different testers at the exact same step across two rounds, which is enough to
+          act on without more testing.
         </p>
       </div>
     </div>
