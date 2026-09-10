@@ -117,11 +117,12 @@
 
     <div class="prose">
       <p class="type-caption method-note">
-        <strong>A note on method:</strong> No access to practicing hospitalists for primary research, a
-        gated clinical domain out of reach for a solo junior researcher, so the problem frame is built
-        from 18 peer-reviewed and expert sources instead. Evaluative testing (Useberry, originally built in
-        Maze, plus SUS and NASA-TLX) ran with proxy testers: an initial panel of five narrowed to three RNs,
-        the closest available stand-in for a hospitalist.
+        <strong>A note on method:</strong> I didn't have access to real hospitalists, that's a tightly
+        restricted clinical setting, so I built the problem from 18 peer-reviewed and expert sources
+        instead. To test the actual design, I recruited nurses as the closest available stand-in: an
+        initial group of five narrowed to three who tested it across two rounds, using two standard
+        measures, one for how easy the design felt to use (SUS) and one for how mentally taxing a task
+        felt (NASA-TLX).
       </p>
     </div>
 
@@ -130,19 +131,19 @@
       <div class="flow">
         <div class="flow-step">
           <p class="type-label-upper flow-label">Problem</p>
-          <p class="type-body">Every drug-interaction alert renders at identical visual priority, so hospitalists override 95% of them. Not carelessness, alarm fatigue, and it's tied to real harm.</p>
+          <p class="type-body">Every drug-interaction alert looks identical on screen, whether it's routine or life-threatening. Hospitalists override 95% of them, not carelessness, but alarm fatigue: so many alerts fire that people stop reacting to any of them. That's tied to real patient harm.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Approach</p>
-          <p class="type-body">No primary access to hospitalists, a gated clinical domain. Problem frame built from 18 clinical sources; two rounds of evaluative testing with 3 RN proxy testers (Useberry, SUS, NASA-TLX).</p>
+          <p class="type-body">I didn't have access to real hospitalists, so I built the problem from 18 clinical sources, then tested the design with 3 nurses across two rounds.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Key decision</p>
-          <p class="type-body">A triage table with ESI severity tiers already in clinical vocabulary, AI confidence stated inline next to the action, and friction that scales with risk: one click to accept, a reasoned form to override.</p>
+          <p class="type-body">A triage table using ESI, the severity scale hospitals already use, with the AI's confidence shown right next to the action, and friction that scales with risk: one click to accept, a short reasoned form to override.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Status</p>
-          <p class="type-body">Two rounds done, Round 2 now at n=3. Alert triage solved: 100% found the critical alert. The AI-confidence decision improved sharply: 0% chose the correct action in Round 1, 67% did in Round 2, once the recommendation was stated inline and styled as primary. One tester still chose Hold over Escalate; that holdout is the open question for a follow-up round.</p>
+          <p class="type-body">Two rounds of testing are done. Every tester found the critical alert right away. Getting them to act on the AI's recommendation took more work: nobody did in round one, but two of three did in round two once I moved the recommendation next to the button. The one tester who still didn't is the open question for a follow-up round.</p>
         </div>
       </div>
     </div>
@@ -245,41 +246,42 @@
     <div class="case-section">
       <div class="prose"><h2 class="type-h2">Process</h2></div>
 
+      <p class="type-label-upper" style="margin-bottom: var(--sp-sm);">Round 1 results (3 testers)</p>
       <div class="stat-row">
         <div class="stat">
           <div class="value">73.3</div>
-          <div class="type-label-upper label">SUS Score (68+ = above avg)</div>
+          <div class="type-label-upper label">Usability score (SUS), 68+ = above avg</div>
         </div>
         <div class="stat">
           <div class="value">35.0</div>
-          <div class="type-label-upper label">NASA-TLX Workload (lower is better)</div>
+          <div class="type-label-upper label">Mental effort score (NASA-TLX), lower is better</div>
         </div>
         <div class="stat">
           <div class="value">100%</div>
-          <div class="type-label-upper label">Task 1 Completion (n=3)</div>
+          <div class="type-label-upper label">Task 1: found the critical alert</div>
         </div>
         <div class="stat">
           <div class="value">0%</div>
-          <div class="type-label-upper label">Task 2: Escalate on 94% alert (n=3)</div>
+          <div class="type-label-upper label">Task 2: acted on a 94%-confidence AI recommendation</div>
         </div>
         <div class="stat">
           <div class="value">67%</div>
-          <div class="type-label-upper label">Task 3: Override friction (n=3)</div>
+          <div class="type-label-upper label">Task 3: finished the override form</div>
         </div>
       </div>
 
       <div class="prose">
         <p class="type-body" style="margin-top: var(--sp-lg);">
-          All 3 testers found the critical alert first and acted without prompting (Task 1, avg 127.2s).
-          None chose Escalate once AI confidence was on screen (Task 2): 2 chose Override, 1 chose Hold.
-          Task 3 completed at 2 of 3; the third dropped off before the override-reason form. That drop-off
-          repeated with a different tester in Round 2, at the exact same step, confirming it as a real
-          problem rather than a one-off.
+          All three testers found the critical alert on their own, no prompting needed, in about two
+          minutes on average. None of them acted on the AI's recommendation once it was on screen: two
+          chose to override it, one chose to just hold. Two of three finished the override form; the third
+          dropped off partway through, and a different tester dropped off at that exact same step in round
+          two, so this looks like a real design problem, not a fluke.
         </p>
 
       </div>
 
-      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (n=3)</p>
+      <p class="type-label-upper" style="margin: var(--sp-lg) 0 var(--sp-sm);">Round 1 → Round 2 (3 testers)</p>
       <div class="bar-chart">
         <div class="bar-metric">
           <p class="bar-metric-label">SUS Score</p>
@@ -312,7 +314,7 @@
           </div>
         </div>
         <div class="bar-metric">
-          <p class="bar-metric-label">Override friction</p>
+          <p class="bar-metric-label">Finished the override form</p>
           <div class="bar-rows">
             <div class="bar-row">
               <span class="bar-tag">R1</span>
@@ -330,19 +332,15 @@
 
       <div class="prose">
         <p class="type-caption" style="margin-top: var(--sp-sm);">
-          Round 2 (n=3) shows the Round 1 fix largely worked: 67% chose Escalate once the recommendation
-          was stated inline and styled as primary, up from 0% in Round 1. SUS and override-form
-          completion, which both dipped with only 2 respondents, recovered once a third joined: SUS
-          climbed to 74.2 (above Round 1's own 73.3) and override-friction completion returned to 67%,
-          matching Round 1. That drop with n=2 reads as small-sample noise in hindsight, not a real
-          regression. One tester still chose Hold over Escalate, taking the longest of the three
-          (2 minutes 25 seconds against 11 seconds and 87 seconds for the two who chose correctly),
-          which reads more like hesitation than a missed element on screen. The Round 2 follow-up
-          (NASA-TLX) is consistent with that: self-rated performance split 9/10, 9/10, and 2/10, roughly
-          tracking who actually got it right. Recruiting for this panel has taken months for three
-          testers, so rather than draw a firm conclusion from one holdout, I'm documenting a moderated
-          follow-up round as the next step, one that can ask that tester directly why they didn't act on
-          the stated confidence.
+          Round 2 shows the fix mostly worked: two of three testers acted on the AI's recommendation, up
+          from zero in round one. The usability score also improved slightly, from 73.3 to 74.2. The one
+          tester who still chose Hold instead of Escalate took much longer to decide, about two and a
+          half minutes, against 11 and 87 seconds for the two who acted on the recommendation, which
+          looks more like hesitation than a design element they simply missed. That tester also rated
+          their own performance lower afterward (2 out of 10, versus 9 out of 10 for the other two),
+          which lines up with the outcome. Recruiting nurses for this kind of testing has taken months
+          for just three people per round, so rather than guess why that one tester hesitated, I'm
+          planning a follow-up session where I can just ask them directly.
         </p>
       </div>
 
@@ -363,15 +361,10 @@
       <div class="prose">
         <h2 class="type-h2">Where this stands</h2>
         <p class="type-body">
-          Both rounds are done, Round 2 now at n=3. Alert triage works: every tester found the critical
-          alert first, nothing to change there. The AI-confidence decision moved from 0% in Round 1 to
-          67% in Round 2 once the recommendation was stated inline and styled as primary, evidence the
-          fix largely worked. One tester still chose Hold over Escalate, taking noticeably longer than the
-          two who chose correctly. If I kept building this, the next move is a moderated session with that
-          remaining profile of tester, one that can ask directly why they didn't act on a stated
-          high-confidence recommendation, instead of inferring it from click timestamps and self-ratings
-          alone. Recruiting this panel has taken months for three testers per round, so that's documented
-          as the next step rather than actually run.
+          If I kept building this, the next step is a moderated session with the one tester who still
+          chose Hold, so I can ask directly why instead of guessing from click timestamps and
+          self-ratings. Recruiting nurses for this kind of testing has taken months for just three people
+          per round, so that session is planned, not yet run.
         </p>
       </div>
     </div>
