@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Designed a clinical alert dashboard to reduce override of critical drug-interaction warnings</title>
-<meta name="description" content="Alert Fatigue Case study: AI dashboard design, clinical alert triage, WCAG 2.2 accessibility, and two rounds of usability testing with SUS and NASA-TLX.">
+<meta name="description" content="Alert Fatigue Case Study: AI dashboard design, clinical alert triage, WCAG 2.2 accessibility, and two rounds of usability testing with SUS and NASA-TLX.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171717'/%3E%3Ctext x='16' y='21.5' font-family='Arial,Helvetica,sans-serif' font-size='13' font-weight='700' fill='%23f5f5f5' text-anchor='middle'%3ESG%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
@@ -95,11 +95,6 @@
       </div>
     </div>
 
-    <div class="figma-embed">
-      <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fjo3H6810m9f2w6VpX7hgTi%2FAlert-Dashboard%3Fnode-id%3D448-4160%26p%3Df%26viewport%3D185%252C287%252C0.25%26t%3Dxv7ntJq6d0bOYks0-1%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D448%253A4160%26show-proto-sidebar%3D1%26page-id%3D438%253A957" allowfullscreen loading="lazy" title="Healthcare AI Dashboard live prototype"></iframe>
-    </div>
-    <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the Round 1 triage table above, or <a href="https://www.figma.com/proto/jo3H6810m9f2w6VpX7hgTi/Alert-Dashboard?node-id=448-4160&p=f&viewport=185%2C287%2C0.25&t=xv7ntJq6d0bOYks0-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=448%3A4160&show-proto-sidebar=1&page-id=438%3A957" target="_blank" rel="noopener">open it in Figma →</a></p>
-
     <div class="tile-grid tile-grid-prose" style="margin-bottom: var(--sp-md);">
       <div>
         <div class="shot-frame">
@@ -113,16 +108,6 @@
         </div>
         <p class="type-caption">The Round 2 fix: Escalate restyled as primary, plus a stated recommendation above the button row. Testing showed this wasn't enough on its own. See Testing below for why.</p>
       </div>
-    </div>
-
-    <div class="prose">
-      <p class="type-caption method-note">
-        <strong>A note on method:</strong> I didn't have access to real hospitalists, so I built the problem from 18 peer-reviewed and expert sources
-        instead. To test the actual design, I recruited registered nurses as the closest available stand-in: an
-        initial group of five narrowed to three, using two
-        standard measures, one for how easy the design felt to use (SUS) and one for how mentally taxing
-        a task felt (NASA-TLX).
-      </p>
     </div>
 
     <div class="summary-block">
@@ -246,12 +231,12 @@
           <p class="type-body">Built the problem from 18 peer-reviewed and clinical sources instead of primary interviews. Synthesis produced two personas and the ESI-based severity framing the design is built around.</p>
         </div>
         <div class="tile">
-          <h3 class="type-h3">2. Wireframes</h3>
-          <p class="type-body">Sketched three low-fidelity layout directions and ran each through a 3-second test: can a clinician spot the most critical alert without reading anything? A compact triage table passed as the best direction over a single-column card where height signaled priority over severity index.</p>
+          <h3 class="type-h3">2. Ideation in Stitch</h3>
+          <p class="type-body">Used Google's Stitch tool to quickly generate and compare three distinct dashboard directions, then narrowed down to the strongest one before committing time to a full Figma build.</p>
         </div>
         <div class="tile">
-          <h3 class="type-h3">3. Ideation in Stitch</h3>
-          <p class="type-body">Used Google's Stitch tool to quickly generate and compare three distinct dashboard directions, then narrowed down to the strongest one before committing time to a full Figma build.</p>
+          <h3 class="type-h3">3. Wireframes</h3>
+          <p class="type-body">Sketched three low-fidelity layout directions and ran each through a 3-second test: can a clinician spot the most critical alert without reading anything? A compact triage table passed as the best direction over a single-column card where height signaled priority over severity index.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">4. Figma: refinement and prototyping</h3>
@@ -366,8 +351,8 @@
           on "Escalate to Pharmacy," and confirmed it a second later. Three different outcomes from the
           same fix: didn't see it, saw it and rejected it, saw it and acted on it. The first two are
           different problems, and a bigger button could only fix one of them. The
-          override-form drop-off from round one also happened again, with a different tester hitting the
-          same dead end; that's now a confirmed problem.
+          override-form drop-off from round one also happened again, with a tester hitting the
+          same dead end a second time; that's now a confirmed problem.
         </p>
       </div>
 
