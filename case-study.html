@@ -9,12 +9,6 @@
 <link rel="stylesheet" href="styles.css">
 <script src="theme.js"></script>
 <style>
-  .method-note {
-    border-left: 2px solid var(--border-default);
-    padding-left: var(--sp-md);
-    margin-bottom: var(--sp-2xl);
-  }
-  .finding-tile .source { margin-top: var(--sp-sm); }
   .tile-grid-decisions .tile { min-height: 268px; }
 </style>
 </head>
@@ -285,7 +279,7 @@
           All three testers found the critical alert on their own, in about two
           minutes on average. None of them acted on the AI's recommendation once it was on screen: two
           chose to override it, one chose to just hold. Two of three finished the override form; the third
-          dropped off partway through, and a different tester dropped off at that exact same step in round
+          dropped off partway through, and a tester dropped off at that exact same step again in round
           two.
         </p>
 
@@ -360,7 +354,7 @@
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Most problems are not strictly visual</h3>
-          <p class="type-body">Stating the AI's recommendation and styling it as primary got one of three Round 2 testers to act on it, up from zero in Round 1. The other two picked something else, for different reasons: one decided in 11 seconds, too fast to have read the new text at all; the other spent 87 seconds and rejected the recommendation anyway. One is a visibility problem. The other is a trust problem: understanding how different users react and decide to critical information is a complex matter that can't be solved with a single hierarchy change.</p>
+          <p class="type-body">Stating the AI's recommendation and styling it as primary got one of three Round 2 testers to act on it, up from zero in Round 1. The other two picked something else, for different reasons: one decided in 11 seconds, too fast to have read the new text at all; the other spent 87 seconds and rejected the recommendation anyway. One is a visibility problem. The other is a trust problem: understanding how different users react to and decide on critical information is a complex matter that can't be solved with a single hierarchy change.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Recruiting is its own project risk</h3>
@@ -390,7 +384,6 @@
         <p class="type-body" style="margin-bottom: var(--sp-md);">Every citation above opens the actual source in a new tab.</p>
         <ol id="sources" class="rq-list type-caption source-list" style="color: var(--text-secondary);">
           <li id="src-bryant-2014"><a href="https://doi.org/10.4338/ACI-2013-12-RA-0103" target="_blank" rel="noopener">Bryant AD, Fletcher GS, Payne TH. "Drug interaction alert override rates in the Meaningful Use era: no evidence of progress." <em>Applied Clinical Informatics</em>, 2014. ↗</a></li>
-          <li id="src-weingart-2003"><a href="https://doi.org/10.1001/archinte.163.21.2625" target="_blank" rel="noopener">Weingart SN, Toth M, Sands DZ, et al. "Physicians' Decisions to Override Computerized Drug Alerts in Primary Care." <em>Archives of Internal Medicine</em>, 2003. ↗</a></li>
           <li id="src-wachter-2015"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter R. "Beware of the Robot Pharmacist" (the Pablo Garcia Septra overdose case). <em>Medium</em>, 2015. ↗</a></li>
           <li id="src-joint-commission"><a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission. Sentinel Event Alert Issue 50: Medical device alarm safety in hospitals. 2013, updated 2016. ↗</a></li>
           <li id="src-drew-2014"><a href="https://doi.org/10.1371/journal.pone.0110274" target="_blank" rel="noopener">Drew BJ, Harris P, Zègre-Hemsey JK, et al. "Insights into the problem of alarm fatigue with physiologic monitor devices" (UCSF ICU observational study). <em>PLoS One</em>, 2014. ↗</a></li>
