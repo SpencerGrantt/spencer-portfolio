@@ -124,6 +124,12 @@ section { padding: var(--sp-3xl) 0; }
 
 .section-muted { background: var(--surface-muted); }
 
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* ── Nav ── */
 
 .site-nav {
