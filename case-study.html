@@ -94,7 +94,7 @@
         <div class="shot-frame">
           <img src="assets/triage-esi1-expanded.png" alt="ESI-1 alert expanded: AI confidence, evidence basis, and the Hold/Override/Escalate action row">
         </div>
-        <p class="type-caption">The ESI-1 alert, expanded. Round 1 design: Hold is styled primary; nothing states the AI's recommendation.</p>
+        <p class="type-caption">The ESI-1 alert, expanded. Round 1 design: Hold is styled primary; the AI's recommendation is in the table but not called out near the action buttons.</p>
       </div>
       <div>
         <div class="shot-frame">
@@ -109,15 +109,15 @@
       <div class="flow">
         <div class="flow-step">
           <p class="type-label-upper flow-label">Problem</p>
-          <p class="type-body">Every drug-interaction alert looks identical on screen, whether it's routine or life-threatening. Hospitalists override 95% of them, not carelessness, but alarm fatigue: so many alerts fire that people stop reacting to any of them. That's tied to real patient harm.</p>
+          <p class="type-body">Every drug-interaction alert looks identical on screen, whether it's routine or life-threatening. Hospitalists override 95% of them, not carelessness, but alarm fatigue: so many alerts that hospitalists stop reacting to any of them. That's tied to real patient harm.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Approach</p>
-          <p class="type-body">I didn't have access to real hospitalists, so I built the problem from 18 clinical sources, then tested the design across two rounds with nurses as the closest available stand-in.</p>
+          <p class="type-body">I didn't have access to real hospitalists, so I built the problem from 18 clinical sources, then tested the design across two rounds with registered nurses as the closest available stand-in.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Key decision</p>
-          <p class="type-body">A triage table using ESI, the severity scale hospitals already use, with the AI's confidence shown right next to the action, and friction that scales with risk: one click to accept, a short reasoned form to override.</p>
+          <p class="type-body">A triage table using Emergency Severity Index (ESI), the scale hospitals already use, with the AI's confidence shown right next to the action, and friction that scales with risk: one click to accept, a short reasoned form to override.</p>
         </div>
         <div class="flow-step">
           <p class="type-label-upper flow-label">Status</p>
@@ -187,7 +187,7 @@
         </div>
         <div class="tile">
           <h3 class="type-h3">ESI, not an invented scale</h3>
-          <p class="type-body">The panel borrows the Emergency Severity Index, already in a hospitalist's vocabulary, instead of a made-up "High/Medium/Low." "ESI-1" needs zero explanation mid-shift.</p>
+          <p class="type-body">The panel borrows the Emergency Severity Index, already in a hospitalist's vocabulary, instead of a made-up "High/Medium/Low." "ESI-1" needs zero explanation.</p>
           <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain et al. 2019</a></p>
         </div>
         <div class="tile">
@@ -197,7 +197,7 @@
         </div>
         <div class="tile" id="d1-008">
           <h3 class="type-h3">Cut override at the point of highest risk</h3>
-          <p class="type-body">Override drops from 99.3% to 1.7% once a high-confidence recommendation is actually stated, not left sitting in a separate evidence panel, across 6,689 cardiovascular cases. That's the lever for the numbers above: Round 1 styled Escalate as secondary with nothing stated; Round 2 made it primary and added a one-line stated recommendation.</p>
+          <p class="type-body">Override drops from 99.3% to 1.7% once a high-confidence recommendation is actually stated, across 6,689 cardiovascular cases. Round 1 styled Escalate as secondary with the recommendation stated in the primary table, but not near the action buttons; Round 2 enhanced visibility and added a one-line stated recommendation above the given actions.</p>
           <div class="bar-chart--compact">
             <p class="bar-metric-label">Override rate, by AI confidence band</p>
             <div class="bar-row">
@@ -222,7 +222,7 @@
       <div class="tile-grid tile-grid-prose" style="margin-bottom: var(--sp-xl);">
         <div class="tile">
           <h3 class="type-h3">1. Research</h3>
-          <p class="type-body">Built the problem from 18 peer-reviewed and clinical sources instead of primary interviews. Synthesis produced two personas and the ESI-based severity framing the design is built around.</p>
+          <p class="type-body">Built the problem from 18 peer-reviewed and clinical sources instead of primary interviews. With the help of Claude, I synthesized the data and produced two personas along with the ESI-based severity framing the design is built around.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">2. Ideation in Stitch</h3>
@@ -230,7 +230,7 @@
         </div>
         <div class="tile">
           <h3 class="type-h3">3. Wireframes</h3>
-          <p class="type-body">Sketched three low-fidelity layout directions and ran each through a 3-second test: can a clinician spot the most critical alert without reading anything? A compact triage table passed as the best direction over a single-column card where height signaled priority over severity index.</p>
+          <p class="type-body">Sketched low-fidelity layout directions and ran each through a 3-second test: can a clinician spot the most critical alert without reading anything? A compact triage table passed as the best direction over a single-column card where height signaled priority over severity index.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">4. Figma: refinement and prototyping</h3>
@@ -354,7 +354,7 @@
       <div class="tile-grid tile-grid-prose">
         <div class="tile">
           <h3 class="type-h3">Most problems are not strictly visual</h3>
-          <p class="type-body">Stating the AI's recommendation and styling it as primary got one of three Round 2 testers to act on it, up from zero in Round 1. The other two picked something else, for different reasons: one decided in 11 seconds, too fast to have read the new text at all; the other spent 87 seconds and rejected the recommendation anyway. One is a visibility problem. The other is a trust problem: understanding how different users react to and decide on critical information is a complex matter that can't be solved with a single hierarchy change.</p>
+          <p class="type-body">Stating the AI's recommendation and styling it as primary got one of three Round 2 testers to act on it, up from zero in Round 1. The other two picked something else, for different reasons: one decided in 11 seconds, the other spent 87 seconds and rejected the recommendation. One is a visibility problem. The other is a trust problem: understanding how different users react to and decide on critical information is a complex matter that can't be solved with a single hierarchy change.</p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Recruiting is its own project risk</h3>
@@ -369,7 +369,7 @@
         <p class="type-body">
           Two rounds in, the override problem this project set out to fix moved but didn't close: escalating
           the highest-risk alert went from 0% to 33% once the recommendation was stated and made primary. That's
-          real progress against the fatigue-driven override pattern, but two of three testers still didn't act
+          progress against the fatigue-driven override pattern, but two of three testers still didn't act
           on it, and recruiting for this panel has already gone over allotted time. Running a full third round
           isn't in my scope, but if I were to build on this further, I'd move to a moderated session so I can
           talk directly with each tester about why they overrode or held instead of escalating, before moving
