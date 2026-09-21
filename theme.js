@@ -67,24 +67,3 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth > 768) closeMenu();
   });
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-  if (!('IntersectionObserver' in window)) return;
-  var sections = document.querySelectorAll('body > section');
-  var targets = Array.prototype.slice.call(sections, 1);
-  if (!targets.length) return;
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-  targets.forEach(function (el) {
-    el.classList.add('reveal');
-    observer.observe(el);
-  });
-});
