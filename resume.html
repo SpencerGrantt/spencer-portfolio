@@ -64,8 +64,10 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
@@ -79,7 +81,7 @@
       </li>
       <li><a href="vantar.html">Vantar</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="resume.html">Résumé</a></li>
+      <li><a href="resume.html" aria-current="page">Résumé</a></li>
     </ul>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
     <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
@@ -89,7 +91,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <section>
   <div class="container prose">
@@ -101,12 +105,12 @@
         Frederick, MD &nbsp;·&nbsp;
         301-401-4655 &nbsp;·&nbsp;
         <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a> &nbsp;·&nbsp;
-        <a href="https://spencergrantt.github.io/spencer-portfolio/" target="_blank" rel="noopener">Portfolio</a> &nbsp;·&nbsp;
-        <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://spencergrantt.github.io/spencer-portfolio/" target="_blank" rel="noopener">Portfolio<span class="visually-hidden"> (opens in new tab)</span></a> &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
       </p>
       <p class="type-caption" style="color: var(--text-tertiary); margin-top: var(--sp-xs);">U.S. Citizen, no visa sponsorship required</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+        <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
       </div>
     </div>
 
@@ -133,11 +137,11 @@
       <div class="r-entry">
         <div class="r-entry-head">
           <div>
-            <span class="r-entry-title"><a href="https://vantar.tech/login" target="_blank" rel="noopener">Vantar: Full-Stack Field Operations PWA ↗</a></span>
+            <span class="r-entry-title"><a href="https://vantar.tech/login" target="_blank" rel="noopener">Vantar: Full-Stack Field Operations PWA <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></span>
           </div>
           <span class="r-entry-date">May 2026 – Present · shipped, ongoing updates</span>
         </div>
-        <p class="r-entry-sub">Solo build for <a href="https://www.29integritylogistics.com/" target="_blank" rel="noopener">29 Integrity Logistics, LLC</a>, a service-disabled-veteran-owned small business holding federal government contracts</p>
+        <p class="r-entry-sub">Solo build for <a href="https://www.29integritylogistics.com/" target="_blank" rel="noopener">29 Integrity Logistics, LLC<span class="visually-hidden"> (opens in new tab)</span></a>, a service-disabled-veteran-owned small business holding federal government contracts</p>
         <ul class="type-body">
           <li>Designed and built a mobile-first Progressive Web App solo (architecture, database, UI, AI integration, and deployment), replacing paper/text-based field operations with a role-based app used daily in production</li>
           <li>Built compliance-automation features for federal contract requirements (SAM.gov expiry alerts, SDVOSB credential tracking, chain-of-custody PDF generation) and an offline-first sync layer for low-connectivity field use; shipped to production with a Lighthouse audit of 97 Performance / 100 Accessibility / 100 Best Practices / 100 SEO</li>
@@ -180,7 +184,7 @@
           <div><span class="r-entry-title">Web Designer</span></div>
           <span class="r-entry-date">2024 – Present · Remote</span>
         </div>
-        <p class="r-entry-sub">Independent client work: designed and launched responsive sites for a local bakery (Webflow) and for <a href="https://www.29integritylogistics.com/" target="_blank" rel="noopener">29 Integrity Logistics</a>, a regional logistics and medical courier company</p>
+        <p class="r-entry-sub">Independent client work: designed and launched responsive sites for a local bakery (Webflow) and for <a href="https://www.29integritylogistics.com/" target="_blank" rel="noopener">29 Integrity Logistics<span class="visually-hidden"> (opens in new tab)</span></a>, a regional logistics and medical courier company</p>
       </div>
       <div class="r-entry">
         <div class="r-entry-head">
@@ -193,14 +197,16 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
-      <a href="#" onclick="window.print(); return false;">Résumé (Print/PDF)</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
+      <button class="link-button" type="button" onclick="window.print()">Résumé (Print/PDF)</button>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX/UI Designer</p>
   </div>

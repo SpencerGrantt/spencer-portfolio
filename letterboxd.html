@@ -11,8 +11,10 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
@@ -21,7 +23,7 @@
         <div class="nav-dropdown-menu">
           <a href="case-study.html">Diagnosing Alert Fatigue<span>Tackling alarm fatigue in clinical alerts</span></a>
           <a href="civicpulse.html">CivicPulse<span>Making civic data transparent</span></a>
-          <a href="letterboxd.html">Reframing Letterboxd<span>Improving engagement and implementing new features</span></a>
+          <a href="letterboxd.html" aria-current="page">Reframing Letterboxd<span>Improving engagement and implementing new features</span></a>
         </div>
       </li>
       <li><a href="vantar.html">Vantar</a></li>
@@ -36,7 +38,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <section style="padding-bottom: 0;">
   <div class="container">
@@ -90,7 +94,7 @@
       <iframe src="https://embed.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=19-166&p=f&viewport=749%2C252%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=19%3A166&show-proto-sidebar=1&page-id=0%3A1&embed-host=share" allowfullscreen loading="lazy" title="Reframing Letterboxd live prototype"></iframe>
     </div>
     <div class="prose">
-      <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=19-166&p=f&viewport=749%2C252%2C0.25&t=eiYCLaBlE0xi3QNZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=19%3A166&show-proto-sidebar=1&page-id=0%3A1" target="_blank" rel="noopener">open it in Figma →</a></p>
+      <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/HRuiKiED5B0r3A6B2wAAR6/Letterboxd-Prototype?node-id=19-166&p=f&viewport=749%2C252%2C0.25&t=eiYCLaBlE0xi3QNZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=19%3A166&show-proto-sidebar=1&page-id=0%3A1" target="_blank" rel="noopener">open it in Figma →<span class="visually-hidden"> (opens in new tab)</span></a></p>
     </div>
 
     <div class="summary-block">
@@ -125,7 +129,7 @@
         </p>
       </div>
 
-      <div class="fact-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="fact-grid fact-grid-3">
         <div class="fact">
           <p class="fact-value">No home</p>
           <p class="fact-body">Social features exist but are scattered across screens with no obvious entry point.</p>
@@ -211,25 +215,25 @@
       <div class="compare-thumbs shot-zoom-grid">
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-current-activity.png" alt="Current Letterboxd Activity tab: one undifferentiated feed of likes, ratings, and reviews with no dedicated social entry point">
+            <a href="assets/letterboxd-current-activity.png"><img src="assets/letterboxd-current-activity.png" alt="Current Letterboxd Activity tab: one undifferentiated feed of likes, ratings, and reviews with no dedicated social entry point"></a>
           </div>
           <p class="type-caption">1. Social home</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-current-feed-ads.png" alt="Current Letterboxd profile: Diary, Lists, and Watchlist split across separate top tabs, above a feed interrupted by a full-width autoplaying video ad">
+            <a href="assets/letterboxd-current-feed-ads.png"><img src="assets/letterboxd-current-feed-ads.png" alt="Current Letterboxd profile: Diary, Lists, and Watchlist split across separate top tabs, above a feed interrupted by a full-width autoplaying video ad"></a>
           </div>
           <p class="type-caption">2. Profile</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-current-poster.png" alt="Current Letterboxd film detail page for 28 Years Later: plain poster with no badges or ratings context">
+            <a href="assets/letterboxd-current-poster.png"><img src="assets/letterboxd-current-poster.png" alt="Current Letterboxd film detail page for 28 Years Later: plain poster with no badges or ratings context"></a>
           </div>
           <p class="type-caption">3. Posters</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-current-tv-search.png" alt="Current Letterboxd search results for a TV show, listing individual episodes as flat film-style entries with no season or show-level view">
+            <a href="assets/letterboxd-current-tv-search.png"><img src="assets/letterboxd-current-tv-search.png" alt="Current Letterboxd search results for a TV show, listing individual episodes as flat film-style entries with no season or show-level view"></a>
           </div>
           <p class="type-caption">4. TV</p>
         </div>
@@ -239,30 +243,30 @@
       <div class="compare-thumbs shot-zoom-grid">
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-redesign-activity.png" alt="Redesigned Activity tab: friends' recent posters and an Add Friends button surfaced at the top, above a filterable activity list">
+            <a href="assets/letterboxd-redesign-activity.png"><img src="assets/letterboxd-redesign-activity.png" alt="Redesigned Activity tab: friends' recent posters and an Add Friends button surfaced at the top, above a filterable activity list"></a>
           </div>
           <p class="type-caption">1. Social home</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-redesign-profile.png" alt="Redesigned profile: a My Library grid surfacing Diary, Watchlist, Film History, TV History, Lists, Favorites, Reviews, and Stats directly on the profile">
+            <a href="assets/letterboxd-redesign-profile.png"><img src="assets/letterboxd-redesign-profile.png" alt="Redesigned profile: a My Library grid surfacing Diary, Watchlist, Film History, TV History, Lists, Favorites, Reviews, and Stats directly on the profile"></a>
           </div>
           <p class="type-caption">2. Profile</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-redesign-poster.png" alt="Redesigned film detail page for 28 Years Later: an award badge and content rating shown just below the poster">
+            <a href="assets/letterboxd-redesign-poster.png"><img src="assets/letterboxd-redesign-poster.png" alt="Redesigned film detail page for 28 Years Later: an award badge and content rating shown just below the poster"></a>
           </div>
           <p class="type-caption">3. Posters</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/letterboxd-redesign-shows.png" alt="Redesigned Explore Shows tab: Currently Watching progress bars and a Top 25 Shows list, toggled from film mode">
+            <a href="assets/letterboxd-redesign-shows.png"><img src="assets/letterboxd-redesign-shows.png" alt="Redesigned Explore Shows tab: Currently Watching progress bars and a Top 25 Shows list, toggled from film mode"></a>
           </div>
           <p class="type-caption">4. TV</p>
         </div>
       </div>
-      <p class="type-caption" style="margin-top: var(--sp-sm);">Hover a screen to zoom in. Each column pairs with the matching move above.</p>
+      <p class="type-caption" style="margin-top: var(--sp-sm);">Hover or tab to a screen to zoom in; select it to open the full-size image. Each column pairs with the matching move above.</p>
     </div>
 
     <div class="case-section">
@@ -306,13 +310,15 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
       <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>

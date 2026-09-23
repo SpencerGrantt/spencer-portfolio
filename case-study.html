@@ -14,15 +14,17 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
       <li class="nav-dropdown">
         <a href="case-studies.html">Case Studies</a>
         <div class="nav-dropdown-menu">
-          <a href="case-study.html">Diagnosing Alert Fatigue<span>Tackling alarm fatigue in clinical alerts</span></a>
+          <a href="case-study.html" aria-current="page">Diagnosing Alert Fatigue<span>Tackling alarm fatigue in clinical alerts</span></a>
           <a href="civicpulse.html">CivicPulse<span>Making civic data transparent</span></a>
           <a href="letterboxd.html">Reframing Letterboxd<span>Improving engagement and implementing new features</span></a>
         </div>
@@ -39,7 +41,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <section style="padding-bottom: 0;">
   <div class="container">
@@ -142,27 +146,27 @@
         <div class="fact">
           <p class="fact-value">39-fold</p>
           <p class="fact-body">antibiotic overdose in a 2015 UCSF case, after a physician and pharmacist both overrode a critical alert that <em>"looked exactly the same"</em> as routine ones.</p>
-          <p class="type-caption fact-source"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter 2015</a></p>
+          <p class="type-caption fact-source"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter 2015<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
         <div class="fact">
           <p class="fact-value">216+ deaths</p>
           <p class="fact-body">in the U.S. (2005–2010) tied to alarm fatigue, per a Boston Globe investigation.</p>
-          <p class="type-caption fact-source"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter 2015</a></p>
+          <p class="type-caption fact-source"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter 2015<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
         <div class="fact">
           <p class="fact-value">187/day</p>
           <p class="fact-body">alerts per patient at UCSF ICUs, almost all clinically insignificant, 2,507,822 unique alarms across five ICUs in one month.</p>
-          <p class="type-caption fact-source"><a href="https://doi.org/10.1371/journal.pone.0110274" target="_blank" rel="noopener">Drew et al. 2014</a></p>
+          <p class="type-caption fact-source"><a href="https://doi.org/10.1371/journal.pone.0110274" target="_blank" rel="noopener">Drew et al. 2014<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
         <div class="fact">
           <p class="fact-value">+13% risk</p>
           <p class="fact-body">per interruption during medication administration. Four interruptions doubles the rate of errors likely to cause permanent harm or death.</p>
-          <p class="type-caption fact-source"><a href="https://doi.org/10.1001/archinternmed.2010.65" target="_blank" rel="noopener">Westbrook et al. 2010</a></p>
+          <p class="type-caption fact-source"><a href="https://doi.org/10.1001/archinternmed.2010.65" target="_blank" rel="noopener">Westbrook et al. 2010<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
       </div>
 
       <div class="prose">
-        <p class="type-caption">The Joint Commission issued an urgent alarm-safety directive in 2013 (updated 2016), naming alarm-related problems a top health-technology hazard. (<a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission 2013/2016</a>)</p>
+        <p class="type-caption">The Joint Commission issued an urgent alarm-safety directive in 2013 (updated 2016), naming alarm-related problems a top health-technology hazard. (<a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission 2013/2016<span class="visually-hidden"> (opens in new tab)</span></a>)</p>
       </div>
     </div>
 
@@ -183,17 +187,17 @@
         <div class="tile">
           <h3 class="type-h3">A table, color as backup only</h3>
           <p class="type-body">Every alert is a row: severity, drug ordered vs. drug on file, AI confidence, recommended action, all visible without expanding. Strip the color out and the ESI-1 row is still identifiable by position, height, and weight; color-only encoding fails color-deficient clinicians and is unreliable under time pressure regardless.</p>
-          <p class="type-caption source"><a href="https://doi.org/10.1001/jamanetworkopen.2018.6893" target="_blank" rel="noopener">Mazur et al. 2019</a>; <a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">NN/g 2018</a>; <a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission 2013/2016</a></p>
+          <p class="type-caption source"><a href="https://doi.org/10.1001/jamanetworkopen.2018.6893" target="_blank" rel="noopener">Mazur et al. 2019<span class="visually-hidden"> (opens in new tab)</span></a>; <a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">NN/g 2018<span class="visually-hidden"> (opens in new tab)</span></a>; <a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission 2013/2016<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
         <div class="tile">
           <h3 class="type-h3">ESI, not an invented scale</h3>
           <p class="type-body">The panel borrows the Emergency Severity Index, already in a hospitalist's vocabulary, instead of a made-up "High/Medium/Low." "ESI-1" needs zero explanation.</p>
-          <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain et al. 2019</a></p>
+          <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain et al. 2019<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
         <div class="tile">
           <h3 class="type-h3">Friction scales with risk</h3>
           <p class="type-body">The recommended action (Hold) completes in one click. Overriding requires picking a reason from five visible radio options, not a dropdown, before Confirm enables. Dropdown reasons are too coarse; clinicians pick the fastest option, not the accurate one.</p>
-          <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015</a></p>
+          <p class="type-caption source"><a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
         <div class="tile" id="d1-008">
           <h3 class="type-h3">Cut override at the point of highest risk</h3>
@@ -202,16 +206,16 @@
             <p class="bar-metric-label">Override rate, by AI confidence band</p>
             <div class="bar-row">
               <span class="bar-tag">90–99%</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 1.7%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 1.7%;"></div></div>
               <span class="bar-value">1.7%</span>
             </div>
             <div class="bar-row">
               <span class="bar-tag">70–79%</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 99.3%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 99.3%;"></div></div>
               <span class="bar-value">99.3%</span>
             </div>
           </div>
-          <p class="type-caption source"><a href="https://doi.org/10.3390/diagnostics15172204" target="_blank" rel="noopener">Yu et al. 2025</a>; <a href="https://www.nngroup.com/articles/smarts-over-sentience/" target="_blank" rel="noopener">NN/g 2025</a>; <a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">NN/g 2018</a>; <a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015</a></p>
+          <p class="type-caption source"><a href="https://doi.org/10.3390/diagnostics15172204" target="_blank" rel="noopener">Yu et al. 2025<span class="visually-hidden"> (opens in new tab)</span></a>; <a href="https://www.nngroup.com/articles/smarts-over-sentience/" target="_blank" rel="noopener">NN/g 2025<span class="visually-hidden"> (opens in new tab)</span></a>; <a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">NN/g 2018<span class="visually-hidden"> (opens in new tab)</span></a>; <a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne et al. 2015<span class="visually-hidden"> (opens in new tab)</span></a></p>
         </div>
       </div>
     </div>
@@ -292,12 +296,12 @@
           <div class="bar-rows">
             <div class="bar-row">
               <span class="bar-tag">R1</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 73.3%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 73.3%;"></div></div>
               <span class="bar-value">73.3</span>
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 74.2%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 74.2%;"></div></div>
               <span class="bar-value">74.2</span>
             </div>
           </div>
@@ -307,12 +311,12 @@
           <div class="bar-rows">
             <div class="bar-row">
               <span class="bar-tag">R1</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 0%;"></div></div>
               <span class="bar-value">0%</span>
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 33%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 33%;"></div></div>
               <span class="bar-value">33%</span>
             </div>
           </div>
@@ -322,12 +326,12 @@
           <div class="bar-rows">
             <div class="bar-row">
               <span class="bar-tag">R1</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 67%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 67%;"></div></div>
               <span class="bar-value">67%</span>
             </div>
             <div class="bar-row is-after">
               <span class="bar-tag">R2</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 67%;"></div></div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width: 67%;"></div></div>
               <span class="bar-value">67%</span>
             </div>
           </div>
@@ -383,17 +387,17 @@
         <h2 class="type-h2">Sources</h2>
         <p class="type-body" style="margin-bottom: var(--sp-md);">Every citation opens in a new tab.</p>
         <ol id="sources" class="rq-list type-caption source-list" style="color: var(--text-secondary);">
-          <li id="src-bryant-2014"><a href="https://doi.org/10.4338/ACI-2013-12-RA-0103" target="_blank" rel="noopener">Bryant AD, Fletcher GS, Payne TH. "Drug interaction alert override rates in the Meaningful Use era: no evidence of progress." <em>Applied Clinical Informatics</em>, 2014. ↗</a></li>
-          <li id="src-wachter-2015"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter R. "Beware of the Robot Pharmacist" (the Pablo Garcia Septra overdose case). <em>Medium</em>, 2015. ↗</a></li>
-          <li id="src-joint-commission"><a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission. Sentinel Event Alert Issue 50: Medical device alarm safety in hospitals. 2013, updated 2016. ↗</a></li>
-          <li id="src-drew-2014"><a href="https://doi.org/10.1371/journal.pone.0110274" target="_blank" rel="noopener">Drew BJ, Harris P, Zègre-Hemsey JK, et al. "Insights into the problem of alarm fatigue with physiologic monitor devices" (UCSF ICU observational study). <em>PLoS One</em>, 2014. ↗</a></li>
-          <li id="src-westbrook-2010"><a href="https://doi.org/10.1001/archinternmed.2010.65" target="_blank" rel="noopener">Westbrook JI, Woods A, Rob MI, et al. "Association of interruptions with an increased risk and severity of medication administration errors." <em>Archives of Internal Medicine</em>, 2010. ↗</a></li>
-          <li id="src-payne-2015"><a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne TH, Hines LE, Chan RC, et al. "Recommendations to improve the usability of drug-drug interaction clinical decision support alerts." <em>Journal of the American Medical Informatics Association</em>, 2015. ↗</a></li>
-          <li id="src-hussain-2019"><a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain MI, Reynolds TL, Zheng K. "Medication safety alert fatigue may be reduced via interaction design and clinical role tailoring." <em>JAMIA</em>, 2019. ↗</a></li>
-          <li id="src-mazur-2019"><a href="https://doi.org/10.1001/jamanetworkopen.2018.6893" target="_blank" rel="noopener">Mazur LM, Mosaly PR, Moore C, Marks LB. "Association of the Usability of Electronic Health Records With Cognitive Workload and Performance Levels Among Physicians." <em>JAMA Network Open</em>, 2019. ↗</a></li>
-          <li id="src-yu-2025"><a href="https://doi.org/10.3390/diagnostics15172204" target="_blank" rel="noopener">Yu Y, Gomez-Cabello CA, Haider SA, et al. "Enhancing Clinician Trust in AI Diagnostics: A Dynamic Framework for Confidence Calibration and Transparency." <em>Diagnostics</em>, 2025. ↗</a></li>
-          <li id="src-nng-2018"><a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">Nielsen Norman Group. "Dashboards: Making Charts and Graphs Easier to Understand." 2018. ↗</a></li>
-          <li id="src-nng-2025"><a href="https://www.nngroup.com/articles/smarts-over-sentience/" target="_blank" rel="noopener">Sunwall E. "Prioritize Smarts over Sentience to Increase Trust with AI." <em>Nielsen Norman Group</em>, 2025. ↗</a></li>
+          <li id="src-bryant-2014"><a href="https://doi.org/10.4338/ACI-2013-12-RA-0103" target="_blank" rel="noopener">Bryant AD, Fletcher GS, Payne TH. "Drug interaction alert override rates in the Meaningful Use era: no evidence of progress." <em>Applied Clinical Informatics</em>, 2014. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-wachter-2015"><a href="https://medium.com/backchannel/beware-of-the-robot-pharmacist-4015ebf13f6f" target="_blank" rel="noopener">Wachter R. "Beware of the Robot Pharmacist" (the Pablo Garcia Septra overdose case). <em>Medium</em>, 2015. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-joint-commission"><a href="https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-50" target="_blank" rel="noopener">The Joint Commission. Sentinel Event Alert Issue 50: Medical device alarm safety in hospitals. 2013, updated 2016. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-drew-2014"><a href="https://doi.org/10.1371/journal.pone.0110274" target="_blank" rel="noopener">Drew BJ, Harris P, Zègre-Hemsey JK, et al. "Insights into the problem of alarm fatigue with physiologic monitor devices" (UCSF ICU observational study). <em>PLoS One</em>, 2014. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-westbrook-2010"><a href="https://doi.org/10.1001/archinternmed.2010.65" target="_blank" rel="noopener">Westbrook JI, Woods A, Rob MI, et al. "Association of interruptions with an increased risk and severity of medication administration errors." <em>Archives of Internal Medicine</em>, 2010. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-payne-2015"><a href="https://doi.org/10.1093/jamia/ocv011" target="_blank" rel="noopener">Payne TH, Hines LE, Chan RC, et al. "Recommendations to improve the usability of drug-drug interaction clinical decision support alerts." <em>Journal of the American Medical Informatics Association</em>, 2015. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-hussain-2019"><a href="https://doi.org/10.1093/jamia/ocz095" target="_blank" rel="noopener">Hussain MI, Reynolds TL, Zheng K. "Medication safety alert fatigue may be reduced via interaction design and clinical role tailoring." <em>JAMIA</em>, 2019. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-mazur-2019"><a href="https://doi.org/10.1001/jamanetworkopen.2018.6893" target="_blank" rel="noopener">Mazur LM, Mosaly PR, Moore C, Marks LB. "Association of the Usability of Electronic Health Records With Cognitive Workload and Performance Levels Among Physicians." <em>JAMA Network Open</em>, 2019. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-yu-2025"><a href="https://doi.org/10.3390/diagnostics15172204" target="_blank" rel="noopener">Yu Y, Gomez-Cabello CA, Haider SA, et al. "Enhancing Clinician Trust in AI Diagnostics: A Dynamic Framework for Confidence Calibration and Transparency." <em>Diagnostics</em>, 2025. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-nng-2018"><a href="https://www.nngroup.com/articles/dashboards-preattentive/" target="_blank" rel="noopener">Nielsen Norman Group. "Dashboards: Making Charts and Graphs Easier to Understand." 2018. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li id="src-nng-2025"><a href="https://www.nngroup.com/articles/smarts-over-sentience/" target="_blank" rel="noopener">Sunwall E. "Prioritize Smarts over Sentience to Increase Trust with AI." <em>Nielsen Norman Group</em>, 2025. <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
         </ol>
       </div>
     </div>
@@ -401,13 +405,15 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
       <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>

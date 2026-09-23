@@ -26,13 +26,15 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
       <li class="nav-dropdown">
-        <a href="case-studies.html">Case Studies</a>
+        <a href="case-studies.html" aria-current="page">Case Studies</a>
         <div class="nav-dropdown-menu">
           <a href="case-study.html">Diagnosing Alert Fatigue<span>Tackling alarm fatigue in clinical alerts</span></a>
           <a href="civicpulse.html">CivicPulse<span>Making civic data transparent</span></a>
@@ -51,7 +53,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <section style="padding-bottom: 0;">
   <div class="container">
@@ -114,13 +118,15 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
       <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>

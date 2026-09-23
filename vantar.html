@@ -11,8 +11,10 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
@@ -24,7 +26,7 @@
           <a href="letterboxd.html">Reframing Letterboxd<span>Improving engagement and implementing new features</span></a>
         </div>
       </li>
-      <li><a href="vantar.html">Vantar</a></li>
+      <li><a href="vantar.html" aria-current="page">Vantar</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Résumé</a></li>
     </ul>
@@ -36,7 +38,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <section>
   <div class="container">
@@ -65,7 +69,7 @@
       </div>
       <div class="meta-item">
         <p class="type-label-upper label">Live</p>
-        <p class="type-body"><a href="https://vantar.tech/" target="_blank" rel="noopener">vantar.tech ↗</a></p>
+        <p class="type-body"><a href="https://vantar.tech/" target="_blank" rel="noopener">vantar.tech <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></p>
       </div>
     </div>
 
@@ -83,7 +87,7 @@
       <div class="prose">
         <h2 class="type-h2">The business</h2>
         <p class="type-body">
-          The client, <a href="https://www.29integritylogistics.com/" target="_blank" rel="noopener">29 Integrity Logistics, LLC</a>, is a 100% service-disabled veteran who owns a small SDVOSB (Service-Disabled
+          The client, <a href="https://www.29integritylogistics.com/" target="_blank" rel="noopener">29 Integrity Logistics, LLC<span class="visually-hidden"> (opens in new tab)</span></a>, is a 100% service-disabled veteran who owns a small SDVOSB (Service-Disabled
           Veteran-Owned Small Business) medical courier company, specimen and supply deliveries,
           split between federal contracts sourced through SAM.gov (the federal contracting portal;
           VA, DoD, HHS) and commercial/broker-booked hauls. Before this product existed, the business ran on paper
@@ -216,37 +220,37 @@
       <div class="tile-grid tile-grid-prose shot-zoom-grid">
         <div>
           <div class="shot-frame">
-            <img src="assets/vantar-contracts.png" alt="Vantar Contracts page: SAM.gov opportunity matches, scored against the company's NAICS codes, with a match-quality score and a one-click save-as-contract action">
+            <a href="assets/vantar-contracts.png"><img src="assets/vantar-contracts.png" alt="Vantar Contracts page: SAM.gov opportunity matches, scored against the company's NAICS codes, with a match-quality score and a one-click save-as-contract action"></a>
           </div>
           <p class="type-caption">Contracts: live SAM.gov opportunities, AI-scored against the company's NAICS codes. Seed/demo account, no real client or contract data shown.</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/vantar-analytics.png" alt="Vantar Finances Analytics tab: revenue vs. expense line chart and an expenses-by-category bar chart">
+            <a href="assets/vantar-analytics.png"><img src="assets/vantar-analytics.png" alt="Vantar Finances Analytics tab: revenue vs. expense line chart and an expenses-by-category bar chart"></a>
           </div>
           <p class="type-caption">Finances → Analytics: revenue/expense trend and cost breakdown, the source for the "Financial analytics" surface above. Seed/demo account, no real financial data shown.</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/vantar-chain-of-custody.png" alt="Vantar Run Detail page: delivered status, pickup, dropoff, and load details, with View/Add Photos and Download Chain of Custody PDF actions">
+            <a href="assets/vantar-chain-of-custody.png"><img src="assets/vantar-chain-of-custody.png" alt="Vantar Run Detail page: delivered status, pickup, dropoff, and load details, with View/Add Photos and Download Chain of Custody PDF actions"></a>
           </div>
           <p class="type-caption">Run detail: the chain-of-custody flow the product exists to fix, photo capture and a branded PDF, one tap away. Seed/demo account, no real run data shown.</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/vantar-ai-assistant.png" alt="Vantar AI Assistant docked panel, answering a query about July 2026 financial data with a categorized summary">
+            <a href="assets/vantar-ai-assistant.png"><img src="assets/vantar-ai-assistant.png" alt="Vantar AI Assistant docked panel, answering a query about July 2026 financial data with a categorized summary"></a>
           </div>
           <p class="type-caption">The AI assistant, scoped to the company's own live data, answering a financial-summary question mid-workflow. Seed/demo account, no real financial data shown.</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/vantar-vehicle-inspection.png" alt="Vantar Vehicle Inspection checklist: Pre-Trip tab with Pass, Fail, and N/A per item, and a warning banner requiring notes on any failed item">
+            <a href="assets/vantar-vehicle-inspection.png"><img src="assets/vantar-vehicle-inspection.png" alt="Vantar Vehicle Inspection checklist: Pre-Trip tab with Pass, Fail, and N/A per item, and a warning banner requiring notes on any failed item"></a>
           </div>
           <p class="type-caption">Vehicle inspection: a failed item blocks submission until the driver adds a note, not a silent checkbox.</p>
         </div>
         <div>
           <div class="shot-frame">
-            <img src="assets/vantar-ifta.png" alt="Vantar IFTA Report: quarterly mileage by jurisdiction, with a CSV export">
+            <a href="assets/vantar-ifta.png"><img src="assets/vantar-ifta.png" alt="Vantar IFTA Report: quarterly mileage by jurisdiction, with a CSV export"></a>
           </div>
           <p class="type-caption">IFTA Report: quarterly mileage by jurisdiction, exportable for filing. Seed/demo account, no real mileage data shown.</p>
         </div>
@@ -331,13 +335,15 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
       <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>

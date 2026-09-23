@@ -11,9 +11,11 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
-    <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
+    <a class="logo" href="index.html" aria-current="page">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
       <li class="nav-dropdown">
@@ -36,7 +38,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -50,7 +54,7 @@
       <cite class="type-caption">(Bryant et al., 2014)</cite>
     </p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="case-study.html">View the case study →</a>
+      <a class="btn btn-primary" href="case-study.html">View the case study <span aria-hidden="true">→</span></a>
       <a class="btn btn-secondary" href="resume.html">Résumé</a>
     </div>
   </div>
@@ -85,7 +89,7 @@
             <div class="type-label-upper label">Correctly triaged the critical alert</div>
           </div>
         </div>
-        <a class="btn btn-primary" href="case-study.html">Read the full case study →</a>
+        <a class="btn btn-primary" href="case-study.html">Read the full case study <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -124,12 +128,12 @@
       <div class="tile">
         <h3 class="type-h3">Two more case studies</h3>
         <p class="type-body">A Letterboxd redesign built on competitive research, and CivicPulse, a government-transparency app built with Baltimore data.</p>
-        <a href="case-studies.html">See all case studies →</a>
+        <a href="case-studies.html">See all case studies <span aria-hidden="true">→</span></a>
       </div>
       <div class="tile">
         <h3 class="type-h3">Vantar: full-stack build</h3>
         <p class="type-body">A logistics platform designed and built solo for a real client: dispatch, chain of custody, AI-assisted contract matching, in daily production use.</p>
-        <a href="vantar.html">See the build →</a>
+        <a href="vantar.html">See the build <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -147,18 +151,20 @@
       </p>
     </div>
     <div>
-      <a class="btn btn-secondary" href="about.html">More about how I work →</a>
+      <a class="btn btn-secondary" href="about.html">More about how I work <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
       <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>

@@ -11,8 +11,10 @@
 </head>
 <body>
 
-<div class="container">
-  <nav class="site-nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="container">
+  <nav class="site-nav" aria-label="Main">
     <a class="logo" href="index.html">Spencer Grant's Portfolio</a>
     <div class="nav-right">
     <ul id="nav-menu">
@@ -20,7 +22,7 @@
         <a href="case-studies.html">Case Studies</a>
         <div class="nav-dropdown-menu">
           <a href="case-study.html">Diagnosing Alert Fatigue<span>Tackling alarm fatigue in clinical alerts</span></a>
-          <a href="civicpulse.html">CivicPulse<span>Making civic data transparent</span></a>
+          <a href="civicpulse.html" aria-current="page">CivicPulse<span>Making civic data transparent</span></a>
           <a href="letterboxd.html">Reframing Letterboxd<span>Improving engagement and implementing new features</span></a>
         </div>
       </li>
@@ -36,7 +38,9 @@
     </button>
   </div>
   </nav>
-</div>
+</header>
+
+<main id="main" tabindex="-1">
 
 <section style="padding-bottom: 0;">
   <div class="container">
@@ -76,7 +80,7 @@
       <iframe src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fs4m5Rb949bizRf8h7XD1UX%2FCivicPulse-Prototyping--Copy-%3Fnode-id%3D0-1%26t%3DuSX6YyaTmqgGHE5n-1" allowfullscreen loading="lazy" title="CivicPulse live prototype"></iframe>
     </div>
     <div class="prose">
-      <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/s4m5Rb949bizRf8h7XD1UX/CivicPulse-Prototyping--Copy-?node-id=0-1&t=uSX6YyaTmqgGHE5n-1" target="_blank" rel="noopener">open it in Figma →</a></p>
+      <p class="type-caption" style="margin-bottom: var(--sp-xl);">Click through the full prototype above, or <a href="https://www.figma.com/proto/s4m5Rb949bizRf8h7XD1UX/CivicPulse-Prototyping--Copy-?node-id=0-1&t=uSX6YyaTmqgGHE5n-1" target="_blank" rel="noopener">open it in Figma →<span class="visually-hidden"> (opens in new tab)</span></a></p>
     </div>
 
     <div class="summary-block">
@@ -134,7 +138,7 @@
     <div class="case-section">
       <div class="prose"><h2 class="type-h2">Five screens of real data, plainly shown</h2></div>
 
-      <div class="feature-carousel">
+      <div class="feature-carousel" role="region" aria-label="CivicPulse screens">
         <div class="feature-carousel-card">
           <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous screen">‹</button>
 
@@ -192,12 +196,13 @@
         </div>
 
         <div class="carousel-dots">
-          <button class="carousel-dot is-active" data-goto="0" aria-label="Go to Dashboard"></button>
-          <button class="carousel-dot" data-goto="1" aria-label="Go to Legislation"></button>
-          <button class="carousel-dot" data-goto="2" aria-label="Go to Spending"></button>
-          <button class="carousel-dot" data-goto="3" aria-label="Go to Meetings"></button>
-          <button class="carousel-dot" data-goto="4" aria-label="Go to Onboarding"></button>
+          <button class="carousel-dot is-active" type="button" aria-current="true" data-goto="0" aria-label="Go to Dashboard"></button>
+          <button class="carousel-dot" type="button" data-goto="1" aria-label="Go to Legislation"></button>
+          <button class="carousel-dot" type="button" data-goto="2" aria-label="Go to Spending"></button>
+          <button class="carousel-dot" type="button" data-goto="3" aria-label="Go to Meetings"></button>
+          <button class="carousel-dot" type="button" data-goto="4" aria-label="Go to Onboarding"></button>
         </div>
+        <p class="visually-hidden" aria-live="polite" id="carousel-status"></p>
       </div>
     </div>
 
@@ -245,13 +250,15 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="links">
       <a href="mailto:spenag20@gmail.com">spenag20@gmail.com</a>
-      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra</a>
+      <a href="https://www.linkedin.com/in/spencergrantux" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://www.upwork.com/freelancers/~0174279fc158d9def9?mp_source=share" target="_blank" rel="noopener">Upwork<span class="visually-hidden"> (opens in new tab)</span></a>
+      <a href="https://contra.com/spencergrant?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=spencergrant" target="_blank" rel="noopener">Contra<span class="visually-hidden"> (opens in new tab)</span></a>
       <a href="resume.html">Résumé (PDF)</a>
     </div>
     <p class="type-caption">© 2026 Spencer Grant's Portfolio: UX / Product Designer</p>
@@ -264,11 +271,18 @@
   var dots = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
   if (!slides.length) return;
   var index = 0;
+  var status = document.getElementById('carousel-status');
 
   function show(i) {
     index = (i + slides.length) % slides.length;
     slides.forEach(function (slide, n) { slide.classList.toggle('is-active', n === index); });
-    dots.forEach(function (dot, n) { dot.classList.toggle('is-active', n === index); });
+    dots.forEach(function (dot, n) {
+      dot.classList.toggle('is-active', n === index);
+      if (n === index) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+    var label = slides[index].querySelector('.type-label-upper');
+    status.textContent = 'Screen ' + (index + 1) + ' of ' + slides.length + (label ? ': ' + label.textContent : '');
   }
 
   document.querySelector('.carousel-prev').addEventListener('click', function () { show(index - 1); });
